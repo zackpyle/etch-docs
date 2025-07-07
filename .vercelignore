@@ -1,0 +1,48 @@
+# Development files
+node_modules/
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build artifacts
+dist/
+build/
+*.log
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# WordPress environment
+.wp-env.json
+wp-content/
+
+# Documentation build (we'll build this in Vercel)
+docs/build/
+
+# Test files
+__tests__/
+*.test.js
+*.test.ts
+*.spec.js
+*.spec.ts
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# Temporary files
+*.tmp
+*.temp
