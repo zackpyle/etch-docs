@@ -94,39 +94,8 @@ const config: Config = {
 		footer: {
 			style: 'dark',
 			links: [
-				{
-					title: 'Documentation',
-					items: [
-						{
-							label: 'Getting Started',
-							to: '/docs/getting-started/installation'
-						}
-					]
-				},
-				{
-					title: 'Community',
-					items: [
-						{
-							label: 'GitHub',
-							href: 'https://github.com/kevingeary/etch'
-						},
-						{
-							label: 'Issues',
-							href: 'https://github.com/kevingeary/etch/issues'
-						}
-					]
-				},
-				{
-					title: 'More',
-					items: [
-						{
-							label: 'Blog',
-							to: '/blog'
-						}
-					]
-				}
 			],
-			copyright: `Copyright © ${new Date().getFullYear()} Etch.`
+			copyright: `Copyright © ${new Date().getFullYear()} Digital Gravy. Etch™ is a Trademark of Digital Gravy.`
 		},
 		prism: {
 			theme: prismThemes.github,
