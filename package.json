@@ -1,0 +1,10 @@
+{
+    "workspaces": [
+        "docs"
+    ],
+    "scripts": {
+        "dev": "npm start -w docs",
+        "build": "npm run build -w docs",
+        "serve": "npm run serve -w docs"
+    }
+}
