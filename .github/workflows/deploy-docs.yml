@@ -31,7 +31,7 @@ jobs:
 
       - name: Build documentation
         run: |
-          npm run docs:build
+          npm run build
 
       - name: Upload build artifacts
         uses: actions/upload-pages-artifact@v3
