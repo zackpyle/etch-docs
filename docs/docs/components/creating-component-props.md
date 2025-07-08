@@ -59,12 +59,12 @@ To add a prop to a component, click the "+" icon near the top of the component e
 Next, click on the prop type that you're wanting:
 
 ### Available Props
-- **[Text](/props/prop-text)** - A simple text input for titles, descriptions, labels, or any string content.
-- **[Boolean](/props/prop-boolean)** - True/false values for controlling visibility, states, or conditional behavior.
-- **[Select](/props/prop-select)** - Dropdown options for choosing from predefined values (like sizes, categories, or themes).
-- **[Image](/props/prop-image)** - Image upload and selection for photos, icons, logos, or any visual content.
-- **[Array](/props/prop-array)** - Multiple values or objects for lists, collections, or complex data structures.
-- **[Slot](/props/prop-slot)** - Content areas where you can drag and drop other components or elements.
+- **[Text](./props/prop-text)** - A simple text input for titles, descriptions, labels, or any string content.
+- **[Boolean](./props/prop-boolean)** - True/false values for controlling visibility, states, or conditional behavior.
+- **[Select](./props/prop-select)** - Dropdown options for choosing from predefined values (like sizes, categories, or themes).
+- **[Image](./props/prop-image)** - Image upload and selection for photos, icons, logos, or any visual content.
+- **[Array](./props/prop-array)** - Multiple values or objects for lists, collections, or complex data structures.
+- **[Slot](./props/prop-slot)** - Content areas where you can drag and drop other components or elements.
 
 Once added, you'll see it in the Component Editor.
 
