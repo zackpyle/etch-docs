@@ -38,7 +38,7 @@ What should you do?
 
 **OPTION A**: Create a **new** loop configuration and name it "Blog Posts 3" or "Featured Blog Posts?"
 
-**OPTION B**: Be an Etch ninja a use custom args (arguments)?
+**OPTION B**: Be an Etch ninja and use custom args (arguments)?
 
 :::tip
 _Always_ choose to be an Etch ninja.
