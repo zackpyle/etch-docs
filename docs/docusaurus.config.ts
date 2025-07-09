@@ -79,7 +79,8 @@ const config: Config = {
 			title: 'Etch',
 			logo: {
 				alt: 'Etch Logo',
-				src: 'img/etch-logo.svg'
+				src: 'img/etch-logo.svg',
+				srcDark: 'img/etch-logo-white.svg'
 			},
 			items: [
 				{
