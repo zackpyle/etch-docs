@@ -97,7 +97,7 @@ All you're going to do is change it to this:
 
 Now, whenever you use the loop, you have full control over the number of items that is displayed.
 
-You can extend this same technique to ANY argument in a loop.
+You can extend this same technique to ANY argument in a loop. You can even use dynamic data as the value for the custom argument.
 
 Pretty awesome, right?
 
