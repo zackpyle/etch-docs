@@ -9,15 +9,35 @@ The CSS Panel provides a powerful code editor for writing and editing CSS styles
 
 ## Authoring CSS
 
-The CSS editor is only available when the selected element has a valid CSS selector. You can add a selector via CMD + Enter or via the "Add Attribute" icons on the HTML, CSS, or Styling panels.
+The CSS editor is only available when the selected element has a valid CSS selector. You can add a selector via the [Attributes Bar](attributes-bar) (UI) or by typing a class or ID into the HTML of the element (code).
 
-In Etch, once you've added a selector to an element, you'll see the selector in the CSS editor:
+In Etch, once you've added a selector to an element, you'll see the [Selector Pill](selector-pills) in the CSS editor:
 
 ![CSS Editor](./img/css-editor.avif)
 
-Since Etch uses element-level CSS (huge advantage over stylesheets!), the selector can't be removed from the editor and styles can't be placed outside of it.
+## Attached CSS
 
-This is not a limitation, because you can achieve everything you want to achieve with **[CSS nesting](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting)**.
+Etch doesn't rely on traditional stylesheets because traditional stylesheets suck.
+
+Instead, styles assigned to a selector are "attached" to the element they belong to. This has the following advantages:
+
+- **Elements are portable without losing styling**: When you move, copy, import, or export an element or pattern or component, its styles move with it automatically. There's no need to hunt through global stylesheets or worry about breaking your design.
+- **CSS only loads when the element is present**: Styles are attached to the elements they belong to and Etch checks to see if the element even exists, so unused CSS never bloats your site. This keeps your pages fast and your CSS lean.
+- **You always know where your styles are**: All styles for an element are attached directly to it, making it easy to find, edit, and manage your CSS without searching through multiple files.
+
+Since this is how we roll, when you a select an element and choose a selector to style, you'll see that selector in the code editor:
+
+```css
+.your-selector {
+    /* Code goes here */
+}
+```
+
+You can't remove this or write outside of it. That wouldn't make any sense and there's no point.
+
+While you might think this is a limitation, it's not. You can achieve everything you want to achieve with **[CSS nesting](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting)**.
+
+Where traditional page builders may use a dynamic root selector like `%%root%%`, this is not CSS. And since Etch has a much more powerful CSS and selector system, these little tricks and workarounds aren't required.
 
 ## CSS Nesting
 
