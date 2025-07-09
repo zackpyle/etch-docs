@@ -5,7 +5,7 @@ sidebar_position: 30
 
 # Need to Know
 
-Etch is different from traditional page builders in many ways. Since your experience with Etch will be shaped by your expectations, we want to make sure you start off with a proper understanding of why Etch exists and why it works differently.
+Etch is different from traditional page builders in many ways. Since your experience with Etch will be shaped by your expectations, we want to make sure you start off with a proper understanding of why Etch exists, why it looks different, and why it works differently.
 
 ## Why Etch Exists
 
