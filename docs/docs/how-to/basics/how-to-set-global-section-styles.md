@@ -6,7 +6,11 @@ sidebar_position: 20
 # How to Set Global Section Styles
 
 :::info
-[Automatic.css](https://automaticcss.com) users do not need to do follow this tutorial. ACSS sets and manages your content width and you can adjust it in the ACSS dashboard.
+[Automatic.css](https://automaticcss.com) users do not need to do follow this tutorial. ACSS sets and manages your section styles and you can adjust them in the ACSS dashboard.
+:::
+
+:::info
+In the future, Etch will have a dedicated section in the Styles Manager for managing global styling. The below method will still work, but it will be made easier soon.
 :::
 
 When you first add a Section element to the page (if you're not an Automatic.css user), you'll notice two things:
