@@ -41,7 +41,7 @@ Let me quickly explain this so you understand it:
 
 `section:not(section section)` - This essentially says, "select all sections except sections that are children of over sections. The end result is that only top level sections are selected. Sections can be nested in other sections, but you wouldn't want any of these default styles applied in that case, so we exclude that scenario.
 
-In Etch, you can use the [Attribute Bar](../../interface/attribute-bar.md) to add that selector by wrapping it in braces:
+In Etch, you can use the [Attribute Bar](../../interface/attributes-bar.md) to add that selector by wrapping it in braces:
 
 ```css
 {:where(section:not(section section))}
