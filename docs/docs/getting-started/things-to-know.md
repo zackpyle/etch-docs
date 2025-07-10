@@ -31,7 +31,7 @@ For the people who go through a significant learning curve to actually do web de
 
 The result is that they might work in this industry for years, but still know hardly anything. They're nothing more than website "assembler." And they go through life with a deep sense of imposter syndrome and a general lack of confidence.
 
-**Etch is different...**
+### Etch is different...
 
 Etch is the first tool to ask a much better and more relevant and more practical question: "How can we use a visual environment to fundamentally innovate a professional web development workflow?"
 
@@ -47,7 +47,7 @@ It's what WordPress' visual environment should have always been.
 
 ## To Beginners & Aspiring Pros: We Believe That You're Capable of Being Capable
 
-Etch's founder, Kevin Geary, has taught web development best practices to tens of thousands of people.
+Etch's founder, [Kevin Geary](https://geary.co), has taught web development best practices to tens of thousands of people.
 
 We've watched pure beginners transform into highly skilled developers by following the right trainings and using the right tools.
 
