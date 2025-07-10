@@ -33,7 +33,7 @@ Etch is a WordPress plugin that provides a visual website builder with the follo
 
 Proceed here first:
 
-- [Installation](installation.md)
-- [Etch Theme](etch-theme.md)
-- [Need to Know](need-to-know.md)
-- [Core Principles](core-principles.md)
+- [Installation](getting-started/installation.md)
+- [Etch Theme](getting-started/etch-theme.md)
+- [Need to Know](getting-started/things-to-know.md)
+- [Core Principles](getting-started/core-principles.md)
