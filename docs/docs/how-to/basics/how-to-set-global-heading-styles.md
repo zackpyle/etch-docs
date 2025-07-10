@@ -40,3 +40,15 @@ For now, though, the best way to add your global styles (especially if you don't
 When you click on a heading element, you'll see the [Selector Pill](../../interface/selector-pills.md) available. Click it and use the [Style Panel](../../interface/style-panel.md) or [CSS Panel](../../interface/css-panel.md) to add your styles.
 
 Using this method will allow you to see exactly what you're doing as you work.
+
+## Grouping Heading Styles
+
+For any shared heading styles, you can create a more efficient selector, which gives you a single source of truth for the shared styles:
+
+```css
+:where(h1,h2,h3,h4,h5,h6)
+```
+
+This can be added in Etch by putting brackets around the selector.
+
+Any styles applied to this selector will apply to all headings.
