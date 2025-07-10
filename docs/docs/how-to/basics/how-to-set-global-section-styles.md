@@ -37,9 +37,11 @@ The safest and best way way to set default Section styles is a little trick we c
 
 Let me quickly explain this so you understand it:
 
-`:where()` - This sets the specificity of the styles we're about to add to 0,0,0. This is best practice for setting global defaults.
+`:where()` - This sets the specificity of the styles we're about to add to `0,0,0`. This is best practice for setting global defaults.
 
-`section:not(section section)` - This essentially says, "select all sections except sections that are children of over sections. The end result is that only top level sections are selected. Sections can be nested in other sections, but you wouldn't want any of these default styles applied in that case, so we exclude that scenario.
+`section:not(section section)` - This essentially says, "select all sections except sections that are children of over sections. 
+
+The end result is that only top level sections are selected. Sections can be nested in other sections, but you wouldn't want any of these default styles applied in that case, so we exclude that scenario.
 
 In Etch, you can use the [Attribute Bar](../../interface/attributes-bar.md) to add that selector by wrapping it in braces:
 
