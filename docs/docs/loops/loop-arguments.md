@@ -99,6 +99,33 @@ Now, whenever you use the loop, you have full control over the number of items t
 
 You can extend this same technique to ANY argument in a loop. You can even use dynamic data as the value for the custom argument.
 
+## Custom Args + Dynamic Data
+
+You might be thinking ahead and wondering if custom args can accept dynamic data and if loops can function inside components while still being controllable "from the outside."
+
+The answer is, "Yes."
+
+Here's an example of a "Blog Posts" component where a blog post loop is inside of a component:
+
+```html
+<component>
+{#loop recent_posts($count: props.numberOfPosts) as item}
+  <div data-etch-element="flex-div">
+    <h2>Insert your heading here...</h2>
+    <p>Insert your text here...</p>
+  </div>
+{/loop}
+</component>
+```
+
+A component prop was created called "numberOfPosts" that accepts a numeric value. You can easily pass that prop into the loop argument:
+
+`{#loop recent_posts($count: props.numberOfPosts) as item}`
+
+This gives you the ability to control the number of loop items from the parent component.
+
+Any dynamic data that makes sense to pass as the value of an argument can be passed into the loop this way.
+
 Pretty awesome, right?
 
 ## More to come!
