@@ -1,6 +1,6 @@
 ---
 title: Javascript Panel
-sidebar_position: 70
+sidebar_position: 65
 ---
 
 # Javascript Panel

@@ -164,66 +164,20 @@ Sections help screen readers and other assistive technologies understand your pa
 - Ensure each section has a unique, descriptive heading
 - Don't skip heading levels
 
-## Common Use Cases
-
-### Hero Sections
-```html
-<section data-etch-element="section">
-  <h1>Welcome to Our Platform</h1>
-  <p>Transform your business with our innovative solutions.</p>
-  <button>Get Started</button>
-</section>
-```
-
-### Feature Sections
-```html
-<section data-etch-element="section">
-  <h2>Key Features</h2>
-  <div class="features-grid">
-    <div class="feature">
-      <h3>Easy to Use</h3>
-      <p>Intuitive interface designed for everyone.</p>
-    </div>
-    <!-- more features -->
-  </div>
-</section>
-```
-
-### Content Sections
-```html
-<section data-etch-element="section">
-  <h2>Latest Blog Posts</h2>
-  <div class="blog-posts">
-    <!-- blog post cards -->
-  </div>
-</section>
-```
-
 ## Styling Considerations
 
 Top level Section elements typically need a consistent block padding default and inline padding default (for gutter). If you're not using a framework like [Automatic.css](https://automaticcss.com) that takes care of this stuff for you, then you'll want to set these defaults yourself.
 
-This will style all top level sections, but not nested sections:
 
-```css
-section:where(:not(section section)) {
-  padding-block: /* Block padding defaults go here */
-  padding-inline: /* Gutter padding defaults go here */
-}
-```
+**See also:**  
+- [How to Set Content Width](../../../how-to/basics/how-to-set-content-width.md)  
+.- [How to Set Global Section Styles](../../../how-to/basics/how-to-set-global-section-styles.md)
 
-You should also make sure you've set a value for `--content-width` to your website's desired content width. [Automatic.css](https://automaticcss.com) does this for you, but you can do it manually in the **Variable Manager** if you're not an ACSS user.
-
-```css
-:root {
-    --content-width: 1366px;
-}
-```
 
 ## When Not to Use Sections
 
-- **Don't use as generic containers:** Use `<div>` for non-semantic wrappers
-- **Don't nest unnecessarily:** Keep your structure simple and logical
+- **Don't use as generic containers:** Use `<div>` for non-semantic wrappers.
+- **Don't nest unnecessarily:** Keep your structure simple and logical.
 
 ## Related Elements
 
