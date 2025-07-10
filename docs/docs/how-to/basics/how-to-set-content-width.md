@@ -9,7 +9,7 @@ sidebar_position: 10
 [Automatic.css](https://automaticcss.com) users do not need to do follow this tutorial. ACSS sets and manages your content width and you can adjust it in the ACSS dashboard.
 :::
 
-Etch sets the max-width of **Container** elements to `var(--content-width)` by default with a fallback value of `1366px`. This is why you the **Container** element (which is added to **Sections** by default) is `1366px` out of the box.
+Etch sets the max-width of **Container** elements to `var(--content-width)` by default with a fallback value of `1366px`. This is why the **Container** element (which is added to **Sections** by default) is `1366px` out of the box.
 
 Since this default is set with a fallback value in an undefined variable, it has zero effect on your preferences should you want to set a different value.
 
