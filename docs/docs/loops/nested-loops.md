@@ -67,4 +67,4 @@ Suppose you have a list of authors, each with a list of books:
 
 ## See Also
 
-- [Loops](/docs/loops/basic-loops)
+- [Loops](/loops/basic-loops)

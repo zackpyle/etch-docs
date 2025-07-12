@@ -58,4 +58,4 @@ Suppose you have a list of authors and want to display their names:
 
 ## See Also
 
-- [Nested Loops](/docs/loops/nested-loops)
+- [Nested Loops](/loops/nested-loops)

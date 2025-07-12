@@ -96,7 +96,7 @@ You can have multiple **Containers** in a **Section** if you'd like, or no conta
    <div data-etch-element="container">
     <h2>About Our Services</h2>
     <p>Discover the wide range of solutions we offer to help your business grow and succeed. Our team is dedicated to providing top-notch support and expertise for every project.</p>
-    <a href="/docs/services/overview">Learn more about our services</a>
+    <a href="/services/overview">Learn more about our services</a>
   </div>
 </section>
 ```
@@ -117,7 +117,7 @@ Every Section should start with a descriptive heading that clearly indicates its
 <section data-etch-element="section">
   <div data-etch-element="container">
     <p>Discover the wide range of solutions we offer to help your business grow and succeed. Our team is dedicated to providing top-notch support and expertise for every project.</p>
-    <a href="/docs/services/overview">Learn more about our services</a>
+    <a href="/services/overview">Learn more about our services</a>
   </div>
 </section>
 ```
