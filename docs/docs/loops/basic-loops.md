@@ -44,13 +44,117 @@ $query_args = [
 - Add child elements (e.g., Heading, Image) inside the loop.
 - Use dynamic data keys like `{item.title}` or `{item.featured_image}` in child elements to display post data.
 
+## Example Build Out (Blog Cards in a Grid)
+
+Here's the code for a blog post grid. The first question is, "What do I need to loop?"
+
+```html
+<ul data-etch-element="container">
+  <li data-etch-element="flex-div">
+    <article data-etch-element="flex-div">
+      <figure data-etch-element="flex-div"><img src="https://placehold.co/600x400" alt="" /></figure>
+      <h2>Insert your heading here...</h2>
+      <p>Insert your text here...</p>
+      <a href="https://digitalgravy.co/">Click me</a>
+    </article>
+  </li>
+</ul>
+```
+
+You might think we need to loop the `article` since that's the actual blog post card, but that's not the case here. That would loop the `article` over and over inside the same `list-item`.
+
+What we really want to loop is the `list-item` to ensure that we maintain proper HTML structure.
+
+If you want to do this with the Etch UI, select the list item element, then hold <kbd>Command</kbd> (<kbd>⌘</kbd>) on Mac or <kbd>Ctrl</kbd> on Windows, and click the "Loop" button in the toolbar. This will add the loop as a sibling of the `list-item`. You can then easily drag the `list-item` into the loop.
+
+![The Loop element in the Etch interface](../interface/img/loop-element.avif)
+
+
+Your HTML will now look like this:
+
+```html
+<ul data-etch-element="container">
+  // highlight-next-line
+  {#loop loop-name as item}
+    <li data-etch-element="flex-div">
+      <article data-etch-element="flex-div">
+        <figure data-etch-element="flex-div"><img src="https://placehold.co/600x400" alt="" /></figure>
+        <h2>Insert your heading here...</h2>
+        <p>Insert your text here...</p>
+        <a href="https://digitalgravy.co/">Click me</a>
+      </article>
+    </li>
+    // highlight-next-line
+  {/loop}
+</ul>
+```
+
+Make sure you choose the correct loop that you configured for your blog posts and Etch will start looping through your posts.
+
+## Inserting Dynamic Data
+
+Looping cards with the same static data over and over again defeats the point of a loop, so the next step is to map the proper areas to your [dynamic data keys](/dynamic-data/dynamic-data-keys).
+
+Since our loop is saying `{#loop loop-name as item}` we need to use `item` as stem for our dynamic data keys.
+
+Anything that is **unique data** to the thing we're looping needs to be replaced with a dynamic data key. In this case, the blog post title, link to the post, excerpt, image src, and image alt. You can do this via the Etch UI or the HTML editor.
+
+Here's our new output:
+
+```html
+<ul data-etch-element="container">
+  {#loop loop-name as item}
+    <li data-etch-element="flex-div">
+      <article data-etch-element="flex-div">
+        <figure data-etch-element="flex-div">
+          <img src="{item.featuredImage.url}" alt="{item.featuredImage.alt}" />
+        </figure>
+        <h2>{item.title}</h2>
+        <p>{item.excerpt}</p>
+        <a href="{item.permalink.relative}">Read more</a>
+      </article>
+    </li>
+  {/loop}
+</ul>
+```
+
+You can use dynamic data to replace pretty much any static data, even attributes like aria attributes.
+
+In this example, each blog post as a link that says "Read more." That's not accessible because it lacks context as to where the user will be taken.
+
+An aria-label can be used here to describe exactly which blog post the user is going to read when they click the link, and we can use dynamic data to inject the name of the post.
+
+```html
+<ul data-etch-element="container">
+  {#loop loop-name as item}
+    <li data-etch-element="flex-div">
+      <article data-etch-element="flex-div">
+        <figure data-etch-element="flex-div">
+          <img src="{item.featuredImage.url}" alt="{item.featuredImage.alt}" />
+        </figure>
+        <h2>{item.title}</h2>
+        <p>{item.excerpt}</p>
+        // highlight-next-line
+        <a aria-label="Read {item.title}" href="{item.permalink.relative}">Read more</a>
+      </article>
+    </li>
+  {/loop}
+</ul>
+```
+
+Now you've learned two things: you can use dynamic data in attributes and you can also mix and match static and dynamic data. Fun!
+
 ## Example: Custom JSON (Authors)
 
-Suppose you have a list of authors and want to display their names:
+You aren't limited to just looping data that's in the WordPress database. Any custom dataset can be looped with `JSON`. 
+
+Suppose you have a list of authors and want to display their names. Format your data as a JSON string like this:
 
 ```json
 [{ "name": "Jane Austen" }, { "name": "Mark Twain" }, { "name": "Virginia Woolf" }]
 ```
+
+Then you can loop it the same way we looped the blog post earlier!
 
 - Add a Loop element and set the data source type to JSON.
 - Paste the above JSON as the data source.

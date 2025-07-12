@@ -100,8 +100,8 @@ const config: Config = {
 			copyright: `Copyright © ${new Date().getFullYear()} Digital Gravy. Etch™ is a Trademark of Digital Gravy.`
 		},
 		prism: {
-			theme: prismThemes.github,
-			darkTheme: prismThemes.dracula
+			theme: prismThemes.oneLight,
+			darkTheme: prismThemes.nightOwl
 		}
 	} satisfies Preset.ThemeConfig
 };
