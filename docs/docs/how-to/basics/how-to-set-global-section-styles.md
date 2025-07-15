@@ -78,7 +78,7 @@ Since the padding-inline value represents your site's "gutter" and the gutter ne
 }
 ```
 
-Where does gutter get it's value from? Hop back over to the Variable Manager and add:
+Where does gutter get its value from? Hop back over to the Variable Manager and add:
 
 ```css
 --gutter: clamp(16px, 10dvw, 80px);

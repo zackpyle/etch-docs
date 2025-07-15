@@ -22,7 +22,7 @@ Here are some examples of common components:
 **Buttons:** Interactive elements that trigger actions like form submissions, navigation, or data processing. These components can be customized with different styles, sizes, and behaviors while maintaining consistent design patterns across your site.
 
 :::info
-Many traditional builders refer to components (like the header and footer, but even other types of compoents) as "templates." This is incorrect & confusing nomenclature and is an architectural disaster. Components and templates are two very different things. If you come from the world of page building, it's important to retrain your brain to understand components separately from templates.
+Many traditional builders refer to components (like the header and footer, but even other types of components) as "templates." This is incorrect & confusing nomenclature and is an architectural disaster. Components and templates are two very different things. If you come from the world of page building, it's important to retrain your brain to understand components separately from templates.
 :::
 
 
