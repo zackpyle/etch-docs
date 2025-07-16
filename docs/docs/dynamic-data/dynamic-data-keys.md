@@ -5,8 +5,14 @@ sidebar_position: 50
 
 # Dynamic Data Keys 
 
-The following dynamic data keys are available:
+This page will serve as the master doc page for all dynamic data keys. Feel free to bookmark it.
 
+## Syntax
+- **Templates** use `this.key`.
+- **Loops** use `item.key` by default (but you control the key).
+- Keys outside of loops and templates use their own proprietary key.
+
+## Available Keys
 
 | Key                | Description                                                                 |
 |--------------------|-----------------------------------------------------------------------------|
@@ -30,9 +36,27 @@ The following dynamic data keys are available:
 | `template.id`      | The unique identifier for the template.                                     |
 | `template.title`   | The title of the template.                                                  |
 
-## Syntax
-- **Templates** use `this.key`.
-- **Loops** use `item.key` by default (but you control the key).
+## User Keys
+
+| Key                | Description                                                                 |
+|--------------------|-----------------------------------------------------------------------------|
+| `user`             | The user object for the current user.                                       |
+| `user.id`          | The unique identifier for the user.                                         |
+| `user.login`       | The username/login of the user.                                             |
+| `user.email`       | The email address of the user.                                              |
+| `user.displayName` | The display name of the user.                                               |
+| `user.firstName`   | The first name of the user.                                                 |
+| `user.lastName`    | The last name of the user.                                                  |
+| `user.nickname`    | The nickname of the user.                                                   |
+| `user.fullName`    | The full name of the user (first + last).                                  |
+| `user.description` | The biographical description of the user.                                   |
+| `user.userUrl`     | The website URL of the user.                                                |
+| `user.avatar`      | The URL of the user's avatar image.                                        |
+| `user.registered`  | The registration date of the user.                                          |
+| `user.roles`       | The roles assigned to the user.                                             |
+| `user.roleNames`   | The human-readable role names for the user.                               |
+| `user.capabilities`| The capabilities/permissions of the user.                                  |
+| `user.loggedIn`    | Whether the user is currently logged in (boolean).                        |
 
 ## Tips
 - Some keys (like `author`, `template`) are objects. Their data can be accessed via their sub-keys (e.g., `author.name`, `template.slug`).
