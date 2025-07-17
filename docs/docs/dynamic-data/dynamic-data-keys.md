@@ -58,6 +58,18 @@ This page will serve as the master doc page for all dynamic data keys. Feel free
 | `user.capabilities`| The capabilities/permissions of the user.                                  |
 | `user.loggedIn`    | Whether the user is currently logged in (boolean).                        |
 
+## Site Keys
+
+| Key                | Description                                                                 |
+|--------------------|-----------------------------------------------------------------------------|
+| `name`             | The site name/title.                                                        |
+| `description`      | The site tagline/description.                                               |
+| `home_url`         | The home URL of the site.                                                   |
+| `url`              | The site URL.                                                               |
+| `version`          | The WordPress version.                                                      |
+| `language`         | The site language code.                                                     |
+| `isMultisite`      | Whether the site is part of a multisite network (boolean).                |
+
 ## Tips
 - Some keys (like `author`, `template`) are objects. Their data can be accessed via their sub-keys (e.g., `author.name`, `template.slug`).
 - If your key outputs an array, you need to drill down to subkey (f.e. `item.author.name`) to get to the data you're looking for.
