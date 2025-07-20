@@ -73,7 +73,7 @@ And since conditions are blocks in the editor, you are free to drag whatever ele
 
 ## Non-Boolean Conditions
 
-If you need to check a specific value, like the value of a custom field, then you will use the `==` and `!=` operators.
+If you need to check a specific value, like the value of a custom field, then you will use the `==` and `!=` operators. You can also use math operators like `>`, `<`, `>=`, or `<=`. 
 
 For this example, let's say you're creating a star rating component. We'll keep it simple and say the rating can be whole numbers from 1 to 5.
 
