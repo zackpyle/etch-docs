@@ -97,7 +97,11 @@ That would look like this:
 
 ...you get the point.
 
-Perhaps a more efficient (requires less star elements) and flexible(since it supports decimal values) way to do it would be "greater or less than specific value" checks.
+## Values vs Strings
+
+Let's continue with the above example, but tackle it with a more efficient (requires less star elements) and flexible (since it supports decimal values) approach.
+
+For this approach, we'll check the actual value of the rating.
 
 ```html
 {#if props.rating >= 1}
