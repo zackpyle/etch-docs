@@ -70,6 +70,16 @@ This page will serve as the master doc page for all dynamic data keys. Feel free
 | `language`         | The site language code.                                                     |
 | `isMultisite`      | Whether the site is part of a multisite network (boolean).                |
 
+## URL Keys
+
+| Key                | Description                                                                 |
+|--------------------|-----------------------------------------------------------------------------|
+| `full`             | The current full URL of the page.                                           |
+| `relative`         | The relative path portion of the current URL.                                        |
+| `parameter`            | The URL parameters/query string of the current page.                       |
+
+`parameter` allows you to reference the value of any parameter key in the url string, which can be very helpful for personalizing page content by injecting content or creating conditions.
+
 ## Tips
 - Some keys (like `author`, `template`) are objects. Their data can be accessed via their sub-keys (e.g., `author.name`, `template.slug`).
 - If your key outputs an array, you need to drill down to subkey (f.e. `item.author.name`) to get to the data you're looking for.
