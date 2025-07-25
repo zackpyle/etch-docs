@@ -3,7 +3,7 @@ title: Basic Conditions
 sidebar_position: 20
 ---
 
-# Basic Conditions 
+# Basic Conditions
 
 The simplest conditions to start with are simple single condition `if` statements.
 
@@ -44,14 +44,14 @@ user.loggedIn
 In the code, this outputs as:
 
 ```html
-{#if user.loggedIn} 
+{#if user.loggedIn}
   <!-- logout link -->
 {/if}
 ```
 
 You don't have to do this: `{#if user.loggedIn == true}` because a boolean check is implied for boolean values.
 
-Now, let's tackle the "is user **not** logged in" side of things. 
+Now, let's tackle the "is user **not** logged in" side of things.
 
 Add another condition block (outside of the first one) and put another link inside of it. This will be for the "login" link (since the user is logged out if this condition is true).
 
@@ -73,7 +73,32 @@ And since conditions are blocks in the editor, you are free to drag whatever ele
 
 ## Non-Boolean Conditions
 
-If you need to check a specific value, like the value of a custom field, then you will use the `==` and `!=` operators. You can also use math operators like `>`, `<`, `>=`, or `<=`. 
+If you need to check a specific value, like the value of a custom field, then you will use comparison operators. Understanding the difference between loose and strict comparisons is crucial for writing reliable conditions.
+
+### Loose vs Strict Comparisons
+
+**Loose Comparisons (`==` and `!=`)**
+- Compares values after attempting type conversion
+- `"5" == 5` returns `true` (string "5" is converted to number 5)
+- `true == 1` returns `true` (boolean true is converted to number 1)
+- `false == 0` returns `true` (boolean false is converted to number 0)
+
+**Use Loose Comparisons when:**
+- You want flexible matching regardless of data type
+- You expect the data might come in different formats
+
+**Strict Comparisons (`===` and `!==`)**
+- Compares both value AND type without conversion
+- `"5" === 5` returns `false` (string vs number)
+- `true === 1` returns `false` (boolean vs number)
+- `false === 0` returns `false` (boolean vs number)
+
+**Use Strict Comparisons when:**
+- You need precise type and value matching
+- Working with exact data validation
+- You want to prevent unexpected type conversion bugs
+
+### Practical Examples
 
 For this example, let's say you're creating a star rating component. We'll keep it simple and say the rating can be whole numbers from 1 to 5.
 
@@ -81,27 +106,41 @@ In your component, create a prop called "rating." This is where we'll place the 
 
 One way to do this would be to create five conditions that all check the rating value. If the rating equals 1, show one star. If the rating equals 2, show two stars.
 
-That would look like this:
-
+**Using Loose Comparison (Flexible):**
 ```html
-{#if props.rating == "1"}
+{#if props.rating == 1}
   <!-- Star 1 -->
 {/if}
-{#if props.rating == "2"}
+{#if props.rating == 2}
   <!-- Star 1 --> <!-- Star 2 -->
 {/if}
-{#if props.rating == "3"}
+{#if props.rating == 3}
   <!-- Star 1 --> <!-- Star 2 --> <!-- Star 3 -->
 {/if}
 ```
 
-...you get the point.
+This approach works whether `props.rating` is the number `2` or the string `"2"`.
+
+**Using Strict Comparison (Precise):**
+```html
+{#if props.rating === 1}
+  <!-- Star 1 -->
+{/if}
+{#if props.rating === 2}
+  <!-- Star 1 --> <!-- Star 2 -->
+{/if}
+{#if props.rating === 3}
+  <!-- Star 1 --> <!-- Star 2 --> <!-- Star 3 -->
+{/if}
+```
+
+This approach only works if `props.rating` is exactly the number (not a string representation).
 
 ## Values vs Strings
 
-Let's continue with the above example, but tackle it with a more efficient (requires less star elements) and flexible (since it supports decimal values) approach.
+Let's continue with the above example, but tackle it with a more efficient (requires fewer star elements) and flexible (since it supports decimal values) approach.
 
-For this approach, we'll check the actual value of the rating.
+For this approach, we'll check the actual numerical value of the rating using mathematical operators (`>`, `<`, `>=`, `<=`):
 
 ```html
 {#if props.rating >= 1}
@@ -121,20 +160,27 @@ For this approach, we'll check the actual value of the rating.
 {/if}
 ```
 
-There's two very important and distinct differences here that you need to examine.
+There are two very important and distinct differences you need to understand:
 
 1. We're checking a VALUE (math) instead of a STRING (text).
 2. This is denoted by removing the quotations around the value.
 
 Look closely:
 
-`{#if props.rating == "2"}` says, "Show the element if the value of `props.rating` literally says "2".
+`{#if props.rating === "2"}` says, "Show the element if the value of `props.rating` literally says "2".
 
 But when you write `{#if props.rating >= 2}`, Etch can actually calculate the value and see if the condition is true, because it knows that 2 is equal to 2. And the condition that comes before it, `{#if props.rating >= 1}` will also be true because Etch knows that 2 is greater than 1.
 
 You would never write `{#if props.rating >= "2"}` because "greater or equal" is irrelevant when examining a string of text. Again, putting the quotes around the number tell Etch that you want to examine "2" as a string, and not a numerical value.
 
 That's a critical distinction that many beginners get wrong.
+
+## Best Practices
+
+1. **Use strict comparisons (`===`, `!==`) by default** to avoid unexpected behavior
+2. **Use loose comparisons (`==`, `!=`) only when you specifically need type flexibility**
+3. **Always use quotes around text values** and never around numbers or booleans
+4. **Use mathematical operators (`>=`, `<=`, `>`, `<`) for numerical ranges**
 
 ## Practice Makes Perfect
 
