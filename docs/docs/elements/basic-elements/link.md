@@ -31,4 +31,4 @@ We did not include a literal Button element in Etch for two big reasons:
 1. Buttons are used far less frequently than links.
 2. The word "button" creates tremendous confusion between visual and semantic use.
 
-It's better to provide a Link element knowing that users who understand the semantic distinction between buttons and links can easily make a button themselves out of any of the existing elements or simply by writing it in the HTML.
+It's better to provide a Link element knowing that users who understand the semantic distinction between buttons and links can easily make a button themselves out of any of the existing elements or simply by writing it in the HTML in the few scenarios where a button is required.
