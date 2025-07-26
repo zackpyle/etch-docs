@@ -1,6 +1,5 @@
 ---
 title: Loop
-sidebar_position: 110
 ---
 
 # Loop

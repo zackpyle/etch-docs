@@ -1,6 +1,5 @@
 ---
 title: Accordion
-sidebar_position: 30
 ---
 
 # Accordion

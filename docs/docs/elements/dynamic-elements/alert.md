@@ -1,6 +1,5 @@
 ---
 title: Alert
-sidebar_position: 180
 ---
 
 # Alert

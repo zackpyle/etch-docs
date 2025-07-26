@@ -1,6 +1,5 @@
 ---
 title: Off Canvas
-sidebar_position: 50
 ---
 
 # Off Canvas

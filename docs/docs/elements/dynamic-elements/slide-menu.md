@@ -1,6 +1,5 @@
 ---
 title: Slide Menu
-sidebar_position: 80
 ---
 
 # Slide Menu

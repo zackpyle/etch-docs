@@ -1,6 +1,5 @@
 ---
 title: Carousel
-sidebar_position: 60
 ---
 
 # Carousel

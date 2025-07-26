@@ -1,6 +1,5 @@
 ---
 title: Div
-sidebar_position: 40
 ---
 
 # Div

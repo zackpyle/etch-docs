@@ -9,4 +9,4 @@ Conventional page builders often refer to things like sliders, modals, accordion
 
 import CategoryOverview from '@site/src/components/CategoryOverview';
 
-<CategoryOverview categoryPath="elements/dynamic-elements" />
+<CategoryOverview categoryPath="elements/dynamic-elements" title="Available Dynamic Elements" />

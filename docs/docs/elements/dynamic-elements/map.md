@@ -1,6 +1,5 @@
 ---
 title: Map
-sidebar_position: 210
 ---
 
 # Map

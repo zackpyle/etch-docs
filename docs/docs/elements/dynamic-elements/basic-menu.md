@@ -1,6 +1,5 @@
 ---
 title: Basic Menu
-sidebar_position: 10
 ---
 
 # Basic Menu

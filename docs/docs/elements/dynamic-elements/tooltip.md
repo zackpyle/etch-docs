@@ -1,6 +1,5 @@
 ---
 title: Tooltip
-sidebar_position: 170
 ---
 
 # Tooltip

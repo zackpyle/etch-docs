@@ -1,6 +1,5 @@
 ---
 title: Table of Contents
-sidebar_position: 100
 ---
 
 # Table of Contents

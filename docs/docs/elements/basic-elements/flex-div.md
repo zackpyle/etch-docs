@@ -1,6 +1,5 @@
 ---
 title: Flex Div
-sidebar_position: 25
 ---
 
 # Flex Div

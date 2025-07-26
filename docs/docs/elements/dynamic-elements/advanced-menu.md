@@ -1,6 +1,5 @@
 ---
 title: Advanced Menu
-sidebar_position: 20
 ---
 
 # Advanced Menu

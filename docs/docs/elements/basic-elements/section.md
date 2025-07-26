@@ -1,6 +1,5 @@
 ---
 title: Section
-sidebar_position: 10
 ---
 
 # Section

@@ -1,6 +1,5 @@
 ---
 title: Modal
-sidebar_position: 40
 ---
 
 # Modal

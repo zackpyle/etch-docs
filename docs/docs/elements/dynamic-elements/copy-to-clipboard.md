@@ -1,6 +1,5 @@
 ---
 title: Copy to Clipboard
-sidebar_position: 130
 ---
 
 # Copy to Clipboard

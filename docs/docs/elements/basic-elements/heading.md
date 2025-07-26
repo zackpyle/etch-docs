@@ -1,6 +1,5 @@
 ---
 title: Heading
-sidebar_position: 50
 ---
 
 # Heading

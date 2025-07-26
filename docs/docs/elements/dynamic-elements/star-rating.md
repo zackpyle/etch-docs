@@ -1,6 +1,5 @@
 ---
 title: Star Rating
-sidebar_position: 90
 ---
 
 # Star Rating

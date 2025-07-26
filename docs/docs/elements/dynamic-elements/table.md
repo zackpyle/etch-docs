@@ -1,6 +1,5 @@
 ---
 title: Table
-sidebar_position: 150
 ---
 
 # Table

@@ -1,6 +1,5 @@
 ---
 title: Lightbox
-sidebar_position: 140
 ---
 
 # Lightbox

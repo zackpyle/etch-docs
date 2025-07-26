@@ -1,6 +1,5 @@
 ---
 title: Before/After
-sidebar_position: 120
 ---
 
 # Before/After

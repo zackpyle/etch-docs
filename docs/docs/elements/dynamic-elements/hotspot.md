@@ -1,6 +1,5 @@
 ---
 title: Hotspot
-sidebar_position: 160
 ---
 
 # Hotspot

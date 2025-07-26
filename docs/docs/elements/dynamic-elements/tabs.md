@@ -1,6 +1,5 @@
 ---
 title: Tabs
-sidebar_position: 70
 ---
 
 # Tabs
