@@ -24,3 +24,7 @@ Large loops (returning dozens and dozens, if not hundreds or thousands of result
 Currently, to preserve in-builder performance with large loops, we cap the loop preview to a specific number of items in the loop. The front-end will still render any number you request, but the builder will only preview a limited number of items to preserve snappiness and developer experience.
 
 In the future you'll be able to control this preview number and we might be able to find other ways around the performance impact that tends to come with very large loop returns.
+
+## CSS Styling Inputs
+
+The current iteration of styling inputs is a Minimum Viable Design (MVD) created for the purposes of programming bi-directional sync between inputs and the CSS editor. While the inputs are completely functional, they're most certainly not in their final form. We will be doing a lot of work on this panel over the coming months via a series of iterative releases.
