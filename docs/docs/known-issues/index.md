@@ -28,3 +28,7 @@ In the future you'll be able to control this preview number and we might be able
 ## CSS Styling Inputs
 
 The current iteration of styling inputs is a Minimum Viable Design (MVD) created for the purposes of programming bi-directional sync between inputs and the CSS editor. While the inputs are completely functional, they're most certainly not in their final form. We will be doing a lot of work on this panel over the coming months via a series of iterative releases.
+
+## Content Hub / CPTs / Custom Fields
+
+This area of Etch is a functional Proof of Concept so that users can start to experience the tremendous advantages of a "unified workflow." It's a high priority area and will get progressively better very quickly, but the CPT/Custom Fields functionality should be treated as more of a playground right now than a real part of your workflow (unless your needs are very basic).
