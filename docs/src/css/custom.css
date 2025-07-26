@@ -69,3 +69,77 @@ body {
 .navbar__search-input::placeholder {
 	color: var(--ifm-color-emphasis-600);
 }
+
+/* Text wrapping for better readability */
+p {
+	text-wrap: pretty;
+}
+
+li {
+	text-wrap: pretty;
+}
+
+/* Also apply to nested list items */
+ul li, ol li {
+	text-wrap: pretty;
+}
+
+/* Left align last updated information */
+.theme-last-updated {
+	text-align: left !important;
+}
+
+/* Also target the container if needed */
+.theme-last-updated-container {
+	text-align: left !important;
+}
+
+/* Target footer layout for last updated */
+footer .theme-last-updated {
+	text-align: left !important;
+	justify-content: flex-start !important;
+}
+
+/* Target any flex containers in footer */
+footer .theme-last-updated,
+footer [class*="last-updated"] {
+	text-align: left !important;
+	justify-content: flex-start !important;
+	align-items: flex-start !important;
+}
+
+/* Target the specific footer row/column */
+footer .row,
+footer .col {
+	text-align: left !important;
+	justify-content: flex-start !important;
+}
+
+/* Remove empty columns in footer */
+footer .col:empty,
+footer .col:blank {
+	display: none !important;
+}
+
+/* Target specific empty columns */
+footer .col:not(:has(*)) {
+	display: none !important;
+}
+
+/* Alternative: make empty columns take no space */
+footer .col:empty {
+	flex: 0 !important;
+	width: 0 !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+/* Left align table header cells */
+table th {
+	text-align: left !important;
+}
+
+/* Also left align table data cells for consistency */
+table td {
+	text-align: left !important;
+}
