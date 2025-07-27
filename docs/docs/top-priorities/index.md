@@ -14,7 +14,7 @@ This page outlines the key areas we're focusing on most actively, but it's impor
 **This page should not be treated as a fixed roadmap.** It's a fluid and flexible attempt to communicate what's currently important. It's also limited to the top 5 large-scale items across two different categories because prioritization beyond that is too fluid to worry about.
 
 :::note
-Bux fixes, general improvements, and minor features are not listed here. The purpose of this page is for communicating larger-scale priorities. It goes without saying that bug fixes and general improvements are always a top priority.
+Bug fixes, general improvements, and minor features are not listed here. The purpose of this page is for communicating larger-scale priorities. It goes without saying that bug fixes and general improvements are always a top priority.
 :::
 
 ## Immediate Priorities (Top 5)
