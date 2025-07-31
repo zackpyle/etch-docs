@@ -7,12 +7,9 @@ sidebar_position: 50
 
 This page will serve as the master doc page for all dynamic data keys. Feel free to bookmark it.
 
-## Syntax
+## Available Keys
 - **Templates** use `this.key`.
 - **Loops** use `item.key` by default (but you control the key).
-- Keys outside of loops and templates use their own proprietary key.
-
-## Available Keys
 
 | Key                | Description                                                                 |
 |--------------------|-----------------------------------------------------------------------------|
@@ -62,23 +59,35 @@ This page will serve as the master doc page for all dynamic data keys. Feel free
 
 | Key                | Description                                                                 |
 |--------------------|-----------------------------------------------------------------------------|
-| `name`             | The site name/title.                                                        |
-| `description`      | The site tagline/description.                                               |
-| `home_url`         | The home URL of the site.                                                   |
-| `url`              | The site URL.                                                               |
-| `version`          | The WordPress version.                                                      |
-| `language`         | The site language code.                                                     |
-| `isMultisite`      | Whether the site is part of a multisite network (boolean).                |
+| `site.name`             | The site name/title.                                                        |
+| `site.description`      | The site tagline/description.                                               |
+| `site.home_url`         | The home URL of the site.                                                   |
+| `site.url`              | The site URL.                                                               |
+| `site.version`          | The WordPress version.                                                      |
+| `site.language`         | The site language code.                                                     |
+| `site.isMultisite`      | Whether the site is part of a multisite network (boolean).                |
 
 ## URL Keys
 
 | Key                | Description                                                                 |
 |--------------------|-----------------------------------------------------------------------------|
-| `full`             | The current full URL of the page.                                           |
-| `relative`         | The relative path portion of the current URL.                                        |
-| `parameter`            | The URL parameters/query string of the current page.                       |
+| `url.full`             | The current full URL of the page.                                           |
+| `url.relative`         | The relative path portion of the current URL.                                        |
+| `url.parameter`            | The URL parameters/query string of the current page.                       |
 
-`parameter` allows you to reference the value of any parameter key in the url string, which can be very helpful for personalizing page content by injecting content or creating conditions.
+`url.parameter` allows you to reference the value of any parameter key in the url string, which can be very helpful for personalizing page content by injecting content or creating conditions.
+
+## Generic Meta Field Support
+
+Custom fields created registered to WordPress can be accessed with the `meta` extension.
+
+For example, `item.meta.field_id` in a loop or `this.meta.field_id` in a template.
+
+## Advanced Custom Fields (ACF) Support
+
+Custom fields created with Advanced Custom Fields can be accessed with the `acf` extension.
+
+For example, `item.acf.field_id` in a loop or `this.acf.field_id` in a template.
 
 ## Tips
 - Some keys (like `author`, `template`) are objects. Their data can be accessed via their sub-keys (e.g., `author.name`, `template.slug`).
