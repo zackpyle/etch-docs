@@ -3,7 +3,7 @@ title: Dynamic Data Keys
 sidebar_position: 50
 ---
 
-# Dynamic Data Keys 
+# Dynamic Data Keys
 
 This page will serve as the master doc page for all dynamic data keys. Feel free to bookmark it.
 
@@ -76,6 +76,12 @@ This page will serve as the master doc page for all dynamic data keys. Feel free
 | `url.parameter`            | The URL parameters/query string of the current page.                       |
 
 `url.parameter` allows you to reference the value of any parameter key in the url string, which can be very helpful for personalizing page content by injecting content or creating conditions.
+
+## Etch Custom Fields Support
+
+Custom fields created within Etch can be accessed with the `etch` extension.
+
+For example, `item.etch.field_id` in a loop or `this.etch.field_id` in a template.
 
 ## Generic Meta Field Support
 
