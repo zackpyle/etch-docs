@@ -10,7 +10,7 @@ To run the documentation site locally, follow these steps:
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/etch/etch-docs.git
+    git clone https://github.com/Digital-Gravy/etch-docs.git
     ```
 2.  Install dependencies:
     ```bash
