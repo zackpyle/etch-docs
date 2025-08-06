@@ -8,6 +8,15 @@ const config: Config = {
 	title: 'Etch Documentation',
 	tagline: 'Build beautiful websites with Etch',
 	favicon: 'img/favicon.ico',
+	headTags: [
+		{
+			tagName: 'meta',
+			attributes: {
+				name: 'algolia-site-verification',
+				content: '689BF4C41D86E4E4',
+			},
+		},
+	],
 
 	// Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
 	future: {
@@ -62,18 +71,7 @@ const config: Config = {
 			} satisfies Preset.Options
 		]
 	],
-	plugins: [
-		[
-			require.resolve('@easyops-cn/docusaurus-search-local'),
-			{
-				hashed: true,
-				language: ['en'],
-				highlightSearchTermsOnTargetPage: true,
-				explicitSearchResultPath: true,
-				searchBarPosition: 'right'
-			}
-		]
-	],
+	plugins: [],
 
 	themeConfig: {
 		// Replace with your project's social card
@@ -92,7 +90,11 @@ const config: Config = {
 					position: 'left',
 					label: 'Documentation'
 				},
-				{ to: 'https://etchwp.com/pricing', label: 'Purchase', position: 'left' }
+				{ to: 'https://etchwp.com/pricing', label: 'Purchase', position: 'left' },
+				{
+					type: 'search',
+					position: 'right'
+				}
 			]
 		},
 		footer: {
@@ -104,6 +106,20 @@ const config: Config = {
 		prism: {
 			theme: prismThemes.oneLight,
 			darkTheme: prismThemes.nightOwl
+		},
+		algolia: {
+			appId: 'YOUR_APP_ID',
+			apiKey: 'YOUR_SEARCH_API_KEY',
+			indexName: 'etch-docs',
+			contextualSearch: true,
+			searchParameters: {},
+			externalUrlRegex: 'external\\.com|domain\\.com',
+			replaceSearchResultPathname: {
+				from: '/docs/',
+				to: '/',
+			},
+			searchPagePath: 'search',
+			debug: false,
 		}
 	} satisfies Preset.ThemeConfig
 };
