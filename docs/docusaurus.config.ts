@@ -110,7 +110,7 @@ const config: Config = {
 		algolia: {
 			appId: 'DNEFN51RGE',
 			apiKey: '1ef868b467a329b2c8112cb3f31e1eba',
-			indexName: 'etch-docs',
+			indexName: 'docs',
 			contextualSearch: true,
 			searchParameters: {},
 			externalUrlRegex: 'external\\.com|domain\\.com',
@@ -119,7 +119,7 @@ const config: Config = {
 				to: '/',
 			},
 			searchPagePath: 'search',
-			debug: false,
+			debug: true,
 		}
 	} satisfies Preset.ThemeConfig
 };
