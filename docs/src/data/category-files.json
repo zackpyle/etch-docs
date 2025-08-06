@@ -42,9 +42,9 @@
   ],
   "docs/elements/dynamic-elements": [
     "accordion.md",
-    "advanced-menu.md",
+    "advanced-nav.md",
     "alert.md",
-    "basic-menu.md",
+    "basic-nav.md",
     "before-after.md",
     "carousel.md",
     "copy-to-clipboard.md",

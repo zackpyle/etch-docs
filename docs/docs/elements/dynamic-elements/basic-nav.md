@@ -901,8 +901,7 @@ The burger trigger is required for triggering the mobile navigation.
 ```
 3. Choose the Burger element and you'll see the `.etch-burger` class. Paste the following CSS into that class:
 ```css
-.etch-burger {
-	--hamburger-size: 20px;
+--hamburger-size: 20px;
 	--burger-dark-color: #242424;
 	--burger-lines-size: 100%;
 	--transition-duration: 0.3s;
@@ -949,7 +948,6 @@ The burger trigger is required for triggering the mobile navigation.
 	&[aria-expanded='true'] span:nth-child(3) {
 		transform: translateY(-9px) rotate(-45deg);
 	}
-}
 ```
 4. With the Burger element still selected, paste in the following JS:
 ```js
