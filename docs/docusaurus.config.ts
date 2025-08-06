@@ -103,7 +103,7 @@ const config: Config = {
 			appId: 'DNEFN51RGE',
 			apiKey: '1ef868b467a329b2c8112cb3f31e1eba',
 			indexName: 'docs_etchwp_com_dnefn51rge_pages',
-			contextualSearch: true,
+			contextualSearch: false,
 			searchParameters: {},
 			externalUrlRegex: 'external\\.com|domain\\.com',
 			replaceSearchResultPathname: {
