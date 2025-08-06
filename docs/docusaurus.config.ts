@@ -110,7 +110,7 @@ const config: Config = {
 				from: '/',
 				to: '/',
 			},
-			searchPagePath: 'search',
+			// searchPagePath: 'search',
 			debug: true,
 		}
 	} satisfies Preset.ThemeConfig
