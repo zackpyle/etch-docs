@@ -108,8 +108,8 @@ const config: Config = {
 			darkTheme: prismThemes.nightOwl
 		},
 		algolia: {
-			appId: 'YOUR_APP_ID',
-			apiKey: 'YOUR_SEARCH_API_KEY',
+			appId: 'DNEFN51RGE',
+			apiKey: '1ef868b467a329b2c8112cb3f31e1eba',
 			indexName: 'etch-docs',
 			contextualSearch: true,
 			searchParameters: {},
