@@ -110,7 +110,7 @@ const config: Config = {
 		algolia: {
 			appId: 'DNEFN51RGE',
 			apiKey: '1ef868b467a329b2c8112cb3f31e1eba',
-			indexName: 'docs',
+			indexName: 'docs_etchwp_com_dnefn51rge_pages',
 			contextualSearch: true,
 			searchParameters: {},
 			externalUrlRegex: 'external\\.com|domain\\.com',
