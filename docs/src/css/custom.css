@@ -200,3 +200,21 @@ table td {
 .category-no-link .menu__list-item-collapsible:hover {
 	background-color: var(--ifm-color-emphasis-100);
 } */
+
+/* Video embed styles */
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  margin-block: 1em;
+}
+
+.video-embed iframe {
+  border: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
