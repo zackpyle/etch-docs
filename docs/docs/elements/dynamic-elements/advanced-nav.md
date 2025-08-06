@@ -1,7 +1,7 @@
 ---
-title: Basic Menu
+title: Advanced Nav
 ---
 
-# Basic Menu
+# Advanced Nav
 
 This element is not currently available, but is planned. Check back soon. 
