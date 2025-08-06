@@ -2,7 +2,7 @@
 
 This repository contains the source code for the official Etch documentation, which is built with [Docusaurus](https://docusaurus.io/).
 
-The live documentation can be found at [docs.etch.com](https://docs.etch.com).
+The live documentation can be found at [docs.etchwp.com](https://docs.etchwp.com).
 
 ## Getting Started
 
