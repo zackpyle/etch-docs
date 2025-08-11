@@ -204,208 +204,219 @@ The main navigation for your site should live in a header component. Heres how y
 4. Select the Nav element in the structure panel. It will already have the `.etch-nav` class attached to it. Paste the CSS below into the `.etch-nav` class.
 ```css
 /* Nav */
-	--nav-background-color: #transparent;
-	--nav-mobile-background-color: #fff;
-	--nav-foreground-color: #000;
+--nav-background-color: #transparent;
+--nav-mobile-background-color: #fff;
+--nav-foreground-color: #000;
 
-	/* Nav List */
-	--nav-list-style: none;
-	--nav-list-padding: 0;
-	--nav-list-margin: 0;
+/* Nav List */
+--nav-list-style: none;
+--nav-list-padding: 0;
+--nav-list-margin: 0;
 
-	/* Nav Items */
-	--nav-item-block-padding: 0.5rem;
-	--nav-item-inline-padding: 1rem;
-	--nav-item-padding: var(--nav-item-block-padding)
-		var(--nav-item-inline-padding);
-	--nav-item-focus-line: 2px;
-	--nav-item-focus-outline-color: var(--nav-foreground-color);
-	--transition-duration: 0.3s;
-	--transition-timing-function: ease-in-out;
-	--nav-item-icon-rotation: 180deg;
+/* Nav Items */
+--nav-item-block-padding: 0.5rem;
+--nav-item-inline-padding: 1rem;
+--nav-item-padding: var(--nav-item-block-padding) var(--nav-item-inline-padding);
+--nav-item-focus-line: 2px;
+--nav-item-focus-outline-color: var(--nav-foreground-color);
+--transition-duration: 0.3s;
+--transition-timing-function: ease-in-out;
+--nav-item-icon-rotation: 180deg;
 
-	/* Nav Button Icons */
-	--nav-button-icon-size: 20px;
+/* Current active page */
+--nav-item-current-active-decoration: underline;
+--nav-item-current-active-offset: 5px;
 
-	/* Nav Links */
-	--nav-link-padding: 0.5em 1em;
-	--nav-link-color: var(--nav-foreground-color);
-	--nav-link-color-contrast: var(--nav-background-color);
-	--nav-link-color-hover: var(--primary, #444);
-	--nav-link-background-hover: transparent;
+/* Nav Button Icons */
+--nav-button-icon-size: 20px;
 
-	/* Nav Dropdowns and flyouts */
-	--nav-dropdown-background: #fff;
-	--nav-flyout-background: #fff;
-	--nav-flyout-icon-desktop-initial-angle: -90deg;
-	--nav-flyout-icon-desktop-rotation: 90deg;
+/* Nav Links */
+--nav-link-padding: 0.5em 1em;
+--nav-link-color: var(--nav-foreground-color);
+--nav-link-color-contrast: var(--nav-background-color);
+--nav-link-color-hover: var(--primary, #444);
+--nav-link-background-hover: transparent;
 
-	/* Set header to relative */
-	header:has(&) {
-		position: relative;
+/* Nav Dropdowns and flyouts */
+--nav-dropdown-background: #fff;
+--nav-flyout-background: #fff;
+--nav-flyout-icon-desktop-initial-angle: -90deg;
+--nav-flyout-icon-desktop-rotation: 90deg;
+
+/* Set header to relative */
+header:has(&) {
+	position: relative;
+}
+
+background-color: var(--nav-background-color);
+display: none;
+
+&[aria-expanded='true'] {
+	--nav-background-color: var(--nav-mobile-background-color);
+	display: flex;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+}
+
+:where(.etch-nav__list) {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin: var(--nav-list-margin);
+	padding: var(--nav-list-padding);
+	list-style: var(--nav-list-style);
+}
+
+:where(.etch-nav__list, .etch-nav__dropdown, .etch-nav__flyout) {
+	margin: var(--nav-list-margin);
+	padding: var(--nav-list-padding);
+	list-style: var(--nav-list-style);
+}
+
+:where(.etch-nav__item) {
+	display: flex;
+	flex-direction: column;
+}
+
+:where(
+	.etch-nav__link:focus,
+	.etch-nav__link:focus-visible,
+	.etch-nav__button:focus,
+	.etch-nav__button:focus-visible
+) {
+	outline: var(--nav-item-focus-line) solid
+		var(--nav-item-focus-outline-color);
+}
+
+:where(
+	.etch-nav__link[aria-current='page'],
+	.etch-nav__button[aria-current='page']
+) {
+	text-decoration: var(--nav-item-current-active-decoration);
+	text-underline-offset: var(--nav-item-current-active-offset);
+}
+
+:where(.etch-nav__item .etch-nav__link, .etch-nav__item .etch-nav__button) {
+	text-decoration: none;
+	color: var(--nav-link-color);
+	padding: var(--nav-item-padding);
+}
+
+:where(.etch-nav__button) {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: var(--nav-link-color);
+
+	svg {
+		width: var(--nav-button-icon-size);
+		min-width: var(
+			--nav-button-icon-size
+		); /* There seems to be some issue with etch.reset and max-width 100%*/
+		height: var(--nav-button-icon-size);
+		transition: transform var(--transition-duration)
+			var(--transition-timing-function);
 	}
+}
 
-	background-color: var(--nav-background-color);
-	display: none;
+:where(
+	.etch-nav__button--dropdown-toggle[aria-expanded='true'] svg,
+	.etch-nav__button--flyout-toggle[aria-expanded='true'] svg
+) {
+	transform: rotate(var(--nav-item-icon-rotation));
+}
 
-	&[aria-expanded='true'] {
-		--nav-background-color: var(--nav-mobile-background-color);
-		display: flex;
-		position: absolute;
-		top: 100%;
-		left: 0;
-		right: 0;
+:where(
+	.etch-nav__item:hover > .etch-nav__link,
+	.etch-nav__item:hover > .etch-nav__button[aria-expanded='true']
+) {
+	color: var(--nav-link-color-hover);
+	background-color: var(--nav-link-background-hover);
+}
+
+:where(.etch-nav__item--has-dropdown, .etch-nav__item--has-flyout) {
+	position: relative;
+}
+
+:where(.etch-nav__dropdown) {
+	position: relative;
+	background-color: var(--nav-dropdown-background);
+	transition:
+		max-height calc(var(--transition-duration) / 2)
+			var(--transition-timing-function),
+		opacity var(--transition-duration) var(--transition-timing-function),
+		visibility var(--transition-duration)
+			var(--transition-timing-function);
+}
+
+:where(
+	.etch-nav__button--dropdown-toggle[aria-expanded='false']
+		~ .etch-nav__dropdown,
+	.etch-nav__button--flyout-toggle[aria-expanded='false']
+		~ .etch-nav__flyout
+) {
+	opacity: 0;
+	pointer-events: none;
+	visibility: hidden;
+	transition:
+		max-height var(--transition-duration)
+			var(--transition-timing-function),
+		opacity var(--transition-duration) var(--transition-timing-function),
+		visibility var(--transition-duration)
+			var(--transition-timing-function);
+}
+
+:where(.etch-nav__flyout) {
+	background-color: var(--nav-flyout-background);
+	transition:
+		max-height calc(var(--transition-duration) / 2)
+			var(--transition-timing-function),
+		opacity var(--transition-duration) var(--transition-timing-function),
+		visibility var(--transition-duration)
+			var(--transition-timing-function);
+}
+
+@media (min-width: 768px) {
+	display: flex;
+
+	:where(.etch-nav__item) {
+		text-wrap: nowrap;
 	}
 
 	:where(.etch-nav__list) {
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		margin: var(--nav-list-margin);
-		padding: var(--nav-list-padding);
-		list-style: var(--nav-list-style);
+		flex-direction: row;
 	}
 
-	:where(.etch-nav__list, .etch-nav__dropdown, .etch-nav__flyout) {
-		margin: var(--nav-list-margin);
-		padding: var(--nav-list-padding);
-		list-style: var(--nav-list-style);
-	}
-
-	:where(.etch-nav__item) {
-		display: flex;
-		flex-direction: column;
-	}
-
-	:where(
-		.etch-nav__link:focus,
-		.etch-nav__link:focus-visible,
-		.etch-nav__button:focus,
-		.etch-nav__button:focus-visible
-	) {
-		outline: var(--nav-item-focus-line) solid
-			var(--nav-item-focus-outline-color);
-	}
-
-	:where(.etch-nav__item .etch-nav__link, .etch-nav__item .etch-nav__button) {
-		text-decoration: none;
-		color: var(--nav-link-color);
-		padding: var(--nav-item-padding);
-	}
-
-	:where(.etch-nav__button) {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		color: var(--nav-link-color);
-
-		svg {
-			width: var(--nav-button-icon-size);
-			min-width: var(
-				--nav-button-icon-size
-			); /* There seems to be some issue with etch.reset and max-width 100%*/
-			height: var(--nav-button-icon-size);
-			transition: transform var(--transition-duration)
-				var(--transition-timing-function);
-		}
-	}
-
-	:where(
-		.etch-nav__button--dropdown-toggle[aria-expanded='true'] svg,
-		.etch-nav__button--flyout-toggle[aria-expanded='true'] svg
-	) {
-		transform: rotate(var(--nav-item-icon-rotation));
-	}
-
-	:where(
-		.etch-nav__item:hover > .etch-nav__link,
-		.etch-nav__item:hover > .etch-nav__button[aria-expanded='true']
-	) {
-		color: var(--nav-link-color-hover);
-		background-color: var(--nav-link-background-hover);
-	}
-
-	:where(.etch-nav__item--has-dropdown, .etch-nav__item--has-flyout) {
-		position: relative;
+	:where(.etch-nav__button:nth-child(2)) {
+		padding-inline: 0 var(--nav-item-inline-padding);
 	}
 
 	:where(.etch-nav__dropdown) {
-		position: relative;
-		background-color: var(--nav-dropdown-background);
-		transition:
-			max-height calc(var(--transition-duration) / 2)
-				var(--transition-timing-function),
-			opacity var(--transition-duration) var(--transition-timing-function),
-			visibility var(--transition-duration)
-				var(--transition-timing-function);
+		position: absolute;
+		top: 100%;
+		left: 0;
+		overflow: inherit;
+		max-height: 0; /* desktop flicker fix */
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 	}
 
-	:where(
-		.etch-nav__button--dropdown-toggle[aria-expanded='false']
-			~ .etch-nav__dropdown,
-		.etch-nav__button--flyout-toggle[aria-expanded='false']
-			~ .etch-nav__flyout
-	) {
-		opacity: 0;
-		pointer-events: none;
-		visibility: hidden;
-		transition:
-			max-height var(--transition-duration)
-				var(--transition-timing-function),
-			opacity var(--transition-duration) var(--transition-timing-function),
-			visibility var(--transition-duration)
-				var(--transition-timing-function);
+	:where(.etch-nav__button--flyout-toggle svg) {
+		transform: rotate(var(--nav-flyout-icon-desktop-initial-angle));
+	}
+
+	:where(.etch-nav__button--flyout-toggle[aria-expanded='true'] svg) {
+		transform: rotate(var(--nav-flyout-icon-desktop-rotation));
 	}
 
 	:where(.etch-nav__flyout) {
-		background-color: var(--nav-flyout-background);
-		transition:
-			max-height calc(var(--transition-duration) / 2)
-				var(--transition-timing-function),
-			opacity var(--transition-duration) var(--transition-timing-function),
-			visibility var(--transition-duration)
-				var(--transition-timing-function);
+		position: absolute;
+		top: 0;
+		left: 100%;
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 	}
-
-	@media (min-width: 768px) {
-		display: flex;
-
-		:where(.etch-nav__item) {
-			text-wrap: nowrap;
-		}
-
-		:where(.etch-nav__list) {
-			flex-direction: row;
-		}
-
-		:where(.etch-nav__button:nth-child(2)) {
-			padding-inline: 0 var(--nav-item-horizontal-padding);
-		}
-
-		:where(.etch-nav__dropdown) {
-			position: absolute;
-			top: 100%;
-			left: 0;
-			overflow: inherit;
-			max-height: 0; /* desktop flicker fix */
-			box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-		}
-
-		:where(.etch-nav__button--flyout-toggle svg) {
-			transform: rotate(var(--nav-flyout-icon-desktop-initial-angle));
-		}
-
-		:where(.etch-nav__button--flyout-toggle[aria-expanded='true'] svg) {
-			transform: rotate(var(--nav-flyout-icon-desktop-rotation));
-		}
-
-		:where(.etch-nav__flyout) {
-			position: absolute;
-			top: 0;
-			left: 100%;
-			box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-		}
-	}
+}
 ```
 5. With the main Nav element still selected, copy the below JS and paste it into the JS editor. If you don't see the JS editor in Etch, make sure the JS panel is turned on in the panel visibility area.
 ```js
