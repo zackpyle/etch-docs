@@ -207,6 +207,7 @@ The main navigation for your site should live in a header component. Heres how y
 --nav-background-color: #transparent;
 --nav-mobile-background-color: #fff;
 --nav-foreground-color: #000;
+--nav-z-index: 99;
 
 /* Nav List */
 --nav-list-style: none;
@@ -258,6 +259,7 @@ display: none;
 	top: 100%;
 	left: 0;
 	right: 0;
+	z-index: var(--nav-z-index);
 }
 
 :where(.etch-nav__list) {
