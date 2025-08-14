@@ -11,6 +11,7 @@ Feature flags allow us to deploy in-progress or in-testing features without full
 
 Feature flags are boolean values that control whether a feature is enabled or disabled. If a feature is causing issues, you can turn its flag off. This allows you to enjoy other aspects of the release version without the issues caused by the problematic feature. We also might ship a feature with the flag turned off by default, allowing you to opt-in to testing it.
 
+
 ### Basic Usage
 
 To use Feature Flags, you need to create a `json` file called `flags.json` in `/wp-content/plugins/etch/config` using the following format:
@@ -21,6 +22,11 @@ To use Feature Flags, you need to create a `json` file called `flags.json` in `/
     "FLAG_NAME_2": "off"
 }
 ```
+
+
+:::warning
+We cannot adjust flag status on your particular server. If you use feature flags to turn a feature on or off, you have to remember to adjust its status in the future. For example, if you disable a feature that's causing issues, you have to remember to enable it once we release a fix.
+::: 
 
 You can choose from the available flags below. Their default state is listed.
 
