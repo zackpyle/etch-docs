@@ -5,7 +5,7 @@ description: Learn how to use feature flags in Etch to control feature availabil
 
 # Feature Flags
 
-Feature flags allow us to deploy in-progress or in-testing features without fully committing them to the codebase. If you want to turn on a testable feature, you can enable the flag. If we ship an update with a flagged feature on, you can turn it off.
+Feature flags allow us to deploy in-progress or in-testing features safely. If you want to turn on a testable feature, you can enable the flag. If we ship an update with a flagged feature on, you can turn it off.
 
 ## How Feature Flags Work
 
@@ -14,7 +14,9 @@ Feature flags are boolean values that control whether a feature is enabled or di
 
 ### Basic Usage
 
-To use Feature Flags, you need to create a `json` file called `flags.json` in `/wp-content/plugins/etch/config` using the following format:
+To use Feature Flags, you can create a `json` file called `flags.user.json` in `/wp-content/uploads/etch/`. This file allows you to override the default value for any specific flag on a flag-by-flag basis. Any flag not specified in your `flags.user.json` file will use its default value. If this file doesn't exist, or if it is an empty JSON object (`{}`), Etch will use the default flag values for all flags.
+
+The file should use the following format:
 
 ```json
 {
@@ -23,9 +25,16 @@ To use Feature Flags, you need to create a `json` file called `flags.json` in `/
 }
 ```
 
+This file is specific to your WordPress install.
+
+:::info
+The `flags.user.json` must be a valid JSON file. An invalid JSON file (including an empty file) will cause an error.
+:::
 
 :::warning
-We cannot adjust flag status on your particular server. If you use feature flags to turn a feature on or off, you have to remember to adjust its status in the future. For example, if you disable a feature that's causing issues, you have to remember to enable it once we release a fix.
+Because flags defined in `flags.user.json` override their default values, you are responsible for managing these overrides across updates.
+
+For example, if we ship an update where a flag that was previously `off` is now `on`, but you have set it to `off` in your `flags.user.json` file, your value will take precedence. You will have to remember to remove the flag from your file to get the new default behavior.
 ::: 
 
 You can choose from the available flags below. Their default state is listed.
