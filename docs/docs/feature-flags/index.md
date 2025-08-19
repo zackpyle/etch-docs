@@ -25,8 +25,6 @@ The file should use the following format:
 }
 ```
 
-This file is specific to your WordPress install.
-
 :::info
 The `flags.user.json` must be a valid JSON file. An invalid JSON file (including an empty file) will cause an error.
 :::
