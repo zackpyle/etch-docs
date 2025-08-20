@@ -21,21 +21,21 @@ Bug fixes, general improvements, and minor features are not listed here. The pur
 
 | Feature                        | Description                                                                                      |
 |--------------------------------|--------------------------------------------------------------------------------------------------|
-| **Gutenberg Block Authoring** | Special handling for rendering dynamic data, conditional logic, and loops. |
-| **Content Hub** | More control over CPTs, more custom field types, fields-as-columns, etc. |
 | **Components Import/Export** | Clean import/export so users can sell/share components |
-| **PHP Authoring** | PHP authoring inside the HTML editor |
+| **Content Hub** | More control over CPTs, more custom field types, fields-as-columns, etc. |
+| **Pattern Library** | A way to save, name, categorize, and import/export patterns for easy insertion throughout a project. This includes support for third party pattern libraries. |
 | **CSS Styling Inputs** | Phased improvements to styling inputs and a pathway to using styling inputs with breakpoints. |
+| **More&nbsp;component&nbsp;props** | SVG prop, Object prop |
 
 ## High Priority Items (Top 5)
 
 | Feature                        | Description                                                                                      |
 |--------------------------------|--------------------------------------------------------------------------------------------------|
-| **Pattern Library** | A way to save, name, categorize, and import/export patterns for easy insertion throughout a project. This includes support for third party pattern libraries. |
-| **More&nbsp;component&nbsp;props** | SVG prop, Object prop |
+| **PHP Authoring** | PHP authoring inside the HTML editor |
 | **Elements API** | A way for 3rd party devs to create/register native Etch elements for custom functionality and for internal use for creating Etch dynamic elements. |
 | **Dynamic Elements** | Prioritization of our native [dynamic elements](../elements/dynamic-elements/overview). |
 | **Facets/Filters** | Facets and filters for loops. |
+| **Loop Through External API** | External API support for loops. |
 
 
 ## Community Feedback
