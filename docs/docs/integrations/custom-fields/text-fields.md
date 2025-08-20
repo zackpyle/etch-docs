@@ -8,7 +8,7 @@ sidebar_position: 2
 Text fields are the most common type of custom fields, allowing you to store and display various types of text data in your templates.
 
 :::info 
-For information about Etch native fields and WordPress meta fields, see the [Dynamic Data Keys](/docs/dynamic-data/dynamic-data-keys) documentation.
+For information about Etch native fields and WordPress meta fields, see the [Dynamic Data Keys](/dynamic-data/dynamic-data-keys) documentation.
 :::
 
 ## General Usage

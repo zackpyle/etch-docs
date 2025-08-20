@@ -24,7 +24,7 @@ Custom fields created with Advanced Custom Fields can be accessed with the `acf`
 ```
 
 :::info 
-For information about Etch native fields and WordPress meta fields, see the [Dynamic Data Keys](/docs/dynamic-data/dynamic-data-keys) documentation.
+For information about Etch native fields and WordPress meta fields, see the [Dynamic Data Keys](/dynamic-data/dynamic-data-keys) documentation.
 :::
 
 ## Custom Field Types

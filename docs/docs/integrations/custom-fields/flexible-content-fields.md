@@ -15,7 +15,7 @@ As an alternative in the future, you will have the option to save your Etch desi
 
 ACF flexible content loops use the `this.acf.your_flexible_field` syntax as the data source. Each row in the flexible content has an `acf_fc_layout` property that tells you which layout type it is.
 
-**Important:** You must use conditional [`#if` statements](/docs/conditional-logic/basic-conditions) inside the loop to check the `acf_fc_layout` property and define different HTML for each layout type. This is how Etch determines which content to render for each section.
+**Important:** You must use conditional [`#if` statements](/conditional-logic/basic-conditions) inside the loop to check the `acf_fc_layout` property and define different HTML for each layout type. This is how Etch determines which content to render for each section.
 
 The basic structure is:
 ```html
