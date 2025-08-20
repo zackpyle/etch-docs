@@ -92,15 +92,15 @@ For example, `item.etch.field_id` in a loop or `this.etch.field_id` in a templat
 
 ## Generic Meta Field Support
 
-Custom fields created registered to WordPress can be accessed with the `meta` extension.
+Custom fields registered to WordPress can be accessed with the `meta` extension.
 
 For example, `item.meta.field_id` in a loop or `this.meta.field_id` in a template.
 
-## Advanced Custom Fields (ACF) Support
+## Third-Party Custom Fields
 
-Custom fields created with Advanced Custom Fields can be accessed with the `acf` extension.
+Etch integrates with third-party custom field solutions like Advanced Custom Fields (ACF).
 
-For example, `item.acf.field_id` in a loop or `this.acf.field_id` in a template.
+For detailed information on working with third-party custom fields, see the [Custom Fields](/integrations/custom-fields) section in Integrations.
 
 ## Tips
 - Some keys (like `author`, `template`) are objects. Their data can be accessed via their sub-keys (e.g., `author.name`, `template.slug`).
