@@ -81,6 +81,15 @@
     "how-to-set-global-heading-styles.md",
     "how-to-set-global-section-styles.md"
   ],
+  "docs/integrations": [
+    "integrations.md"
+  ],
+  "docs/integrations/custom-fields": [
+    "custom-fields.md",
+    "image-fields.md",
+    "repeater-fields.md",
+    "text-fields.md"
+  ],
   "docs/interface": [
     "attributes-bar.md",
     "breakpoint-manager.md",
@@ -102,6 +111,7 @@
   ],
   "docs/loops": [
     "basic-loops.md",
+    "loop-acf-repeater.md",
     "loop-arguments.md",
     "nested-loops.md"
   ],

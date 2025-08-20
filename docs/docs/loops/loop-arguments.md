@@ -1,6 +1,7 @@
 ---
 title: Loop Arguments
 description: How to use arguments in Etch loops
+sidebar_position: 3
 ---
 
 # Loop Arguments
