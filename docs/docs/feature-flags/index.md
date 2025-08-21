@@ -50,3 +50,4 @@ You can choose from the available flags below. Their default state is listed.
 | `REMOVE_WP_DEFAULT_CSS` | Removes WordPress default CSS | `off` |
 | `ENABLE_STRUCTURE_PANEL_V2` | Enables version 2 of the structure panel | `on` |
 | `ENABLE_INSTANT_STRUCTURE_SORT` | Enables instant sorting in structure panel | `off` |
+| `COMPONENTS-COPY-PASTE` | Enables copy and paste of components and element groups | `on` |
