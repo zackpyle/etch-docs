@@ -164,5 +164,6 @@ Then you can loop it the same way we looped the blog post earlier!
 
 - [Nested Loops](/loops/nested-loops)
 - [Repeater Fields](/integrations/custom-fields/repeater-fields)
+- [Relationship Fields](/integrations/custom-fields/relationship-fields)
 - [Gallery Fields](/integrations/custom-fields/gallery-fields)
 - [ACF Flexible Content](/integrations/custom-fields/flexible-content-fields)
