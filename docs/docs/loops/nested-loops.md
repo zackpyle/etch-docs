@@ -36,6 +36,58 @@ $post_args = [
 ```
 
 - Add a Loop element for categories, then inside it, add another Loop element for posts, using the current category's ID.
+- The outer loop syntax would be: `{#loop categories as category}`
+- The inner loop syntax would be: `{#loop posts($cat: category.id) as post}`
+
+:::tip
+The key relationship here is passing the `category.id` (term_id) from the parent loop into the nested loop's `$cat` parameter. This creates the parent-child relationship, ensuring that each nested loop only displays posts belonging to the current category in the outer loop. Without this connection, the nested loop would show all posts regardless of category.
+:::
+
+---
+
+## Example: Custom Post Types and Custom Taxonomies
+
+Nested loops are particularly useful when working with Custom Post Types (CPTs) and their associated Custom Taxonomies. This example demonstrates how to display **Project Statuses** (`project-status`) and the **Projects** (`project`) within each status:
+
+**Parent Loop (Project Status Taxonomy):**
+
+```php
+// Query for all project statuses
+$query_args = [
+  'taxonomy' => 'project-status',
+  'orderby' => 'name',
+  'order' => 'ASC'
+];
+```
+
+**Nested Loop (Projects in each Status):**
+
+```php
+// Query for projects with the current status
+$query_args = [
+  'post_type' => 'project',
+  'posts_per_page' => 10,
+  'post_status' => 'publish',
+  'orderby' => 'date',
+  'order' => 'DESC',
+  'tax_query' => [
+    [
+      'taxonomy' => 'project-status',
+      'field' => 'term_id',
+      'terms' => $status // Use the current status' term_id
+    ]
+  ]
+];
+```
+
+- Add a Loop element for project statuses, then inside it, add another Loop element for projects.
+- The outer loop syntax would be: `{#loop project-status as status}`
+- The inner loop syntax would be: `{#loop projects($status: status.id) as project}`
+- This pattern works for any post type and its associated custom taxonomies.
+
+:::tip
+Just like in the Categories example, we're passing the `status.id` (which is the `term_id`) from the parent loop into the nested loop's `$status` parameter. This creates the relationship between the taxonomy term and its associated posts, ensuring each nested loop only shows projects with the current status. The main difference here from the previous example is that with custom taxonomies, we use the `tax_query` parameter instead of the `cat` parameter which is specific to the default Category taxonomy.
+:::
 
 ---
 
