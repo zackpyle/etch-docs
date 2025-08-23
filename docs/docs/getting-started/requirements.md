@@ -22,3 +22,9 @@ For the best experience, use the latest available version of your browser.
 ## Browser Type Compatibility
 
 Etch should work in all browsers, but may currently have bugs and issues in Firefox specifically since Firefox is particularly problematic and we have not dedicated much debug time to Firefox. For the best experience, use a Chromium or WebKit browser.
+
+## Important Safari Note
+
+Safari currently has known and tracked bugs related to proper rendering of the OKLCH color space as as well as relative color syntax. The Etch interface uses both of these to render certain interface colors. 
+
+Due to these issues, Safari users may experience off-brand color shifts and interface color inconsistencies that users in Chromium and Firefox browsers will not experience.
