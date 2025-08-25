@@ -33,4 +33,5 @@ For information about Etch native fields and WordPress meta fields, see the [Dyn
 - **[Image Fields](./image-fields.md)** - Working with image custom fields
 - **[Gallery Fields](./gallery-fields.md)** - Working with multiple image galleries
 - **[Repeater Fields](./repeater-fields.md)** - Working with repeatable field groups
+- **[Relationship Fields](./relationship-fields.md)** - Working with connections between posts, pages, or custom post types
 - **[ACF Flexible Content Loops](./flexible-content-fields.md)** - Creating dynamic layouts with ACF Flexible Content
