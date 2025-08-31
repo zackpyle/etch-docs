@@ -7,7 +7,7 @@ sidebar_position: 60
 
 Etch's Style Panel is designed to help beginner and intermediate users build with Etch as they grow their CSS skills.
 
-The Style Panel organizes CSS properties into logical categories and provides inputs for entering values.
+The Style Panel organizes CSS properties into logical categories and provides inputs for entering values:
 
 - **Layout**: Display, position, flexbox, and grid properties
 - **Spacing**: Margins, padding, and gap settings
