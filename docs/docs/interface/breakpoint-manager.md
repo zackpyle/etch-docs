@@ -1,5 +1,5 @@
 ---
-title: Breakpoint Manager
+title: Responsive Controls
 sidebar_position: 110
 ---
 
