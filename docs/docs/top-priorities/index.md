@@ -21,13 +21,13 @@ Bug fixes, general improvements, and minor features are not listed here. The pur
 
 | Feature                        | Description                                                                                      |
 |--------------------------------|--------------------------------------------------------------------------------------------------|
-| **Components Import/Export** | Clean import/export so users can sell/share components |
-| **Content Hub** | More control over CPTs, more custom field types, fields-as-columns, etc. |
+| **Global Stylesheets** | Creation of global stylesheets and stylesheet collections. |
 | **Pattern Library** | A way to save, name, categorize, and import/export patterns for easy insertion throughout a project. This includes support for third party pattern libraries. |
 | **CSS Styling Inputs** | Phased improvements to styling inputs and a pathway to using styling inputs with breakpoints. |
 | **More&nbsp;component&nbsp;props** | SVG prop, Object prop |
+| **V1 Stability** | Bug fixes and stability for V1 status. |
 
-## High Priority Items (Top 5)
+## High Priority Items (Top 10)
 
 | Feature                        | Description                                                                                      |
 |--------------------------------|--------------------------------------------------------------------------------------------------|
@@ -36,6 +36,8 @@ Bug fixes, general improvements, and minor features are not listed here. The pur
 | **Dynamic Elements** | Prioritization of our native [dynamic elements](../elements/dynamic-elements/overview). |
 | **Facets/Filters** | Facets and filters for loops. |
 | **Loop Through External API** | External API support for loops. |
+| **History States** | Proper undo/redo functionality & selectable history states. |
+| **Shortcuts** | Customizable shortcut architecture |
 
 
 ## Community Feedback
