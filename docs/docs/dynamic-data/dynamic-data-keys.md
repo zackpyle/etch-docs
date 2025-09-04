@@ -10,6 +10,7 @@ This page will serve as the master doc page for all dynamic data keys. Feel free
 ## Available Keys
 
 - **Templates** use `this.key`.
+- **Taxonomies** use `taxonomy.key` and `term.key`.
 - **Loops** use `item.key` by default (but you control the key).
 
 | Key                  | Description                                                                            |
