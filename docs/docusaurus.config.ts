@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
 	title: 'Etch Documentation',
 	tagline: 'Build beautiful websites with Etch',
-	favicon: 'img/favicon.ico',
+	favicon: 'img/favico.png',
 	headTags: [
 		{
 			tagName: 'meta',

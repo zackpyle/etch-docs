@@ -131,7 +131,6 @@
     "archive-templates.md",
     "author-template.md",
     "content-slot.md",
-    "dynamic-data-in-templates.md",
     "index-template-catch-all.md",
     "intro-to-templates.md",
     "page-templates.md",
@@ -141,5 +140,8 @@
   ],
   "docs/top-priorities": [
     "index.md"
+  ],
+  "docs/utilities": [
+    "functions.md"
   ]
 }
