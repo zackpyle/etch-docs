@@ -18,7 +18,7 @@ In the code editor you will see `<etch:svg />`, but the output on the front-end 
 
 In the Attributes Panel, with the SVG Element selected, you can choose a source (media library) or enter a URL in the `src` attribute field:
 
-![Etch SVG Element](../img/etch-svg-attribute-panel.webp)
+![Etch SVG Attribute Panel](../img/etch-svg-attribute-panel.webp)
 
 It's important to note that the `src` attribute accepts any valid URL to an SVG file, even external URLs to 3rd party icon libraries.
 
