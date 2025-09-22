@@ -34,14 +34,14 @@ This allows you to format or transform values before they are displayed.
       <td><code>value = 123456.78</code><br /><br /><code>&#123;item.value.numberFormat(2, '.', ',')&#125;</code> → <code>123,456.78</code></td>
     </tr>
     <tr>
-      <td><code>.toUppercase()</code></td>
+      <td><code>.toUpperCase()</code></td>
       <td>Converts all characters to uppercase.</td>
-      <td><code>value = "John"</code><br /><br /><code>&#123;item.value.toUppercase()&#125;</code> → <code>JOHN</code></td>
+      <td><code>value = "John"</code><br /><br /><code>&#123;item.value.toUpperCase()&#125;</code> → <code>JOHN</code></td>
     </tr>
     <tr>
-      <td><code>.toLowercase()</code></td>
+      <td><code>.toLowerCase()</code></td>
       <td>Converts all characters to lowercase.</td>
-      <td><code>value = "John"</code><br /><br /><code>&#123;item.value.toLowercase()&#125;</code> → <code>john</code></td>
+      <td><code>value = "John"</code><br /><br /><code>&#123;item.value.toLowerCase()&#125;</code> → <code>john</code></td>
     </tr>
     <tr>
       <td><code>.toString()</code></td>
@@ -204,6 +204,6 @@ The `.toBool()` method normalizes common truthy/falsey inputs into a strict bool
 ---
 
 ## Additional Notes
-- **Case transforms:** `.toUppercase()` and `.toLowercase()` only operate on strings.
-- **Combining:** You can combine/stack modifiers. They are applied in the order they are written. For example, you could use `{user.fullName.toSlug().toUppercase()}` to transform a user named "Thomas Müller" to "THOMAS-MUELLER".
+- **Case transforms:** `.toUpperCase()` and `.toLowerCase()` only operate on strings.
+- **Combining:** You can combine/stack modifiers. They are applied in the order they are written. For example, you could use `{user.fullName.toSlug().toUpperCase()}` to transform a user named "Thomas Müller" to "THOMAS-MUELLER".
 - **Unknown modifiers:** If a modifier name isn’t recognized, the internal call returns `null`, which results in an empty string.
