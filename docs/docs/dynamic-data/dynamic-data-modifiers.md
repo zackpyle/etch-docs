@@ -35,22 +35,22 @@ This allows you to format or transform values before they are displayed.
     </tr>
     <tr>
       <td><code>.toUpperCase()</code></td>
-      <td>Converts all characters to uppercase.</td>
+      <td>Converts all characters to uppercase (strings only).</td>
       <td><code>value = "John"</code><br /><br /><code>&#123;item.value.toUpperCase()&#125;</code> → <code>JOHN</code></td>
     </tr>
     <tr>
       <td><code>.toLowerCase()</code></td>
-      <td>Converts all characters to lowercase.</td>
+      <td>Converts all characters to lowercase (strings only).</td>
       <td><code>value = "John"</code><br /><br /><code>&#123;item.value.toLowerCase()&#125;</code> → <code>john</code></td>
     </tr>
     <tr>
       <td><code>.toString()</code></td>
-      <td>Converts to a string; arrays/objects become JSON when encodable. <br /><a href="#tostring">More Details</a></td>
+      <td>Converts to a string. Arrays/objects become JSON when encodable. <br /><a href="#tostring">More Details</a></td>
       <td><code>value = true</code><br /><br /><code>&#123;item.value.toString()&#125;</code> → <code>"true"</code></td>
     </tr>
     <tr>
       <td><code>.toInt()</code></td>
-      <td>Converts numeric values (incl. numeric strings) to an integer; leaves others unchanged. <br /><a href="#toint">More Details</a></td>
+      <td>Converts numeric values (incl. numeric strings) to an integer. Leaves others unchanged. <br /><a href="#toint">More Details</a></td>
       <td><code>value = "123.9"</code><br /><br /><code>&#123;item.value.toInt()&#125;</code> → <code>123</code></td>
     </tr>
     <tr>
@@ -98,7 +98,11 @@ This allows you to format or transform values before they are displayed.
     </tr>
     <tr>
       <td><code>.includes()</code></td>
-      <td>Checks if an array contains a value. Returns <code>true</code>/<code>false</code>.</td>
+      <td>
+        Checks if a *string* contains a *substring* OR an *array* contains a *value*. Returns <code>true</code>/<code>false</code>.
+        <details><summary>Arguments</summary> <code>search</code>: substring (for strings) or value (for arrays)</details>
+        <a href="#includes">More Details</a>
+      </td>
       <td><code>user.userRoles = ["author", "editor"]</code><br /><br /><code>&#123;user.userRoles.includes('editor')&#125;</code> → <code>true</code></td>
     </tr>
     <tr>
@@ -203,7 +207,31 @@ The `.toBool()` method normalizes common truthy/falsey inputs into a strict bool
 
 ---
 
+### `.includes()`
+**Returns:** boolean (`true`/`false`)
+
+The `.includes()` method checks whether a string contains a given substring or an array contains a given value. String checks are case-sensitive. Array checks require an exact element match (substrings within array elements do not count as a match).
+
+| Argument | Type          | Default | Description                                  |
+| -------- | ------------- | ------- | -------------------------------------------- |
+| `search` | string or any | —       | Substring to find (strings) or value to find (arrays) |
+
+#### String Examples:
+- value = `"foo bar"`
+  - `{item.value.includes("foo")}` → `true`
+  - `{item.value.includes("oo")}` → `true`
+  - `{item.value.includes("Foo")}` → `false` (case-sensitive)
+  - `{item.value.includes("test")}` → `false`
+
+#### Array Examples:
+- value = `["foo", "bar"]`
+  - `{item.value.includes("foo")}` → `true`
+  - `{item.value.includes("oo")}` → `false` (no substring matching)
+  - `{item.value.includes("Foo")}` → `false` (case-sensitive)
+  - `{item.value.includes("test")}` → `false`
+
+---
+
 ## Additional Notes
-- **Case transforms:** `.toUpperCase()` and `.toLowerCase()` only operate on strings.
 - **Combining:** You can combine/stack modifiers. They are applied in the order they are written. For example, you could use `{user.fullName.toSlug().toUpperCase()}` to transform a user named "Thomas Müller" to "THOMAS-MUELLER".
 - **Unknown modifiers:** If a modifier name isn’t recognized, the internal call returns `null`, which results in an empty string.
