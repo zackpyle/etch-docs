@@ -85,10 +85,11 @@ This page will serve as the master doc page for all dynamic data keys. Feel free
 
 For example, if you have a URL of `/thank-you/?firstName=John`, you can use `{url.parameter.firstName}` to output `John`.
 
-**Tips:**
+For security, all URL parameters are automatically sanitized using WordPress's `sanitize_text_field()` function to prevent XSS attacks.
 
-- This key is case sensitive. If you have a parameter of `Name` in your URL, you need to use `{url.parameter.Name}`, not `{url.parameter.name}`
-- For security, all URL parameters are automatically sanitized using WordPress's `sanitize_text_field()` function to prevent XSS attacks.
+:::tip
+This key is case sensitive. If you have a parameter of `Name` in your URL, you need to use `{url.parameter.Name}`, not `{url.parameter.name}`
+:::
 
 ## Etch Custom Fields Support
 
@@ -108,8 +109,36 @@ Etch integrates with third-party custom field solutions like Advanced Custom Fie
 
 For detailed information on working with third-party custom fields, see the [Custom Fields](/integrations/custom-fields) section in Integrations.
 
+## Accessing Arrays in Dynamic Data
+
+Some dynamic data keys return arrays (for example, `categories`, `tags`, etc). You can work with these arrays in two common ways:
+
+**1) Loop through the items**
+- Create a loop that returns the array items you want to render, then output each item’s fields.
+
+*Example: Loop categories for the current post:*
+
+```html
+{#loop categories as category}
+  <span>{category.name}</span>
+{/loop}
+```
+
+**2) Access a specific item by index (zero-based)**
+- Use numeric path segments to pick a single item out of an array and then access its fields.
+
+*Example: Get the first category’s name for the current post:*
+
+```html
+{this.categories.0.name}
+```
+
+**Notes:**
+- Indexing is zero-based (`0` is the first item, `1` is the second, etc.).
+- Ensure the array and the requested index exist before using them (e.g., a post may have no categories).
+
 ## Tips
 
 - Some keys (like `author`, `template`) are objects. Their data can be accessed via their sub-keys (e.g., `author.name`, `template.slug`).
-- If your key outputs an array, you need to drill down to subkey (f.e. `item.author.name`) to get to the data you're looking for.
+- If your key outputs an object, you need to drill down to a sub-key (e.g., `item.author.name`) to get to the data you're looking for.
 - Not all keys are available for every item type. Availability depends on the context (e.g., posts, pages, custom post types).
