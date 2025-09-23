@@ -22,9 +22,9 @@ This page will serve as the master doc page for all dynamic data keys. Feel free
 | `excerpt`            | The summary or excerpt of the item.                                                    |
 | `permalink.relative` | The relative permalink (URL path) to the item (e.g., `/blog/my-post`).                 |
 | `permalink.full`     | The full absolute permalink (URL) to the item (e.g., `https://site.com/blog/my-post`). |
-| `image`               | All image object data (two examples of use below).                                                                |
-| `image.url`               | The URL to the image.                                                                |
-| `image.alt`               | The image's alt text.                                                            |
+| `image`              | All image object data (two examples of use below).                                     |
+| `image.url`          | The URL to the image.                                                                  |
+| `image.alt`          | The image's alt text.                                                                  |
 | `date`               | The publish date of the item.                                                          |
 | `status`             | The status of the item (e.g., `publish`, `draft`).                                     |
 | `type`               | The post type (e.g., `post`, `page`, `product`).                                       |
@@ -36,6 +36,7 @@ This page will serve as the master doc page for all dynamic data keys. Feel free
 | `template.slug`      | The slug of the template.                                                              |
 | `template.id`        | The unique identifier for the template.                                                |
 | `template.title`     | The title of the template.                                                             |
+| `readingTime`        | The estimated reading time in minutes based on content word count (200 words/min).     |
 
 ## User Keys
 
