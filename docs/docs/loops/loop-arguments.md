@@ -161,11 +161,14 @@ $query_args = [
 2) Use the loop in your single post template, passing the current post’s ID into `$post_id`. In Etch, `this.id` refers to the current post’s ID in a singular context:
 
 ```html
+<ul class="related-posts-grid">
 {#loop relatedPosts($post_id: this.id) as post}
-  <div class="related-post-card">
+  <li class="related-post-card">
     <h3>{post.title}</h3>
-  </div>
+    <!-- other info here -->
+  </li>
 {/loop}
+</ul>
 ```
 
 ### Related Posts with Taxonomy Filter
@@ -195,12 +198,14 @@ $query_args = [
 Then, pass the current post’s first category ID (as an example) from the template:
 
 ```html
+<ul class="related-posts-grid">
 {#loop relatedPosts($post_id: this.id, $taxonomy: "category", $term_id: this.categories.0.id) as post}
   <li class="related-post-card">
     <h3>{post.title}</h3>
     <!-- other info here -->
   </li>
 {/loop}
+</ul>
 ```
 
 **Notes:**
