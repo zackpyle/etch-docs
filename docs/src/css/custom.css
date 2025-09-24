@@ -221,3 +221,7 @@ table td {
   height: 100%;
   width: 100%;
 }
+
+details summary {
+  cursor: pointer;
+}
