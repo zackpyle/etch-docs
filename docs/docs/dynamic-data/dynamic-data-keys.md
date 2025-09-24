@@ -109,7 +109,14 @@ Etch integrates with third-party custom field solutions like Advanced Custom Fie
 
 For detailed information on working with third-party custom fields, see the [Custom Fields](/integrations/custom-fields) section in Integrations.
 
-## Accessing Arrays in Dynamic Data
+## Tips for Working with Dynamic Data
+- Some keys output the data directly (e.g., `{item.title}`, `{this.content}`, etc). If your key outputs a string, you can use it directly in your page or template.
+- Some keys are objects (e.g., `author`, `template`). These are inside of curly braces `{}`. If your key outputs an object, you need to drill down to a sub-key (e.g., `{item.author.name}`, `{this.template.slug`) to get to the data you're looking for.
+- Some keys are arrays (e.g., `categories`, `tags`). These are inside of square brackets `[]`. If your key outputs an array, you can `{#loop}` through it or access a specific item by index (e.g., `{this.categories.0.name}`). See the [Accessing Data in Arrays](#accessing-data-in-arrays) section below for more information.
+- Not all keys are available for every item type. Availability depends on the context (e.g., posts, pages, custom post types).
+    - Use the Loop Manager (or just output `{this}` on the page/template) to view the data available for the the post type you are working with. This will show the full JSON object for the item in question, which can be helpful for understanding what data is available.
+
+## Accessing Data in Arrays
 
 Some dynamic data keys return arrays (for example, `categories`, `tags`, etc). You can work with these arrays in two common ways:
 
@@ -136,9 +143,3 @@ Some dynamic data keys return arrays (for example, `categories`, `tags`, etc). Y
 **Notes:**
 - Indexing is zero-based (`0` is the first item, `1` is the second, etc.).
 - Ensure the array and the requested index exist before using them (e.g., a post may have no categories).
-
-## Tips
-
-- Some keys (like `author`, `template`) are objects. Their data can be accessed via their sub-keys (e.g., `author.name`, `template.slug`).
-- If your key outputs an object, you need to drill down to a sub-key (e.g., `item.author.name`) to get to the data you're looking for.
-- Not all keys are available for every item type. Availability depends on the context (e.g., posts, pages, custom post types).
