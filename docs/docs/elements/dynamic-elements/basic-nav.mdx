@@ -134,7 +134,15 @@ Here's some sample JSON:
 Use relative URL references, not full static URLs.
 :::
 
-### Nav Component Options
+### Nav Javascript Options
+| Option           | Type                      | Default | Description |
+| ---------------- | ------------------------- | ------- | ----------- |
+| `ariaCurrentPage` | `boolean` or `object` | `false` | Enables automatic setting of `aria-current="page"` on the current navigation link. Pass `true` for basic usage, or an object for advanced configuration.         |
+|   • `homePage`    | `boolean`             | `true`  | *(Only if `ariaCurrentPage` is an object)* — If `true`, the homepage link will also be marked as the current page. Set to `false` to skip homepage highlighting. |
+
+**See** [Nav Behavior](#nav-behavior) for more information.
+
+### Nav Component Props
 
 | Option           | Type                      | Default | Description |
 | ---------------- | ------------------------- | ------- | ----------- |
@@ -142,11 +150,31 @@ Use relative URL references, not full static URLs.
 | `navAriaLabel`   | `string`                  | `"Menu"` | Sets the nav `aria-label`. |
 | `mouseSubmenu`   | select                    | `"hover"` | Interaction mode. Options: `hover`, `click`, `click-sub-hover` (click for dropdowns, hover for flyouts on desktop). |
 
-### Burger Component Options
+
+### Burger Javascript Options
+| Option             | Type                        | Default     | Description                                                                  |
+| ------------------ | --------------------------- | ----------- | ---------------------------------------------------------------------------- |
+| `button`           | `HTMLElement`               | `undefined` | **Required** – The burger toggle element where click handling is attached.   |
+| `target`           | `string` or `HTMLElement`   | `null`      | The element to show/hide when toggled. Selector or direct element reference. |
+| `selfAriaExpanded` | `boolean`                   | `false`     | If `true`, the burger button manages its own `aria-expanded` attribute.      |
+| `targetOptions`    | `object`                    | `{}`        | Configuration for the target element.                                        |
+|   • `class`        | `string`                    | `null`      | Class to toggle on the target element.                                       |
+|   • `ariaExpanded` | `boolean`                   | `false`     | If `true`, toggles `aria-expanded` on the target element.                    |
+| `onToggle`         | `(isOpen: boolean) => void` | `null`      | Called every time the burger is toggled; `isOpen` is `true` when opened.     |
+| `onClose`          | `() => void`                | `null`      | Called only when the burger is closed.                                       |
+
+**See** [Burger Behavior](#burger-behavior) for more information.
+
+### Burger Component Props
 
 | Option      | Type     | Default | Description                                  |
 | ----------- | -------- | ------- | -------------------------------------------- |
 | `ariaLabel` | `string` | "Menu"  | Sets the burger button `aria-label` text.    |
+
+**Example** of using the `onToggle` or `onClose` to execute custom functions:
+:::warning
+The example below might differ from the javascript provided in the burger component for brevity.
+:::
 
 ## Styling Your Nav / Burger
 
@@ -159,28 +187,47 @@ Open the component styles and adjust those variables to match your design. For n
 ## Changing the Mobile Breakpoint
 
 Both components default to a 768px breakpoint. You can change this within the component CSS (media queries) so the Navigation and Burger stay in sync.
+:::tip
+you can search for `// Set the desired breakpoint` in the component CSS to find the breakpoint.
+:::
 
-## Customizing Nav Behavior (Advanced)
+## Advanced Customization
 
 After you paste/import the components, you can open the Navigation or Burger component and edit its JS to customize behavior. This is optional—the defaults work out of the box.
 
-Example: trigger custom code when the burger opens/closes via onToggle/onClose:
+:::warning
+The examples below might differ from the javascript provided in the components for brevity.
+:::
+
+### Nav Behavior
+
+**Example**: customize the `aria-current` behavior:
+```js
+instantiateNavClass({
+	ariaCurrentPage: {
+		homePage: false
+	}
+});
+```
+### Burger Behavior
+
+**Example**: trigger a method from another component when the burger closes via `onClose`:
+
 
 ```js
 const burgerInstance = new EtchBurgerScript({
-  button: document.querySelector('.etch-burger'),
-  target: document.querySelector('[data-etch-nav="main"]'),
+  button: burgerBtn,
+  target: etchNav,
   selfAriaExpanded: true,
   targetOptions: {
     ariaExpanded: true
   },
-  onToggle: (isOpen) => {
-    document.body.classList.toggle('my-class', isOpen);
-  },
-  onClose: myOwnFunction
+  onClose
 });
 
-function myOwnFunction() {
-  // do something
+function closeEtchNav() {
+	window.etchElements?.etchNav?.closeAllNavs();
 }
+
+instantiateBurgerClass(etchNav, closeEtchNav);
 ```
