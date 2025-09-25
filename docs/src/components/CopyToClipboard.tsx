@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 type CopyToClipboardProps = {
   label: string;
   value: string;
   successText?: string;
+  errorText?: string;
   className?: string;
 };
 
@@ -11,31 +12,21 @@ export default function CopyToClipboard({
   label,
   value,
   successText = 'Copied!',
-  className,
+  errorText = 'Failed to copy',
+  className = 'btn-copy-to-clipboard',
 }: CopyToClipboardProps) {
   const [copied, setCopied] = useState(false);
-
+  const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
   async function handleCopy() {
     try {
       await navigator.clipboard.writeText(value);
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
     } catch (e) {
-      // Fallback: create a temporary textarea
-      try {
-        const textarea = document.createElement('textarea');
-        textarea.value = value;
-        textarea.style.position = 'fixed';
-        textarea.style.opacity = '0';
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-        setCopied(true);
-        setTimeout(() => setCopied(false), 1500);
-      } catch (err) {
-        console.error('Copy failed', err);
-      }
+      console.error('Copy failed', e);
+      setCopied(false);
+      setErrorMessage(errorText || undefined);
+      setTimeout(() => setErrorMessage(undefined), 1500);
     }
   }
 
@@ -45,19 +36,8 @@ export default function CopyToClipboard({
       onClick={handleCopy}
       className={className}
       aria-live="polite"
-      aria-label={copied ? successText : label}
-      title={copied ? successText : label}
-      style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: '0.5rem',
-        padding: '0.5rem 0.75rem',
-        borderRadius: 6,
-        border: '1px solid var(--ifm-color-primary)',
-        color: 'var(--ifm-color-primary)',
-        background: 'transparent',
-        cursor: 'pointer',
-      }}
+      aria-label={copied ? successText : errorMessage || label}
+      title={copied ? successText : errorMessage || label}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +54,7 @@ export default function CopyToClipboard({
         <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
         <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
       </svg>
-      <span>{copied ? successText : label}</span>
+      <span>{copied ? successText : errorMessage || label}</span>
     </button>
   );
 }
