@@ -100,14 +100,25 @@ Now, whenever you use the loop, you have full control over the number of items t
 
 You can extend this same technique to ANY argument in a loop. You can even use dynamic data as the value for the custom argument.
 
+:::tip
+You can pass more than one argument at a time. You just have to separate them with commas. For example, you might combine a count with another argument like a current post ID:
+
+```html
+{#loop relatedPosts($count: 3, $post_id: this.id) as post}
+  <!-- loop item markup -->
+{/loop}
+```
+:::
+
 ## Custom Args + Dynamic Data
+
+Custom args don't only accept static values - they can accept dynamic data as well. For example, you can pass values like `this.id` (current post ID) directly into an argument.
 
 You might be thinking ahead and wondering if custom args can accept dynamic data and if loops can function inside components while still being controllable "from the outside."
 
 The answer is, "Yes."
 
 Here's an example of a "Blog Posts" component where a blog post loop is inside of a component:
-
 ```html
 <component>
 {#loop recent_posts($count: props.numberOfPosts) as item}
@@ -128,6 +139,80 @@ This gives you the ability to control the number of loop items from the parent c
 Any dynamic data that makes sense to pass as the value of an argument can be passed into the loop this way.
 
 Pretty awesome, right?
+
+### Related Posts Example
+
+A common pattern is a "Related Posts" section on single post templates. You can exclude the current post from the results by using a custom argument for the current post ID and passing it into your saved loop.
+
+1) Define your loop (e.g., name it `relatedPosts`) with a `$post_id` argument and exclude it via `post__not_in`:
+
+```php
+$query_args = [
+  'post_type' => 'post',
+  'posts_per_page' => 3,
+  'post_status' => 'publish',
+  'orderby' => 'date',
+  'order' => 'DESC',
+  'post__not_in' => [$post_id]
+];
+```
+**Note:** `post__not_in` must be an array, so that's why it is wrapped in brackets.
+
+2) Use the loop in your single post template, passing the current post’s ID into `$post_id`. In Etch, `this.id` refers to the current post’s ID in a singular context:
+
+```html
+<ul class="related-posts-grid">
+{#loop relatedPosts($post_id: this.id) as post}
+  <li class="related-post-card">
+    <h3>{post.title}</h3>
+    <!-- other info here -->
+  </li>
+{/loop}
+</ul>
+```
+
+### Related Posts with Taxonomy Filter
+
+If you want the related posts to be in the same taxonomy term (e.g., same category), add a taxonomy filter to the saved loop and pass the current post’s term dynamically.
+
+Update your loop definition to accept `$taxonomy` and `$term_id` and add a `tax_query`:
+
+```php
+$query_args = [
+  'post_type' => 'post',
+  'posts_per_page' => 3,
+  'post_status' => 'publish',
+  'orderby' => 'date',
+  'order' => 'DESC',
+  'post__not_in' => [$post_id],
+  'tax_query' => [
+    [
+      'taxonomy' => $taxonomy,
+      'field' => 'term_id',
+      'terms' => [$term_id]
+    ]
+  ]
+];
+```
+
+Then, pass the current post’s first category ID (as an example) from the template:
+
+```html
+<ul class="related-posts-grid">
+{#loop relatedPosts($post_id: this.id, $taxonomy: "category", $term_id: this.categories.0.id) as post}
+  <li class="related-post-card">
+    <h3>{post.title}</h3>
+    <!-- other info here -->
+  </li>
+{/loop}
+</ul>
+```
+
+**Notes:**
+- We have to put quotes around the taxonomy value in the loop arg (e.g., `$taxonomy: "category"`) because in the PHP query, `$taxonomy` is a variable and must remain unquoted. If you quoted it there, it would become the literal string `$taxonomy`. Quoting the value at call time ensures the WP query receives a proper string (e.g., `category`).
+- `terms` must be an array. That's why `$term_id` is wrapped in brackets in the `tax_query`.
+- If you prefer to filter by term slug, set `'field' => 'slug'` and pass a slug value instead of an ID.
+- Adjust which term you pass (e.g., first category vs. a specific taxonomy) to match your content model.
 
 ## More to come!
 

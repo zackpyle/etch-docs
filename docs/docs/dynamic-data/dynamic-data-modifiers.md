@@ -35,22 +35,22 @@ This allows you to format or transform values before they are displayed.
     </tr>
     <tr>
       <td><code>.toUpperCase()</code></td>
-      <td>Converts all characters to uppercase.</td>
+      <td>Converts all characters to uppercase (strings only).</td>
       <td><code>value = "John"</code><br /><br /><code>&#123;item.value.toUpperCase()&#125;</code> → <code>JOHN</code></td>
     </tr>
     <tr>
       <td><code>.toLowerCase()</code></td>
-      <td>Converts all characters to lowercase.</td>
+      <td>Converts all characters to lowercase (strings only).</td>
       <td><code>value = "John"</code><br /><br /><code>&#123;item.value.toLowerCase()&#125;</code> → <code>john</code></td>
     </tr>
     <tr>
       <td><code>.toString()</code></td>
-      <td>Converts to a string; arrays/objects become JSON when encodable. <br /><a href="#tostring">More Details</a></td>
+      <td>Converts to a string. Arrays/objects become JSON when encodable. <br /><a href="#tostring">More Details</a></td>
       <td><code>value = true</code><br /><br /><code>&#123;item.value.toString()&#125;</code> → <code>"true"</code></td>
     </tr>
     <tr>
       <td><code>.toInt()</code></td>
-      <td>Converts numeric values (incl. numeric strings) to an integer; leaves others unchanged. <br /><a href="#toint">More Details</a></td>
+      <td>Converts numeric values (incl. numeric strings) to an integer. Leaves others unchanged. <br /><a href="#toint">More Details</a></td>
       <td><code>value = "123.9"</code><br /><br /><code>&#123;item.value.toInt()&#125;</code> → <code>123</code></td>
     </tr>
     <tr>
@@ -98,13 +98,22 @@ This allows you to format or transform values before they are displayed.
     </tr>
     <tr>
       <td><code>.includes()</code></td>
-      <td>Checks if an array contains a value. Returns <code>true</code>/<code>false</code>.</td>
+      <td>
+        Checks if a *string* contains a *substring* OR an *array* contains a *value*. Returns <code>true</code>/<code>false</code>.
+        <details><summary>Arguments</summary> <code>search</code>: substring (for strings) or value (for arrays)</details>
+        <a href="#includes">More Details</a>
+      </td>
       <td><code>user.userRoles = ["author", "editor"]</code><br /><br /><code>&#123;user.userRoles.includes('editor')&#125;</code> → <code>true</code></td>
     </tr>
     <tr>
       <td><code>.join()</code></td>
       <td>Combines array elements into a string with a separator.</td>
       <td><code>user.userRoles = ["author", "editor"]</code><br /><br /><code>&#123;user.userRoles.join(', ')&#125;</code> → <code>"author, editor"</code></td>
+    </tr>
+    <tr>
+      <td><code>.applyData()</code></td>
+      <td>Reapplies available dynamic data to the given value.<br /><a href="#applydata">More Details</a></td>
+      <td><code>item.text = "Hello &#123;user.name&#125;"</code><br /><br /><code>&#123;item.text.applyData()&#125;</code> → <code>"Hello John"</code></td>
     </tr>
   </tbody>
   </table>
@@ -203,7 +212,46 @@ The `.toBool()` method normalizes common truthy/falsey inputs into a strict bool
 
 ---
 
+### `.includes()`
+**Returns:** boolean (`true`/`false`)
+
+The `.includes()` method checks whether a string contains a given substring or an array contains a given value. String checks are case-sensitive. Array checks require an exact element match (substrings within array elements do not count as a match).
+
+| Argument | Type          | Default | Description                                  |
+| -------- | ------------- | ------- | -------------------------------------------- |
+| `search` | string or any | —       | Substring to find (strings) or value to find (arrays) |
+
+#### String Examples:
+- value = `"foo bar"`
+  - `{item.value.includes("foo")}` → `true`
+  - `{item.value.includes("oo")}` → `true`
+  - `{item.value.includes("Foo")}` → `false` (case-sensitive)
+  - `{item.value.includes("test")}` → `false`
+
+#### Array Examples:
+- value = `["foo", "bar"]`
+  - `{item.value.includes("foo")}` → `true`
+  - `{item.value.includes("oo")}` → `false` (no substring matching)
+  - `{item.value.includes("Foo")}` → `false` (case-sensitive)
+  - `{item.value.includes("test")}` → `false`
+
+---
+
+### `.applyData`
+**Returns:** Returns the original value with dynamic data reapplied.
+
+The `applyData()` method is an advanced feature that can be used to reapply dynamic data to an already resolved value.
+
+#### Examples:
+
+You might have a custom field that includes dynamic data, for example: `this.etch.header = "Welcome to {this.title}!"` <br/>
+If you output `{this.etch.header}` directly, it will render as: <br /> `"Welcome to {this.title}!"` — without replacing `{this.title}`.
+
+To resolve the dynamic data, call `.applyData()` on the value: `{this.etch.header.applyData()}` <br />
+This first retrieves the original string, then reapplies the dynamic data, resulting in: <br />`"Welcome to Etch!` (or whatever value `{this.title}` resolves to).
+
+---
+
 ## Additional Notes
-- **Case transforms:** `.toUpperCase()` and `.toLowerCase()` only operate on strings.
 - **Combining:** You can combine/stack modifiers. They are applied in the order they are written. For example, you could use `{user.fullName.toSlug().toUpperCase()}` to transform a user named "Thomas Müller" to "THOMAS-MUELLER".
 - **Unknown modifiers:** If a modifier name isn’t recognized, the internal call returns `null`, which results in an empty string.

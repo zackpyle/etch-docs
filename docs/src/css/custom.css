@@ -242,3 +242,7 @@ table td {
 .btn-copy-to-clipboard:active {
 	background: var(--ifm-color-primary-dark);
 }
+
+details summary {
+  cursor: pointer;
+}
