@@ -147,6 +147,15 @@ This allows you to format or transform values before they are displayed.
       </td>
     </tr>
     <tr>
+      <td><code>.concat()</code></td>
+      <td>
+        Concatenates all the given strings to the source string. Any number of strings can be passed as arguments.
+      </td>
+      <td>
+        <code>value = "Hello"</code><br /><br /><code>&#123;item.value.concat(" ", "World", "!")&#125;</code> → <code>"Hello World!</code>
+      </td>
+    </tr>
+    <tr>
       <td><code>.length()</code></td>
       <td>
         Returns the length of a *string* OR an *array*. 
@@ -183,6 +192,13 @@ This allows you to format or transform values before they are displayed.
       <td><code>animals = ["ant", "bison", "camel", "duck", "elephant"]</code><br /><br /><code>&#123;item.animals.slice(2)&#125;</code> → <code>["camel", "duck", "elephant"]</code></td>
     </tr>
     <tr>
+      <td><code>.indexOf()</code></td>
+      <td>
+    Returns the index of a <em>substring</em> within a <em>string</em>, or the index of a <em>value</em> within an <em>array</em>.<br /> Returns the <code>index</code> if found, or <code>-1</code> if not found.
+      </td>
+      <td><code>user.userRoles = ["author", "editor"]</code><br /><br /><code>&#123;user.userRoles.indexOf('editor')&#125;</code> → <code>1</code></td>
+    </tr>
+    <tr>
       <td><code>.includes()</code></td>
       <td>
         Checks if a *string* contains a *substring* OR an *array* contains a *value*. Returns <code>true</code>/<code>false</code>.
@@ -192,9 +208,17 @@ This allows you to format or transform values before they are displayed.
       <td><code>user.userRoles = ["author", "editor"]</code><br /><br /><code>&#123;user.userRoles.includes('editor')&#125;</code> → <code>true</code></td>
     </tr>
     <tr>
+      <td><code>.split()</code></td>
+      <td>
+        Splits a string by the given separator and returns the result as an array.
+        <details><summary>Arguments</summary> <code>separator</code>: default <code>","</code></details>
+      </td>
+      <td><code>value = "Jan,Feb,Mar,Apr"</code><br /><br /><code>&#123;item.value.split(",")&#125;</code> → <code><br/>["Jan", "Feb", "Mar", "Apr"]</code></td>
+    </tr>
+    <tr>
       <td><code>.join()</code></td>
       <td>Combines array elements into a string with a separator.</td>
-      <td><code>user.userRoles = ["author", "editor"]</code><br /><br /><code>&#123;user.userRoles.join(', ')&#125;</code> → <code>"author, editor"</code></td>
+      <td><code>user.userRoles = ["author", "editor"]</code><br /><br /><code>&#123;user.userRoles.join(", ")&#125;</code> → <code>"author, editor"</code></td>
     </tr>
     <tr>
       <td><code>.applyData()</code></td>
