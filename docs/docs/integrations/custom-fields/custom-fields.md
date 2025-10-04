@@ -35,6 +35,18 @@ Custom fields created with JetEngine can be accessed with the `jetengine` namesp
 {item.jetengine.field_id}
 ```
 
+### Meta Box
+
+Custom fields created with Meta Box can be accessed with the `metabox` namespace.
+
+```html
+<!-- In a template -->
+{this.metabox.field_id}
+
+<!-- In a loop -->
+{item.metabox.field_id}
+```
+
 :::info 
 For information about Etch native fields and WordPress meta fields, see the [Dynamic Data Keys](/dynamic-data/dynamic-data-keys) documentation.
 :::
