@@ -250,3 +250,27 @@ details summary {
 td p:last-child {
 	margin-bottom: 0;
 }
+
+/* Show line numbers on all code blocks */
+.prism-code {
+	counter-reset: line-number;
+}
+
+.prism-code .token-line::before {
+	counter-increment: line-number;
+	content: counter(line-number);
+	display: inline-block;
+	width: 3em;
+	padding-right: 1em;
+	margin-right: 0.5em;
+	text-align: right;
+	color: var(--ifm-color-emphasis-600);
+	user-select: none;
+	border-right: 1px solid var(--ifm-color-emphasis-300);
+}
+
+/* Adjust for dark mode */
+[data-theme='dark'] .prism-code .token-line::before {
+	color: var(--ifm-color-emphasis-500);
+	border-right-color: var(--ifm-color-emphasis-200);
+}
