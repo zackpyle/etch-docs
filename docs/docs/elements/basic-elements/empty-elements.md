@@ -25,7 +25,9 @@ You can override the default 35px minimum by changing the value of the `--empty-
 ### Element Level
 Set it on a specific element using inline styles or the CSS panel:
 ```css
---empty-element-size: 0;
+.my-element {
+  --empty-element-size: 20px;
+}
 ```
 
 ### Section Level
