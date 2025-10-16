@@ -118,7 +118,7 @@
     "index.md"
   ],
   "docs/loops": [
-    "basic-loops.md",
+    "basic-loops.mdx",
     "loop-arguments.md",
     "looping-attachments.md",
     "nested-loops.md"
