@@ -276,6 +276,12 @@ td p:last-child {
 	border-right-color: var(--ifm-color-emphasis-200);
 }
 
+/* Adjust version badges for light / dark mode */
+body [class^="versionBadge_"] {
+	background-color: var(--ifm-color-primary);
+	color: var(--ifm-background-surface-color);
+}
+
 /* Sidebar badge */
 .menu__link-badge {
   margin-left: 0.5rem;
