@@ -1,9 +1,9 @@
 ---
-title: Dynamic Data Modifiers
+title: Basic Modifiers
 sidebar_position: 60
 ---
 
-# Dynamic Data Modifiers
+# Basic Dynamic Data Modifiers
 
 Dynamic data can be customized by applying modifiers directly to the data path.
 For example: `item.modifier()`
@@ -127,32 +127,12 @@ This allows you to format or transform values before they are displayed.
       <td><code>value = "1.9"</code><br /><br /><code>&#123;item.value.floor()&#125;</code> → <code>1</code></td>
     </tr>
     <tr>
-      <td><code>.startsWith()</code></td>
-      <td>
-        Checks if a *string* starts with a given string. Returns 
-        <code>true</code>/<code>false</code>.
-      </td>
-      <td>
-        <code>value = "Hello World!"</code><br /><br /><code>&#123;item.value.startsWith('Hel')&#125;</code> → <code>true</code>
-      </td>
-    </tr>
-    <tr>
-      <td><code>.endsWith()</code></td>
-      <td>
-        Checks if a *string* ends with a given string. Returns 
-        <code>true</code>/<code>false</code>.
-      </td>
-      <td>
-        <code>value = "Hello World!"</code><br /><br /><code>&#123;item.value.endsWith('ld!')&#125;</code> → <code>true</code>
-      </td>
-    </tr>
-    <tr>
       <td><code>.concat()</code></td>
       <td>
         Concatenates all the given strings to the source string. Any number of strings can be passed as arguments.
       </td>
       <td>
-        <code>value = "Hello"</code><br /><br /><code>&#123;item.value.concat(" ", "World", "!")&#125;</code> → <code>"Hello World!</code>
+        <code>value = "Hello"</code><br /><br /><code>&#123;item.value.concat(" ", "World", "!")&#125;</code> → <code>"Hello World!"</code>
       </td>
     </tr>
     <tr>
@@ -199,15 +179,6 @@ This allows you to format or transform values before they are displayed.
       <td><code>user.userRoles = ["author", "editor"]</code><br /><br /><code>&#123;user.userRoles.indexOf('editor')&#125;</code> → <code>1</code></td>
     </tr>
     <tr>
-      <td><code>.includes()</code></td>
-      <td>
-        Checks if a *string* contains a *substring* OR an *array* contains a *value*. Returns <code>true</code>/<code>false</code>.
-        <details><summary>Arguments</summary> <code>search</code>: substring (for strings) or value (for arrays)</details>
-        <a href="#includes">More Details</a>
-      </td>
-      <td><code>user.userRoles = ["author", "editor"]</code><br /><br /><code>&#123;user.userRoles.includes('editor')&#125;</code> → <code>true</code></td>
-    </tr>
-    <tr>
       <td><code>.split()</code></td>
       <td>
         Splits a string by the given separator and returns the result as an array.
@@ -226,7 +197,7 @@ This allows you to format or transform values before they are displayed.
       <td><code>item.text = "Hello &#123;user.name&#125;"</code><br /><br /><code>&#123;item.text.applyData()&#125;</code> → <code>"Hello John"</code></td>
     </tr>
   </tbody>
-  </table>
+</table>
 
 
 ## Detailed Modifier Reference
@@ -356,31 +327,6 @@ Extraction happens up to but not including end.
   - `{item.value.slice(2)}` → `["camel", "duck", "elephant"]`
   - `{item.value.slice(2, 4)}` → `["camel", "duck"]`
   - `{item.value.slice(-2)}` → `["duck", "elephant"]`
-
----
-
-### `.includes()`
-**Returns:** boolean (`true`/`false`)
-
-The `.includes()` method checks whether a string contains a given substring or an array contains a given value. String checks are case-sensitive. Array checks require an exact element match (substrings within array elements do not count as a match).
-
-| Argument | Type          | Default | Description                                  |
-| -------- | ------------- | ------- | -------------------------------------------- |
-| `search` | string or any | —       | Substring to find (strings) or value to find (arrays) |
-
-#### String Examples:
-- value = `"foo bar"`
-  - `{item.value.includes("foo")}` → `true`
-  - `{item.value.includes("oo")}` → `true`
-  - `{item.value.includes("Foo")}` → `false` (case-sensitive)
-  - `{item.value.includes("test")}` → `false`
-
-#### Array Examples:
-- value = `["foo", "bar"]`
-  - `{item.value.includes("foo")}` → `true`
-  - `{item.value.includes("oo")}` → `false` (no substring matching)
-  - `{item.value.includes("Foo")}` → `false` (case-sensitive)
-  - `{item.value.includes("test")}` → `false`
 
 ---
 
