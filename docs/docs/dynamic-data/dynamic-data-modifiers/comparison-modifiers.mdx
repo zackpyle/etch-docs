@@ -32,13 +32,13 @@ Without comparison modifiers, you’d have to use multiple conditionals and dupl
 
 ```html
 {#loop products as product}
-  {#if product.price < 10}
-    <div class="product--affordable">
+  {#if product.price > 10}
+    <div class="product--expensive">
       <p>Price: {product.price}</p>
     </div>
   {/if}
-  {#if product.price >= 10}
-    <div class="product--expensive">
+  {#if product.price <= 10}
+    <div class="product--affordable">
       <p>Price: {product.price}</p>
     </div>
   {/if}
