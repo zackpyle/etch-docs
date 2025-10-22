@@ -3,6 +3,8 @@ title: Basic Modifiers
 sidebar_position: 60
 ---
 
+import VersionBadge from '@site/src/components/VersionBadge/VersionBadge';
+
 # Basic Dynamic Data Modifiers
 
 Dynamic data can be customized by applying modifiers directly to the data path.
@@ -77,6 +79,14 @@ This allows you to format or transform values before they are displayed.
       <td><code>.rtrim()</code></td>
       <td>Removes whitespace from the end of a string.</td>
       <td><code>value = "hello  "</code><br /><br /><code>&#123;item.value.rtrim()&#125;</code> → <code>"hello"</code></td>
+    </tr>
+    <tr>
+      <td><code>.stripTags()</code></td>
+      <td>
+          Removes HTML tags from a string.
+          <VersionBadge version="1.0.0-alpha-5" style={{marginBottom: 0}}/>
+      </td>
+      <td><code>value = "&lt;a href="#"&gt;Link&lt;/a&gt;"</code><br /><br /><code>&#123;item.value.stripTags()&#125;</code> → <code>"Link"</code></td>
     </tr>
     <tr>
       <td><code>.urlEncode()</code></td>
