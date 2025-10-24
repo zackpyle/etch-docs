@@ -20,12 +20,18 @@ Options pages let you manage global site settings (e.g., business phone, address
 Use the `options` key with the provider namespace that owns your options page fields.
 
 ```html
-<!-- General syntax -->
-{options.provider.field_name}
+<!-- ACF syntax -->
+{options.acf.field_name}
+
+<!-- Meta Box syntax -->
+{options.metabox.option_page_name.field_name}
+
+<!-- Jet Engine syntax -->
+{options.jetengine.option_page_name.field_name}
 ```
 
-- Available now: **Advanced Custom Fields (ACF)** via `options.acf.*`
-- Planned: **Meta Box** via `options.metabox.*`, **Etch Options** via `options.etch.*`
+- Available now: **Advanced Custom Fields (ACF)** via `options.acf.*`, **Meta Box** via `options.metabox.*` and **Jet Engine** via `options.jetengine.*`
+- Planned: **Etch Options** via `options.etch.*`
 
 Works globally (templates, pages, loops, headers/footers, etc.). No post context is required.
 
@@ -76,6 +82,7 @@ Works globally (templates, pages, loops, headers/footers, etc.). No post context
 
 ### Meta Box
 
+<VersionBadge version="1.0.0-alpha-4" />
 #### Accessing Option Values
 
 ```html
@@ -110,6 +117,51 @@ Works globally (templates, pages, loops, headers/footers, etc.). No post context
 ```html
 <ul class="hours">
   {#loop options.metabox.company.hours as hour}
+    <li>
+      <span class="day">{hour.day}</span>
+      <span class="time">{hour.open}–{hour.close}</span>
+    </li>
+  {/loop}
+</ul>
+```
+
+### Jet Engine
+
+<VersionBadge version="1.0.0-alpha-5" />
+#### Accessing Option Values
+
+```html
+{options.jetengine.option_page_name.field_name}
+```
+
+- Replace `option_page_name` with your Settings Page ID or Option name defined on the Jet Engine Settings Page.
+- Replace `field_name` with your Jet Engine field name/key defined on the Jet Engine Custom Fields page.
+
+#### Common Examples
+
+##### Basic Fields
+```html
+<a href="mailto:{options.jetengine.company.business_email}">{options.jetengine.company.business_email}</a>
+<a href="{options.jetengine.company.facebook_url}">Facebook</a>
+```
+
+##### Group Fields
+```html
+<div class="address">
+  <div>{options.jetengine.company.address.street}</div>
+  <div>{options.jetengine.company.address.city}, {options.jetengine.company.address.state} {options.jetengine.company.address.zip}</div>
+</div>
+```
+
+##### Image Fields
+```html
+<img src="{options.jetengine.company.logo.url}" alt="{options.jetengine.company.logo.alt}" />
+```
+
+##### Repeater Fields
+```html
+<ul class="hours">
+  {#loop options.jetengine.company.hours as hour}
     <li>
       <span class="day">{hour.day}</span>
       <span class="time">{hour.open}–{hour.close}</span>
