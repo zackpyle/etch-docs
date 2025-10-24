@@ -79,21 +79,16 @@ This page will serve as the master doc page for all dynamic data keys. Feel free
 
 The `options` key provides access to global site options configured via options pages. These values are available everywhere (pages, templates, loops, headers/footers, etc.).
 
-- Current providers: **ACF** via the `acf` extension
-- Planned providers: **Meta Box** (`metabox`), **Etch Options** (`etch`)
-
-### Example Usage
-
-`{options.acf.business_email}`
-
-- Replace `business_email` with your ACF field key/name from the ACF Options Page.
-- Access nested objects/arrays as usual (e.g., `options.acf.address.city`).
+For up-to-date provider availability, namespaces, and scoping patterns, see the [Options Pages](/integrations/custom-fields/options-pages) documentation. It covers:
+- Which providers are currently supported.
+- The required namespace for each provider (e.g., `acf`, `metabox`, `jetengine`).
+- Provider-specific syntax and scoping rules (for example, Meta Box: `options.metabox.option_page_name.field_name`).
+- Any setup steps required in the provider plugin before values are available in Etch.
 
 ### Notes
 
 - Requires an Options Page created in the provider plugin.
 - Keys resolve globally; no post context is required.
-- For complex fields (repeaters, groups, galleries), use standard access patterns and loops. See [Options Pages](/integrations/custom-fields/options-pages) for details.
 
 ## URL Keys
 
