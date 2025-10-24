@@ -2,7 +2,7 @@
 title: Dynamic Data Keys
 sidebar_position: 50
 last_update:
-  date: 2025-10-19
+  date: 2025-10-24
 ---
 
 # Dynamic Data Keys
@@ -79,15 +79,14 @@ This page will serve as the master doc page for all dynamic data keys. Feel free
 
 The `options` key provides access to global site options configured via options pages. These values are available everywhere (pages, templates, loops, headers/footers, etc.).
 
-For up-to-date provider availability, namespaces, and scoping patterns, see the [Options Pages](/integrations/custom-fields/options-pages) documentation. It covers:
-- Which providers are currently supported.
-- The required namespace for each provider (e.g., `acf`, `metabox`, `jetengine`).
-- Provider-specific syntax and scoping rules (for example, Meta Box: `options.metabox.option_page_name.field_name`).
-- Any setup steps required in the provider plugin before values are available in Etch.
+For up-to-date integrations, namespaces, and scoping patterns, see the [Options Pages](/integrations/custom-fields/options-pages) documentation. It covers:
+- Which integrations are currently supported.
+- The required namespace for each integration (e.g., `acf`, `metabox`, `jetengine`).
+- Integration-specific syntax (for example, Meta Box requiring a option page name: `options.metabox.option_page_name.field_name`).
 
 ### Notes
 
-- Requires an Options Page created in the provider plugin.
+- Requires an Options Page created in the integration plugin.
 - Keys resolve globally; no post context is required.
 
 ## URL Keys
