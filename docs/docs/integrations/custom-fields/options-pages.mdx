@@ -20,8 +20,14 @@ Options pages let you manage global site settings (e.g., business phone, address
 Use the `options` key with the provider namespace that owns your options page fields.
 
 ```html
-<!-- General syntax -->
-{options.provider.field_name}
+<!-- ACF syntax -->
+{options.acf.field_name}
+
+<!-- Meta Box syntax -->
+{options.metabox.option_page_name.field_name}
+
+<!-- Jet Engine syntax -->
+{options.jetengine.option_page_name.field_name}
 ```
 
 Works globally (templates, pages, loops, headers/footers, etc.). No post context is required.
@@ -74,7 +80,6 @@ These examples are provider-agnostic. Replace `provider` with the integration na
   {/loop}
 </ul>
 ```
-
 
 ## Troubleshooting
 
