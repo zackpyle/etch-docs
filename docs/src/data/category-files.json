@@ -5,6 +5,7 @@
     "creating-component-variations.md",
     "intro-components.md",
     "mapping-component-props.md",
+    "prop-slot.md",
     "using-a-component-dynamic.md",
     "using-a-component-static.md"
   ],
@@ -14,7 +15,6 @@
     "prop-image.md",
     "prop-object.md",
     "prop-select.md",
-    "prop-slot.md",
     "prop-text.md"
   ],
   "docs/conditional-logic": [
