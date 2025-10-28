@@ -68,6 +68,16 @@ body {
 	box-shadow: 0 0 0 2px rgba(var(--ifm-color-primary-rgb), 0.2);
 }
 
+.markdown > h3 {
+	--ifm-h3-font-size: 1.75rem;
+}
+.markdown > h4 {
+	--ifm-h4-font-size: 1.4rem;
+}
+.markdown > h5 {
+	--ifm-h5-font-size: 1.125rem;
+}
+
 /* Keyboard shortcut hint */
 .navbar__search-input::placeholder {
 	color: var(--ifm-color-emphasis-600);
