@@ -37,7 +37,7 @@ When you're in component editing mode, you'll see an icon in the Elements Bar fo
 
 Once you've added a slot, you can name it by editing its label in the structure panel or editing its name in the attributes panel. It's helpful to use a contextual name so that anyone who uses the component knows what it's for.
 
-You can also define your slot simply by writing `{@slot your-slot-name}` in the HTML editor. This will create your slot and name it at the same time.
+You can also define your slot simply by writing `{@slot yourSlotName}` in the HTML editor. This will create your slot and name it at the same time.
 
 ## Using a Slot
 
@@ -49,7 +49,7 @@ If for some reason the slots don't show up when using your component, you'll see
 
 ![Add Slot in Etch](img/etch-use-slot-icon-squashed.webp)
 
-You can also add your slot simply by writing `{#slot your-slot-name}{/slot}` in the HTML editor.
+You can also add your slot simply by writing `{#slot yourSlotName}{/slot}` in the HTML editor.
 
 :::note Don't Get it Twisted
 A slot is an empty drop-zone that you define at the component level. This means each component instance will have a slot available for unique content. You should not try to add content to the slot from inside the component editor — slots are for adding content to each instance from *outside* the component editing context (e.g. the normal page development workflow).
