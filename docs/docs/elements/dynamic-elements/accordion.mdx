@@ -47,8 +47,7 @@ Transition variables:
 --etch-accordion-transition-duration
 --etch-accordion-transition-timing-function
 ```
-
-Are used along the CSS but are managed through Javascript. See [Advanced Javascript Options](#accordion-javascript-options) for more details.
+Are used along the CSS but are managed through Props. See [Accordion Component Props](#accordion-component-props) for more details.
 :::
 
 ## Configuring Your Accordion
@@ -66,34 +65,13 @@ You obviously don't want sample data in your Accordion, so let's customize it.
 2. Duplicate the `<div class="etch-accordion__item">`
 3. Replace the `{item.title}` and `{item.content}` with another elements or anything you need.
 
-### Accordion Javascript Options
-
-| Option                     | Type      | Default         | Description                                                                                           |
-| -------------------------- | --------- | --------------- | ----------------------------------------------------------------------------------------------------- |
-| `openFirstItem`            | `boolean` | `true`          | If false, the first accordion item is not opened by default when the accordion is rendered.           |
-| `allowMultiple`            | `boolean` | `false`         | If true, multiple accordion items can be open at the same time. If false, opening one closes others.  |
-| `transitionDuration`       | `string`  | `'0.35s'`       | Duration of the open/close animation (any valid CSS time value, e.g. '0.5s', '200ms').                |
-| `transitionTimingFunction` | `string`  | `'ease-in-out'` | The CSS timing function used for accordion panel transitions (e.g., 'ease', 'linear', 'ease-in-out'). |
-
 ### Accordion Component Props
 
-| Option          | Type                  | Default | Description                                                                  |
-| --------------- | --------------------- | ------- | ---------------------------------------------------------------------------- |
-| `accordionLoop` | Loop (array of items) | preset  | Data source for your accordion. Preinstalled in Etch; edit via Loop Manager. |
-
-## Customization
-
-After you paste/import the components, you can open the Navigation or Burger component and edit its JS to customize behavior. This is optional—the defaults work out of the box.
-
-:::warning
-The example below might differ from the javascript provided in the component for brevity.
-:::
-
-```js
-instantiateAccordionClass({
-  openFirstItem: true,
-  allowMultiple: false,
-  transitionDuration: "0.35s",
-  transitionTimingFunction: "ease-in-out",
-});
-```
+| Option           | Type                      | Default | Description |
+| ---------------- | ------------------------- | ------- | ----------- |
+| `accordionLoop`        | Loop (array of items)     | preset  | Data source for your accordion. Preinstalled in Etch; edit via Loop Manager. |
+| `uniqueId`        | String     | `'acc1'`  | Unique ID for your accordion. This is used to identify the accordion in the DOM and for the accordion's CSS classes. |
+| `openFirstItem`        | Boolean     | `true`  | If false, the first accordion item is not opened by default when the accordion is rendered. |
+| `allowMultiple`        | Boolean     | `false`  | If true, multiple accordion items can be open at the same time. If false, opening one closes others. |
+| `transitionDuration`        | String     | `'0.35s'`  | Duration of the open/close animation (any valid CSS time value, e.g. '0.5s', '200ms'). |
+| `transitionTimingFunction`        | String     | `'ease-in-out'`  | The CSS timing function used for accordion panel transitions (e.g., 'ease', 'linear', 'ease-in-out'). |
