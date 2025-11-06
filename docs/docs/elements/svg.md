@@ -12,13 +12,13 @@ Etch has native support for SVG HTML, but this is separate from Etch's SVG eleme
 
  To get started, add the SVG element to the page by clicking the SVG element in the Elements Bar.
 
-![Etch SVG Element](../img/etch-svg-element.webp)
+![Etch SVG Element](img/etch-svg-element.webp)
 
 In the code editor you will see `<etch:svg />`, but the output on the front-end will be the raw SVG code.
 
 In the Attributes Panel, with the SVG Element selected, you can choose a source (media library) or enter a URL in the `src` attribute field:
 
-![Etch SVG Attribute Panel](../img/etch-svg-attribute-panel.webp)
+![Etch SVG Attribute Panel](img/etch-svg-attribute-panel.webp)
 
 It's important to note that the `src` attribute accepts any valid URL to an SVG file, even external URLs to 3rd party icon libraries.
 

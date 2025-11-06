@@ -17,36 +17,7 @@
     "prop-select.md",
     "prop-text.md"
   ],
-  "docs/conditional-logic": [
-    "advanced-conditions.md",
-    "basic-conditions.md",
-    "intro-to-conditional-logic.md"
-  ],
-  "docs/dynamic-data": [
-    "dynamic-data-intro.md",
-    "dynamic-data-keys.md"
-  ],
-  "docs/dynamic-data/dynamic-data-modifiers": [
-    "basic-modfiers.mdx",
-    "comparison-modifiers.mdx"
-  ],
-  "docs/elements/basic-elements": [
-    "anchor.md",
-    "condition.md",
-    "container.md",
-    "div.md",
-    "element.mdx",
-    "empty-elements.md",
-    "flex-div.md",
-    "heading.md",
-    "iframe.md",
-    "image.md",
-    "loop.md",
-    "section.md",
-    "svg.md",
-    "text.md"
-  ],
-  "docs/elements/dynamic-elements": [
+  "docs/components-native": [
     "accordion.mdx",
     "advanced-nav.md",
     "alert.md",
@@ -68,6 +39,35 @@
     "table.md",
     "tabs.md",
     "tooltip.md"
+  ],
+  "docs/conditional-logic": [
+    "advanced-conditions.md",
+    "basic-conditions.md",
+    "intro-to-conditional-logic.md"
+  ],
+  "docs/dynamic-data": [
+    "dynamic-data-intro.md",
+    "dynamic-data-keys.md"
+  ],
+  "docs/dynamic-data/dynamic-data-modifiers": [
+    "basic-modfiers.mdx",
+    "comparison-modifiers.mdx"
+  ],
+  "docs/elements": [
+    "anchor.md",
+    "condition.md",
+    "container.md",
+    "div.md",
+    "element.mdx",
+    "empty-elements.md",
+    "flex-div.md",
+    "heading.md",
+    "iframe.md",
+    "image.md",
+    "loop.md",
+    "section.md",
+    "svg.md",
+    "text.md"
   ],
   "docs/feature-flags": [
     "index.md"

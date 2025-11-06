@@ -6,7 +6,7 @@ title: Image
 
 The Image element creates a standard HTML image tag with the `src` and `alt` attributes automatically added. You can edit the `src` and `alt` via the HTML editor, the Attributes Panel, or the Add Attribute Bar.
 
-![Etch Image Element](../img/etch-image-element-squashed.webp)
+![Etch Image Element](img/etch-image-element-squashed.webp)
 
 Example output:
 
@@ -18,7 +18,7 @@ Example output:
 
 You can click on the thumbnail in the image attributes panel to to open the media library and choose an image. This will replace the `src` attribute with the path to the new image.
 
-![Etch Image Element](../img/etch-image-attributes-squashed.webp)
+![Etch Image Element](img/etch-image-attributes-squashed.webp)
 
 ### `src`
 The `src` attribute is mandatory and contains the URL or path to the image file. This is automatically added with a placeholder path when you add an Image element to the canvas.
@@ -40,7 +40,7 @@ The Image element supports the `srcset` attribute for responsive images, allowin
 
 Once you choose an image, more attributes will appear:
 
-![Etch Image Element](../img/etch-image-srcset-squashed.webp)
+![Etch Image Element](img/etch-image-srcset-squashed.webp)
 
 ### `size`
 Use this attribute to select the optimal size for the image in its current context on the canvas. The size options are automatically pulled from your registered size options in WordPress.
