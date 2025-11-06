@@ -35,7 +35,6 @@
     "condition.md",
     "container.md",
     "div.md",
-    "element.mdx",
     "empty-elements.md",
     "flex-div.md",
     "heading.md",
@@ -44,6 +43,7 @@
     "loop.md",
     "section.md",
     "svg.md",
+    "tag-element.mdx",
     "text.md"
   ],
   "docs/elements/dynamic-elements": [
