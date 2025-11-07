@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # Components (Native)
 
-Conventional page builders often refer to things like sliders, modals, accordions, etc. as components. This is a technically incorrect and problematic naming decision. In Etch, we call these elements, "Dynamic Elements." This differentiates them from simple elements like headings, paragraphs, and links without confusing them with [component-based functionality](../components/intro-components).
+Etch has a growing library of native, pre-made components. We've put a lot of work into these to make sure they follow all guidelines of scalability, maintainability, and accessibility.
 
 import CategoryOverview from '@site/src/components/CategoryOverview';
 
