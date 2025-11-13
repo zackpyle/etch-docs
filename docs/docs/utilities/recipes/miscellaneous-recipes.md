@@ -17,6 +17,7 @@ Limits multi-line content to a maximum number of lines with an ellipsis for over
 - **concentric-radius**: 
 Applies concentric border radius and enhances padding for nested elements, ensuring child elements have a unified rounded appearance and remain visually cohesive.
 
-
+- **is-bg**:
+Turns any element into a background element and automatically handles the layering of multiple background elements.
 
 
