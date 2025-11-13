@@ -62,10 +62,12 @@
     "empty-elements.md",
     "flex-div.md",
     "heading.md",
+    "html.mdx",
     "iframe.md",
     "image.md",
     "loop.md",
     "section.md",
+    "shortcode.mdx",
     "svg.md",
     "text.md"
   ],
@@ -152,5 +154,15 @@
   ],
   "docs/utilities": [
     "functions.md"
+  ],
+  "docs/utilities/recipes": [
+    "accessibility-recipes.md",
+    "color-recipes.md",
+    "custom.md",
+    "fade-recipes.md",
+    "flex-recipes.md",
+    "grid-recipes.md",
+    "intro.md",
+    "miscellaneous-recipes.md"
   ]
 }
