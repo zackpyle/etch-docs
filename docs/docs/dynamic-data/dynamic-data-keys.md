@@ -2,7 +2,7 @@
 title: Dynamic Data Keys
 sidebar_position: 50
 last_update:
-  date: 2025-10-24
+  date: 2025-11-17
 ---
 
 # Dynamic Data Keys
@@ -40,6 +40,27 @@ This page will serve as the master doc page for all dynamic data keys. Feel free
 | `template.id`        | The unique identifier for the template.                                                |
 | `template.title`     | The title of the template.                                                             |
 | `readingTime`        | The estimated reading time in minutes based on content word count (200 words/min).     |
+| `post_author`        | The unique identifier for the author.                                                  |
+| `post_date`          | The publish date of the item.                                                          |
+| `post_date_gmt`      | The publish date of the item.                                                          |
+| `post_content`       | The main content/body of the item.                                                     |
+| `post_title`         | The title of the item.                                                                 |
+| `post_excerpt`       | The summary or excerpt of the item.                                                    |
+| `post_status`        | The status of the item (e.g., `publish`, `draft`).                                     |
+| `comment_status`     | The status for comments (e.g., `open`, `closed`).                                      |
+| `ping_status`        | The ping stauts of the item (e.g., `open`, `closed`).                                  |
+| `post_password`      | The items's password.                                                                  |
+| `post_name`          | The URL-friendly slug for the item.                                                    |
+| `to_ping`            | URLs queued to be pinged.                                                              |
+| `pinged`             | URLs that have been pinged.                                                            |
+| `post_modified`      | The modified date of the item.                                                         |
+| `post_modified_gmt`  | The modified date of the item.                                                         |
+| `guid`               | The GUID of the item.                                                                  |
+| `menu_order`         | The menu order of the item.                                                            |
+| `post_type`          | The post type (e.g., `post`, `page`, `product`).                                       |
+| `post_mime_type`     | The mime type of attachment item.                                                      |
+| `post_parent`        | The ID of a post's parent post.                                                        |
+| `comment_count`      | The total of comments for the item.                                                    |
 
 ## User Keys
 
