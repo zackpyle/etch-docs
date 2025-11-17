@@ -14,7 +14,7 @@ Etch now authors everything you build to custom Gutenberg blocks (not core block
 
 Etch authors everything you build to custom Gutenberg blocks and maintains a bi-directional sync between Etch and Gutenberg. They render in the editor exactly as they do in Etch, and all content is stored in WordPress for portability and longevity. This keeps Etch as your development environment while Gutenberg remains a simple, client-facing editor, which improves stability and day-to-day editing.
 
-## Why author to blocks
+## Why Author to Blocks
 
 1. **Data Liberation**: The content you add to pages and templates is stored in WordPress, not Etch.
 2. **Compatibility**: Blocks work with all plugins without conflicts.
@@ -34,20 +34,20 @@ Likewise, changes you make in Etch flow back into the block editor on save, whic
 
 There is no manual syncing or configuration to manage because synchronization is part of Etch's architecture and runs automatically in the background.
 
-## Why custom blocks (not core blocks)?
+## Why Custom Blocks (Not Core Blocks)?
 
 Core blocks seemed like the most “native” and flexible path, but in practice they were too limited for modern workflows. Achieving the necessary fidelity required manipulating output, removing wrappers, and overriding defaults, which is an unstable, maintenance-heavy approach.
 
 Custom blocks, by contrast, give us precise rendering, a smoother editor experience, and a far more stable foundation across your stack.
 
-### Advantages of custom blocks
+### Advantages of Custom Blocks
 
 - **1 to 1 Design Representation**: Patterns, components, loops, and templates render in Gutenberg exactly as you built them in Etch, without hacky overrides or wrappers.
 - **Seamless Editing Experience**: Custom blocks support nuanced content editing (for example, spans inside headings or paragraphs, inline links, and single buttons) while protecting structure.
 - **Improved Stability**: Custom blocks reduce breakage from core updates and remove brittle workarounds required by core blocks.
 - **Ecosystem Flexibility (Phase 2)**: Etch's custom block authoring enables building and distributing custom blocks, libraries, and prefabs directly from WordPress. More details are coming in the second phase of this refactor.
 
-## Where should things be built?
+## Where Should Things Be Built?
 
 Etch is the development environment. The block editor is only for content editing. Do not build things in the block editor: 
 
