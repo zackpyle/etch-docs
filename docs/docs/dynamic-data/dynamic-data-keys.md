@@ -148,6 +148,10 @@ Etch integrates with third-party custom field solutions like Advanced Custom Fie
 
 For detailed information on working with third-party custom fields, see the [Custom Fields](/integrations/custom-fields) section in Integrations.
 
+## Custom Integration
+
+Etch allows to extend Dynamic Data through filter hooks. This way, all main keys ([post](./dynamic-data-integration/post-dynamic-data-integration.md), [user](./dynamic-data-integration/user-dynamic-data-integration.md), [term](./dynamic-data-integration/term-dynamic-data-integration.md), and [options](./dynamic-data-integration/option-dynamic-data-integration.md)) can be extended.
+
 ## Tips for Working with Dynamic Data
 
 - Not all keys are available for every item type. Availability depends on the context (e.g., posts, pages, custom post types).
