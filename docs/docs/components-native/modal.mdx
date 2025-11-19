@@ -1,0 +1,103 @@
+---
+title: Modal
+sidebar_position: 100
+---
+import CopyToClipboard from '@site/src/components/CopyToClipboard/CopyToClipboard';
+import ModalJSON from '../components-native/components-native-json/modal-component.json';
+
+export const MODAL_JSON = JSON.stringify(ModalJSON, null, 2);
+
+# Modal
+
+:::note
+This page documents the recommended way to add a Modal by importing the prebuilt component with Copy/Paste JSON below.
+:::
+
+## Setup
+
+- Add a container or a flex-div on your site if you don't already have one.
+- You'll paste the Modal component into the container or flex-div in the next step.
+
+## Importing the Component
+
+Use the button below to copy the ready-to-use Modal component as JSON.
+Then, in Etch, press <kbd>cmd</kbd> + <kbd>v</kbd> (Mac) or <kbd>ctrl</kbd> + <kbd>v</kbd> (Windows) anywhere in the builder to insert the component.
+
+<div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+  <CopyToClipboard label="Copy Modal Component" value={MODAL_JSON} />
+</div>
+
+### Steps
+- Click "Copy Modal Component" above, then in Etch press <kbd>cmd</kbd> + <kbd>v</kbd> (Mac) / <kbd>ctrl</kbd> + <kbd>v</kbd> (Windows) anywhere in the builder to insert the component
+- Arrange the component inside your container or flex-div.
+- Verify the component.
+
+### Configuration
+- CSS, JS, and props are bundled inside the component—no setup required. You can edit prop values to customize behavior.
+- Styling: tweak CSS variables on `.etch-modal` (e.g., colors, icon sizes).
+- Fill the props in the Elements Settings panel.
+
+
+## Editing the Modal
+
+Modal comes with 1 slot, if you open the modal and you don't see the slot, you will need to add it.
+
+### Adding the slot ( if the slot is not already there )
+
+Once you select the modal, on the bottom bar where all the elements are, you will see 1 slot icons on the left, click on it and you should see the slot appear on the modal.
+
+Now your modal should contain 1 slot named `dialogcontent`
+
+### Adding content to the slot
+- You can add content to the modal by adding content to the slot.
+- `dialogcontent` slot is the content that will be displayed in the modal.
+  - You can add any content to the slot.
+  - You can add text, images, create cards, use divs, the slot is a normal div container.
+
+:::tip
+You can edit the content while the modal is open by adding Switching (Show / Hide Editor).
+:::
+
+### Adding a trigger to the modal
+
+Lets select the modal component and see the Elements Settings panel.
+
+On that Panel there will be a prop called `triggerSelector`, type there a .class or an #id from the element that you want to trigger the modal from.
+
+### Modal Component Props
+
+| Option           | Type                      | Default | Description |
+| ---------------- | ------------------------- | ------- | ----------- |
+| `showEditor` | `boolean` | `true` | Used internally to hide / show the modal in Etch Editor. |
+| `closeMethod` | `select` | `any` | The method to close the modal. |
+|   • `any` |  |  | Any (Allow all methods) |
+|   • `closerequest` |  |  | Close Request (Esc key or developer action) |
+|   • `none` |  |  | None (Only developer-defined actions) |
+| `triggerSelector` | `string` | `.open-dialog` | The selector of the trigger element, must be a .class or #id of an element on the page |
+| `dialogPlacement` | `select` | `center` | The placement of the modal. |
+|   • `center` |  |  | Positions the modal in the center of the screen |
+|   • `center-left` |  |  | Positions the modal to the left of the screen |
+|   • `center-right` |  |  | Positions the modal to the right of the screen |
+|   • `top-left` |  |  | Positions the modal to the top left of the screen |
+|   • `top-center` |  |  | Positions the modal to the top center of the screen |
+|   • `top-right` |  |  | Positions the modal to the top right of the screen |
+|   • `bottom-left` |  |  | Positions the modal to the bottom left of the screen |
+|   • `bottom-center` |  |  | Positions the modal to the bottom center of the screen |
+|   • `bottom-right` |  |  | Positions the modal to the bottom right of the screen |
+|   • `custom` |  | custom | removes any positioning and allows you to set the modal to a custom position with CSS or any other method |
+| `closeButtonType` | `select` | `icon` | The type of close button if any |
+|   • `Label` |  |  | Button with label only |
+|   • `Icon` |  |  | Button with icon only (SVG by default) |
+|   • `Label + Icon` |  |  | Button with label and Icon |
+|   • `none` |  |  | Without Close button |
+| `closeButtonLabel` | `string` | `Close` | Text for the close button |
+| `dialogId` | `string` | `etch-dialog` | The unique id of the Modal. This is required to have multiple modals on the same page, must be alphanumeric and unique. |
+| `maxWidth` | `string` | `400px` | The maximum width for the Modal, sets scoped variable inline |
+| `dialogBackgroundColor` | `string` | `white` | The background color for the Modal body, sets scoped variable inline |
+| `dialogBackdropColor` | `string` | `rgba(0, 0, 0, 0.5)` | The background color for the Modal backdrop, sets scoped variable inline |
+| `dialogPadding` | `string` | `1em` | Padding for the Modal |
+
+#### Close Method
+:::tip
+For more information about Close Method on Dialogs refer to: [Dialog closedby attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog#closedby)
+:::

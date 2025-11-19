@@ -29,7 +29,7 @@
     "hotspot.md",
     "lightbox.md",
     "map.md",
-    "modal.md",
+    "modal.mdx",
     "off-canvas.md",
     "read-more.md",
     "slide-menu.md",
@@ -46,9 +46,14 @@
     "intro-to-conditional-logic.md"
   ],
   "docs/dynamic-data": [
-    "dynamic-data-integration.md",
     "dynamic-data-intro.md",
     "dynamic-data-keys.md"
+  ],
+  "docs/dynamic-data/dynamic-data-integration": [
+    "option-dynamic-data-integration.md",
+    "post-dynamic-data-integration.md",
+    "term-dynamic-data-integration.md",
+    "user-dynamic-data-integration.md"
   ],
   "docs/dynamic-data/dynamic-data-modifiers": [
     "basic-modfiers.mdx",
@@ -68,7 +73,6 @@
     "image.md",
     "loop.md",
     "section.md",
-    "shortcode.mdx",
     "svg.md",
     "text.md"
   ],
