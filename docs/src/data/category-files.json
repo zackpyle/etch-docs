@@ -109,6 +109,9 @@
     "repeater-fields.md",
     "text-fields.md"
   ],
+  "docs/integrations/hooks": [
+    "hooks.md"
+  ],
   "docs/interface": [
     "attributes-bar.md",
     "content-manager.md",
