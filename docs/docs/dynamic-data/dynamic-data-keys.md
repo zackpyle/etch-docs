@@ -179,7 +179,7 @@ _Example: Loop categories for the current post:_
 
 **2) Access a specific item by index (zero-based)**
 
-- Us the `.at()` modifier to access a specific item.
+- Use the `.at()` modifier to access a specific item.
 
 _Example: Get the first category’s name for the current post:_
 
