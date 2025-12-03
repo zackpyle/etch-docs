@@ -31,7 +31,7 @@ $post_args = [
   'orderby' => 'date',
   'order' => 'DESC',
   'post_status' => 'publish',
-  'cat' => $cat // Use the current category's term_id
+  'cat' => $cat // Use the current category\'s term_id
 ];
 ```
 
