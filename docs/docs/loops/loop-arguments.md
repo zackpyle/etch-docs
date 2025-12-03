@@ -6,7 +6,7 @@ sidebar_position: 3
 
 # Loop Arguments
 
-Creating and saving a loop in Etch makes the loop configuration easily re-usable, but what happens when you need to change part of the configuration? Do you have to save a *new* instance of the loop?
+Creating and saving a loop in Etch makes the loop configuration easily re-usable, but what happens when you need to change part of the configuration? Do you have to save a _new_ instance of the loop?
 
 Nope! That would be tragic. And in Etch, we steer clear of tragic situations.
 
@@ -14,7 +14,7 @@ Nope! That would be tragic. And in Etch, we steer clear of tragic situations.
 
 Let's keep it super basic.
 
-You want to create a loop that loops through your blog posts. It looks something like this: 
+You want to create a loop that loops through your blog posts. It looks something like this:
 
 ```php
 $query_args = [
@@ -59,6 +59,7 @@ If you've done anything like this:
   color: var(--primary);
 }
 ```
+
 Then you're fully trained and licensed to use loop arguments!
 
 Check this out:
@@ -77,6 +78,58 @@ $query_args = [
 Look carefully at the `posts_per_page` line.
 
 See that `$count` token? That's a custom arg. And all you have to do to create an arg like that is literally write it in.
+
+## Default Argument Values
+
+What happens if you forget to pass a custom argument when using a loop? Or what if you want the argument to be optional?
+
+You can now declare default values using the `??` syntax (null coalescing operator). If the argument isn't passed when the loop is used, it will fall back to the default value.
+
+```php
+$query_args = [
+  'post_type' => 'post',
+  'posts_per_page' => $count ?? -1,
+  'orderby' => 'date',
+  'order' => 'ASC',
+  'post_status' => 'publish',
+  'ignore_sticky_posts' => 1
+];
+```
+
+In this example, if you use the loop without passing `$count`, it will default to `-1` (which in WordPress means "show all posts").
+
+```html
+<!-- No $count passed, defaults to -1 -->
+{#loop blog-posts as item}
+
+<!-- Explicit $count passed, uses 3 -->
+{#loop blog-posts($count: 3) as item}
+```
+
+:::warning Important: First Default Wins
+If you use the same argument multiple times in your loop configuration with different default values, **the first declared default takes precedence**.
+
+```php
+$query_args = [
+  'post_type' => 'post',
+  'posts_per_page' => $count ?? 1,
+  'offset' => $count ?? 0,
+];
+```
+
+In this case, if `$count` is not passed, the default value will be `1` (from the first declaration), not `0`. The `offset` will also receive `1` because the same argument resolves to a single value.
+
+If you need different defaults for different parameters, use separate argument names:
+
+```php
+$query_args = [
+  'post_type' => 'post',
+  'posts_per_page' => $count ?? 1,
+  'offset' => $offset ?? 0,
+];
+```
+
+:::
 
 ## Using Custom Args
 
@@ -105,9 +158,10 @@ You can pass more than one argument at a time. You just have to separate them wi
 
 ```html
 {#loop relatedPosts($count: 3, $post_id: this.id) as post}
-  <!-- loop item markup -->
+<!-- loop item markup -->
 {/loop}
 ```
+
 :::
 
 ## Custom Args + Dynamic Data
@@ -119,14 +173,15 @@ You might be thinking ahead and wondering if custom args can accept dynamic data
 The answer is, "Yes."
 
 Here's an example of a "Blog Posts" component where a blog post loop is inside of a component:
+
 ```html
 <component>
-{#loop recent_posts($count: props.numberOfPosts) as item}
+  {#loop recent_posts($count: props.numberOfPosts) as item}
   <div data-etch-element="flex-div">
     <h2>Insert your heading here...</h2>
     <p>Insert your text here...</p>
   </div>
-{/loop}
+  {/loop}
 </component>
 ```
 
@@ -144,7 +199,7 @@ Pretty awesome, right?
 
 A common pattern is a "Related Posts" section on single post templates. You can exclude the current post from the results by using a custom argument for the current post ID and passing it into your saved loop.
 
-1) Define your loop (e.g., name it `relatedPosts`) with a `$post_id` argument and exclude it via `post__not_in`:
+1. Define your loop (e.g., name it `relatedPosts`) with a `$post_id` argument and exclude it via `post__not_in`:
 
 ```php
 $query_args = [
@@ -156,18 +211,19 @@ $query_args = [
   'post__not_in' => [$post_id]
 ];
 ```
+
 **Note:** `post__not_in` must be an array, so that's why it is wrapped in brackets.
 
-2) Use the loop in your single post template, passing the current post’s ID into `$post_id`. In Etch, `this.id` refers to the current post’s ID in a singular context:
+2. Use the loop in your single post template, passing the current post’s ID into `$post_id`. In Etch, `this.id` refers to the current post’s ID in a singular context:
 
 ```html
 <ul class="related-posts-grid">
-{#loop relatedPosts($post_id: this.id) as post}
+  {#loop relatedPosts($post_id: this.id) as post}
   <li class="related-post-card">
     <h3>{post.title}</h3>
     <!-- other info here -->
   </li>
-{/loop}
+  {/loop}
 </ul>
 ```
 
@@ -199,16 +255,18 @@ Then, pass the current post’s first category ID (as an example) from the templ
 
 ```html
 <ul class="related-posts-grid">
-{#loop relatedPosts($post_id: this.id, $taxonomy: "category", $term_id: this.categories.at(0).id) as post}
+  {#loop relatedPosts($post_id: this.id, $taxonomy: "category", $term_id:
+  this.categories.at(0).id) as post}
   <li class="related-post-card">
     <h3>{post.title}</h3>
     <!-- other info here -->
   </li>
-{/loop}
+  {/loop}
 </ul>
 ```
 
 **Notes:**
+
 - We have to put quotes around the taxonomy value in the loop arg (e.g., `$taxonomy: "category"`) because in the PHP query, `$taxonomy` is a variable and must remain unquoted. If you quoted it there, it would become the literal string `$taxonomy`. Quoting the value at call time ensures the WP query receives a proper string (e.g., `category`).
 - `terms` must be an array. That's why `$term_id` is wrapped in brackets in the `tax_query`.
 - If you prefer to filter by term slug, set `'field' => 'slug'` and pass a slug value instead of an ID.
@@ -216,6 +274,6 @@ Then, pass the current post’s first category ID (as an example) from the templ
 
 ## More to come!
 
-In the future, you'll be able to set fallback values and do other really awesome things with custom arguments. There will also be a fancy dancy UI to make everything so much easier and ensure that you don't have to touch the code if you don't want to.
+There will also be a fancy dancy UI to make everything so much easier and ensure that you don't have to touch the code if you don't want to.
 
 Happy Etching!
