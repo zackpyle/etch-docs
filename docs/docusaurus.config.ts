@@ -16,6 +16,74 @@ const config: Config = {
 				content: '689BF4C41D86E4E4',
 			},
 		},
+		// Responsive modern favicon
+        {
+            tagName: 'link',
+            attributes: {
+                rel: 'icon',
+                href: '/img/favicon-light.svg',
+                sizes: 'any',
+                type: 'image/svg+xml',
+            }
+        },
+        {
+            tagName: 'link',
+            attributes: {
+                rel: 'icon',
+                href: '/img/favicon-dark.svg',
+                sizes: 'any',
+                type: 'image/svg+xml',
+                media: 'only screen and (prefers-color-scheme: dark)',
+            }
+        },
+        // Legacy fallback favicon
+        {
+            tagName: 'link',
+            attributes: {
+                rel: 'icon',
+                href: '/img/favicon.ico',
+                sizes: '32x32',
+            }
+        },
+        // iOS + PWA icons
+        {
+            tagName: 'link',
+            attributes: {
+                rel: 'apple-touch-icon',
+                href: '/img/apple-touch-icon.png',
+                sizes: '180x180',
+            }
+        },
+        {
+            tagName: 'link',
+            attributes: {
+                rel: 'apple-mobile-web-app-title',
+                content: 'Etch Docs',
+            }
+        },
+        {
+            tagName: 'link',
+            attributes: {
+                rel: 'apple-mobile-web-app-status-bar-style',
+                content: '#18181B',
+            }
+        },
+        {
+            tagName: 'link',
+            attributes: {
+                rel: 'manifest',
+                content: '/site.webmanifest',
+            }
+        },
+        // Safari Pinned Tab Icon
+        {
+            tagName: 'link',
+            attributes: {
+                rel: 'mask-icon',
+                href: '/img/safari-pinned-tab.svg',
+                color: '#18181B',
+            }
+        },
 	],
 
 	// Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
