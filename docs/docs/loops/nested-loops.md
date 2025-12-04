@@ -97,17 +97,20 @@ Suppose you have a list of authors, each with a list of books:
 
 ```json
 [
-	{
-		"name": "Jane Austen",
-		"books": [{ "title": "Pride and Prejudice" }, { "title": "Sense and Sensibility" }]
-	},
-	{
-		"name": "Mark Twain",
-		"books": [
-			{ "title": "Adventures of Huckleberry Finn" },
-			{ "title": "The Adventures of Tom Sawyer" }
-		]
-	}
+    {
+        "name": "Jane Austen",
+        "books": [
+            { "title": "Pride and Prejudice" },
+            { "title": "Sense and Sensibility" }
+        ]
+    },
+    {
+        "name": "Mark Twain",
+        "books": [
+            { "title": "Adventures of Huckleberry Finn" },
+            { "title": "The Adventures of Tom Sawyer" }
+        ]
+    }
 ]
 ```
 
