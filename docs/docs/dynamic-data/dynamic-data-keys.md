@@ -162,6 +162,7 @@ Etch allows you to extend Dynamic Data through filter hooks. This way, all main 
   For these cases, you can use bracket notation with quotes:
   - Keys with spaces: `{item["full name"]}`
   - Keys with dashes: `{item["post-meta"]}`
+  - Keys with underscores: `{this.acf_field}` or `{item["custom_value"]}`
   - Keys with numbers: `{item[0]}` (for arrays)
 
     Examples:
