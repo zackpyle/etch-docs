@@ -45,9 +45,9 @@ If you want to completely hide a panel so that it doesn't exist at all in the in
 
 ## Controlling Interface Visibility
 
-If you want to completely hide a panel so that it doesn't exist at all in the interface, you can toggle it off via the Panel Manager.
+If you want to temporary hide all the panels to get a clear view of the canvas preview, you can toggle the entire interface on and off via by clicking on the eye icon in the Settings Bar. Only the Settings Bar will remain visible.
 
-![Panel Manager](./img/hide-interface.avif)
+![Hide Interface Toggle](./img/hide-interface.avif)
 
 ## Workflow Adaptation
 
