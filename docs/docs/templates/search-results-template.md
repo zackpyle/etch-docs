@@ -70,18 +70,15 @@ Here's an example of a more complete search archive layout:
 
 ```html
 <main>
-  <section>
-    <div class="search-results">
+  <section data-etch-element="section" class="search">
+    <div data-etch-element="container" class="search__header">
+      <h1 class="search__title">Search results for: {url.parameter.s}</h1>
+    </div>
+    <div data-etch-element="container" class="search__results">
       {#loop mainQuery as item}
-        <article class="search-card">
-          <h3 class="search-card__title">
-            <a href="{item.permalink.relative}" class="search-card__link">
-              {item.title}
-            </a>
-          </h3>
-          <div class="search-card__description">
-            {item.excerpt}
-          </div>
+        <article data-etch-element="flex-div" class="search-card">
+          <h2 class="search-card__title"><a href={item.permalink.relative}>{item.title}</a></h2>
+          <div class="search-card__description">{item.excerpt}</div>
         </article>
       {/loop}
     </div>
