@@ -21,15 +21,7 @@ WP Grid Builder's pagination facet allows you to add pagination controls to your
 
 6. Click the **Advanced** tab
 7. Set the **Facet Slug** (e.g., "posts" or whatever you prefer - this will be used in the URL for pagination)
-8. **Important**: Take note of the **Generated CSS Class** for your facet (shown in the "Generated CSS Class" box). You'll need this in the next steps.
-
-![WP Grid Builder Advanced tab showing Facet Slug and Generated CSS Class](img/grid-builder-generated-class-squashed.webp)
-
 9. Click **Save**
-
-:::tip
-The Generated CSS Class is typically something like `wpgb-content-1`, `wpgb-content-2`, etc. This identifier is crucial for connecting the facet to your loop.
-:::
 
 ### Step 2: Configure Your Etch Loop
 
@@ -39,7 +31,7 @@ The Generated CSS Class is typically something like `wpgb-content-1`, `wpgb-cont
    ```php
    'wp_grid_builder' => 'wpgb-content-1'
    ```
-   Replace `wpgb-content-1` with the actual Generated CSS Class from Step 1.
+   Replace `wpgb-content-1` with whatever selector name you want to identify your loop with (e.g. `wpgb-content-posts`), but make sure that `wpgb-content-` remains the prefix.
 
 :::info
 The `wp_grid_builder` argument tells Etch which facet selector to use for identifying this loop on the page. This creates the connection between your loop and the pagination facet.
@@ -48,7 +40,7 @@ The `wp_grid_builder` argument tells Etch which facet selector to use for identi
 ### Step 3: Add the Facet Class to Your Loop Container
 
 1. In your template, locate the direct parent element of your loop
-2. Add the Generated CSS Class (e.g., `wpgb-content-1`) as a class to that parent element
+2. Add a CSS Class that matches the selector you defined in your loop (e.g., `wpgb-content-1`) as a class to that parent element.
 
 **Example:**
 
@@ -64,7 +56,7 @@ The `wp_grid_builder` argument tells Etch which facet selector to use for identi
 ```
 
 :::caution
-The facet class must be on the **direct parent** of your loop, not the loop itself (loops in etch are not elements and can't accept selectors). Placing the class on the parent is critical for WP Grid Builder to properly identify and update the content.
+The class must be on the **direct parent** of your loop, not the loop itself (loops in etch are not elements and can't accept selectors). Placing the class on the parent is critical for WP Grid Builder to properly identify and update the content.
 :::
 
 ### Step 4: Add the Pagination Shortcode
@@ -90,7 +82,7 @@ The facet class must be on the **direct parent** of your loop, not the loop itse
   {/loop}
 </div>
 
-[wpgb-facet id="123"]
+[wpgb-facet id="wpgb-content-1"]
 ```
 
 ## Complete Example
@@ -111,7 +103,7 @@ Here's a complete example of a paginated blog post loop:
     {/loop}
   </div>
   
-  [wpgb-facet id="123"]
+  [wpgb-facet id="wpgb-content-1"]
 </section>
 ```
 
