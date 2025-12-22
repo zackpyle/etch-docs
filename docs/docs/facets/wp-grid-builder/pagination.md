@@ -7,10 +7,6 @@ sidebar_position: 1
 
 WP Grid Builder's pagination facet allows you to add pagination controls to your Etch loops, enabling users to navigate through multiple pages of content. This integration works seamlessly with Etch loops by connecting the pagination facet to your loop's container.
 
-## Overview
-
-The pagination facet from WP Grid Builder provides a way to paginate content displayed in Etch loops. When configured correctly, clicking pagination controls will dynamically update the loop content without a full page reload, providing a smooth user experience.
-
 ## Setup Instructions
 
 ### Step 1: Create the Pagination Facet
