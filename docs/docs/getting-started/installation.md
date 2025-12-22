@@ -29,7 +29,7 @@ To use the Etch Theme with auto-updates enabled, you'll need to claim your free 
 
 ### Child Theme Setup (Recommended)
 
-We strongly recommend using a [child theme](/docs/etch-theme#child-theme-approach) to safely add your modifications without losing them on Etch theme updates.
+We strongly recommend using a [child theme](/getting-started/etch-theme#child-theme-approach) to safely add your modifications without losing them on Etch theme updates.
 
 You can download our free child theme starter here: [etch-child-theme on GitHub](https://github.com/Digital-Gravy/etch-child-theme/archive/refs/heads/main.zip)
 

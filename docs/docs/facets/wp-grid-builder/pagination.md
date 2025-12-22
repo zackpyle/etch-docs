@@ -85,7 +85,7 @@ The facet class must be on the **direct parent** of your loop, not the loop itse
 **Example:**
 
 ```html
-<div class="posts-container wpgb-content-1">
+<div class="posts-list wpgb-content-1">
   {#loop your-loop-name as item}
     <article>
       <h2>{item.title}</h2>

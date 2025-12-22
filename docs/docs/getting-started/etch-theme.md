@@ -22,7 +22,7 @@ The Etch theme provides the necessary hooks and structure for Auto Block Authori
 
 Your Etch Theme license key is required to enable auto-updates and access certain features.
 
-If you haven't already claimed your free license, head over to [etchwp.com/account/customer-dashboard/](https://etchwp.com/account/customer-dashboard/) and follow the [License Setup guide](/docs/installation#license-setup).
+If you haven't already claimed your free license, head over to [etchwp.com/account/customer-dashboard/](https://etchwp.com/account/customer-dashboard/) and follow the [License Setup guide](/getting-started/installation#license-setup).
 
 ## Child Theme Approach
 
