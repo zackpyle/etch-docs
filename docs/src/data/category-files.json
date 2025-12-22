@@ -76,6 +76,19 @@
     "svg.md",
     "text.md"
   ],
+  "docs/facets": [
+    "apply.md",
+    "filter.md",
+    "load.md",
+    "map.md",
+    "pagination.md",
+    "reset.md",
+    "search.md",
+    "sort.md"
+  ],
+  "docs/facets/wp-grid-builder": [
+    "pagination.md"
+  ],
   "docs/feature-flags": [
     "index.md"
   ],
@@ -158,7 +171,6 @@
     "post-content-slot.md",
     "search-results-template.md",
     "single-post-templates.md",
-    "tax-archive-templates.md",
     "template-manager.md"
   ],
   "docs/top-priorities": [
@@ -175,6 +187,7 @@
     "flex-recipes.md",
     "grid-recipes.md",
     "intro.md",
-    "miscellaneous-recipes.md"
+    "miscellaneous-recipes.md",
+    "pseudo-selector-recipes.md"
   ]
 }
