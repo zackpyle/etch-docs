@@ -86,8 +86,9 @@
     "search.md",
     "sort.md"
   ],
-  "docs/facets/wp-grid-builder": [
-    "pagination.md"
+  "docs/facets/third-party-facets": [
+    "wp-grid-builder.md",
+    "facetwp.md"
   ],
   "docs/feature-flags": [
     "index.md"
