@@ -87,8 +87,8 @@
     "sort.md"
   ],
   "docs/facets/third-party-facets": [
-    "wp-grid-builder.md",
-    "facetwp.md"
+    "facetwp.md",
+    "wp-grid-builder.md"
   ],
   "docs/feature-flags": [
     "index.md"
@@ -186,6 +186,7 @@
     "custom.md",
     "fade-recipes.md",
     "flex-recipes.md",
+    "gradients-recipes.md",
     "grid-recipes.md",
     "intro.md",
     "miscellaneous-recipes.md",
