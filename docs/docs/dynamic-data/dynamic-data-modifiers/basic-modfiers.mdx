@@ -326,7 +326,11 @@ The `.toBool()` method normalizes common truthy/falsey inputs into a strict bool
 **Returns:** array
 
 The `.pluck()` method extracts the value at a given property path from each element in an array of objects and returns those values as a new array. Similar to `array_column()` in PHP or `pluck()` in Laravel.
-- Pluck paths can be nested using dot notation (e.g., `"author.name"`) to get a nested property's values, so `.pluck("author.name")` on an array like `[ {"author": { "name": "John" } } ]` will return `["John"]`. 
+- Pluck paths can be nested using dot notation (e.g., `"author.displayName"`) to get a nested property's values, so `.pluck("author.displayName")` on an array like 
+  ```json
+  [ { "author": { "displayName": "John" } } ]
+  ``` 
+  will return `["John"]`. 
 - If the property does not exist for an element, `null` is used for that element.
 - If called on a non-array value, an empty array (`[]`) is returned.
 

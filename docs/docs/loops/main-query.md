@@ -88,7 +88,7 @@ Show all posts (WordPress convention: `-1` means “no limit”):
 
 Main Query loop items use the **same dynamic data system** as any other post loop in Etch.
 
-- Use `{item.title}`, `{item.excerpt}`, `{item.image.url}`, `{item.author.name}`, etc.
+- Use `{item.title}`, `{item.excerpt}`, `{item.image.url}`, `{item.author.displayName}`, etc.
 - For the full list of available keys, see [Dynamic Data Keys](/dynamic-data/dynamic-data-keys).
 - For an intro to how dynamic data works in general, see [Dynamic Data Intro](/dynamic-data/dynamic-data-intro).
 
@@ -119,5 +119,3 @@ Example:
 - [Loop Arguments](/loops/loop-arguments)
 - [Nested Loops](/loops/nested-loops)
 - [Dynamic Data Keys](/dynamic-data/dynamic-data-keys)
-
-
