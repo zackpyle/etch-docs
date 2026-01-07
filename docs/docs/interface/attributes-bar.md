@@ -15,7 +15,7 @@ Unlike traditional builders, Etch has a full attribute and selector system, not 
 
 ![Screenshot of the Attributes Bar in Etch](./img/attributes-bar.avif)
 
-You can access the Attributes Bar by selecting any element and pressing <kbd>Cmd</kbd> + <kbd>K</kbd> on Mac, or <kbd>Ctrl</kbd> + <kbd>K</kbd> on Windows/Linux.
+You can access the Attributes Bar by selecting any element and pressing <kbd>Cmd</kbd> + <kbd>Return</kbd> on Mac, or <kbd>Ctrl</kbd> + <kbd>Return</kbd> on Windows/Linux.
 
 You can also click the "+" icon in the header of the HTML, CSS, or Style panels.
 
