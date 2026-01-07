@@ -17,7 +17,7 @@ Users who are using Hostinger for their hosting are having unique issues that ar
 - WAF blocks plugin upload
 - WAF breaks copy/paste of components and JSON
 
-Some of these issues be temporarily solved by setting the WAF to "essentially off."
+If the errors you are seeing return a "403" then it's most likely a WAF issue. Some of these issues be temporarily solved by setting the WAF to "essentially off."
 
 We are currently trying to reach out to Hostinger and get in touch with a higher-level technical person on their team to investigate these issues. We hope they'll be responsive to our requests and help us find a solution.
 
