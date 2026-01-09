@@ -10,7 +10,7 @@
     "using-a-component-static.md"
   ],
   "docs/components/props": [
-    "prop-array.md",
+    "prop-array.mdx",
     "prop-boolean.md",
     "prop-image.md",
     "prop-object.md",
