@@ -5,7 +5,7 @@ sidebar_position: 10
 
 # Known Issues & Areas of Improvement
 
-Great software is never "done," and that's certainly true for software as young as Etch. We are committed to continuous improvement and transparency about the current limitations, bugs, and areas where we know things could be better. 
+Great software is never "done," and that's certainly true for software as young as Etch. We are committed to continuous improvement and transparency about the current limitations, bugs, and areas where we know things could be better.
 
 This page documents the most significant known issues and areas we're actively planning to improve. If you encounter a problem not listed here, please let us know so we can investigate and address it in future updates.
 
@@ -35,6 +35,6 @@ If you find partial selectors in your style manager, it's a sign that you should
 
 ## Improvement: Nested Components
 
-Components should not be nested directly inside of another component. Instead, they should be inserted via a [Slot](../components/prop-slot.md). Slots expose the nested component, the nested component's props, and nested component editing.
+Components should not be nested directly inside of another component. Instead, they should be inserted via a [Slot](../components/prop-slot.mdx). Slots expose the nested component, the nested component's props, and nested component editing.
 
 We're working on improving slots to support default content for undefined slots and other features to generally improve the extensibility and usability of slots to be the primary pathway for supporting nested components with no limitations.
