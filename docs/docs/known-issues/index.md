@@ -33,12 +33,6 @@ If you're a fast typist, you won't have any issues. If you're a slow typist and 
 
 If you find partial selectors in your style manager, it's a sign that you should stop using the HTML editor to add classes to elements. Instead, use the add attribute bar/workflow which allows you to type at any speed and doesn't require any debouncing or guessing.
 
-## Improvement: Nested Components
-
-Components should not be nested directly inside of another component. Instead, they should be inserted via a [Slot](../components/prop-slot.mdx). Slots expose the nested component, the nested component's props, and nested component editing.
-
-We're working on improving slots to support default content for undefined slots and other features to generally improve the extensibility and usability of slots to be the primary pathway for supporting nested components with no limitations.
-
 ## WIP: Mini GUI vs Styling Panels
 
 The Mini GUI / CSS Quick Actions bar is our new, streamlined way to style elements quickly and intuitively.
