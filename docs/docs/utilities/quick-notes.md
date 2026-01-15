@@ -7,9 +7,13 @@ sidebar_custom_props:
 
 # Quick Notes
 
-Quick Notes allows you to add developer notes to any element in the builder. These notes are visible when hovering over elements on the canvas, making it easy to leave reminders, instructions, or context for yourself or team members.
+Quick Notes allows you to add developer notes to any element in the Etch builder. These notes are visible when hovering over elements on the canvas, making it easy to leave reminders, instructions, or context for yourself or team members.
 
 This is one of two pathways for creating developer only notes. A "note" element will be coming in the future for adding long-form notes.
+
+:::note
+These notes will only show up in the Etch builder and not in Gutenberg. There will be dedicated way to display notes for clients in the future.
+:::
 
 ## Enabling Quick Notes
 
