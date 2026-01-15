@@ -131,6 +131,7 @@
   ],
   "docs/interface": [
     "attributes-bar.md",
+    "command-bar.md",
     "content-manager.md",
     "css-panel.md",
     "elements-bar.md",
