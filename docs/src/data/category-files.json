@@ -179,7 +179,8 @@
     "index.md"
   ],
   "docs/utilities": [
-    "functions.md"
+    "functions.md",
+    "quick-notes.md"
   ],
   "docs/utilities/recipes": [
     "accessibility-recipes.md",

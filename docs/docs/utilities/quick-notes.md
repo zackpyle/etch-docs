@@ -1,6 +1,8 @@
 ---
 title: Quick Notes
 sidebar_position: 20
+sidebar_custom_props:
+  badge: "New"
 ---
 
 # Quick Notes
