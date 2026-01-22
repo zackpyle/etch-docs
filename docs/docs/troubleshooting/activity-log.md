@@ -9,29 +9,11 @@ Etch includes an activity log that records structured information about plugin o
 
 ## How It Works
 
-The activity log captures one structured event per request. It records:
-- What operation was attempted
-- Whether it succeeded or failed
-- How long it took
-- Relevant context (like which post was being edited)
-
-### Smart Sampling
-
-To keep the log file manageable:
-- **Errors are always logged** — so problems are never missed
-- **Successful requests are sampled** — only ~1% are logged in production
-- **Debug mode logs everything** — when you enable `ENABLE_DEBUG_LOG`
-
-### Automatic Rotation
-
-The log automatically rotates when it reaches 5MB:
-- Old logs are kept as `.1`, `.2`, `.3` suffixes
-- The oldest is deleted when a new one is created
-- Maximum ~20MB of logs on disk at any time
+The activity log captures one event per request — what operation was attempted, whether it succeeded or failed, and relevant context. Errors are always logged so problems are never missed, while successful requests are sampled to keep file sizes manageable. The log automatically rotates so it won't fill your disk.
 
 ## What Data Is Collected
 
-The activity log records operational data — things like request URLs, plugin version, timing, and success/failure status. It does not collect passwords, personal information, post content, or authentication tokens.
+The activity log records operational data — things like request URLs, plugin version, timing, and success/failure status. It does not collect passwords, personal information, or authentication tokens.
 
 This feature is evolving as we refine our support workflows, so the specific data points logged may change over time.
 
@@ -41,6 +23,8 @@ The activity log is stored at:
 ```
 wp-content/uploads/etch/activity.log
 ```
+
+You can safely delete these files if you want to clear your logs.
 
 ## Security
 
@@ -89,5 +73,3 @@ If we ask for your activity log during troubleshooting:
 1. Navigate to `wp-content/uploads/etch/` via FTP or file manager
 2. Download `activity.log` (and any `.log.1`, `.log.2` files if they exist)
 3. Share the files through the support channel
-
-The log contains JSON-formatted events separated by blank lines, making them easy for us to analyze.
