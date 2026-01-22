@@ -64,7 +64,7 @@
     "condition.md",
     "container.md",
     "div.md",
-    "dynamic-image.md",
+    "dynamic-image.mdx",
     "element.mdx",
     "empty-elements.md",
     "flex-div.md",
@@ -178,6 +178,9 @@
   ],
   "docs/top-priorities": [
     "index.md"
+  ],
+  "docs/troubleshooting": [
+    "activity-log.md"
   ],
   "docs/utilities": [
     "functions.md",
