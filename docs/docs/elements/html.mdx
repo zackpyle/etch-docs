@@ -40,10 +40,18 @@ Note that the HTML element is a self-closing element. Write it like `<etch:html 
 The HTML Element has two attributes:
 
 - **content**: This is where you put the dynamic data or prop key.
-- **unsafe**: Boolean attribute that accepts `true` or `false`. The default is `false`, which means Etch sanitizes the HTML. If you want to allow the HTML to pass through unsanitized, set this value to `true`.
+- **unsafe**: Boolean attribute that accepts `true` or `false`. The default is `false`.
+
+### The `unsafe` Attribute
+
+When `unsafe="false"` (the default), the HTML is sanitized but still allows "safe" tags commonly used in rich content. This includes tags like `<p>`, `<strong>`, `<em>`, `<b>`, `<u>`, `<a>`, `<ul>`, `<ol>`, `<li>`, `<blockquote>`, and more. Technically, it allows any HTML that WordPress permits in post content (via `wp_kses_allowed_html('post')`).
+
+When `unsafe="true"`, no sanitization occurs. All HTML passes through, including potentially dangerous tags like `<script>` and `<iframe>`.
+
+**In most cases, `unsafe="false"` is what you want.** If you're rendering rich content from dynamic data (like a WYSIWYG field), the default setting will display your formatting while keeping things secure.
 
 :::danger Security Alert
-Setting the `unsafe` attribute to `true` has major security implications. You should only do this under tightly controlled circumstances. If you don't understand the implications, do not set to `true`.
+Setting the `unsafe` attribute to `true` has major security implications. It should be reserved for very specific edge cases where you need to render scripts or iframes. Only use this if you fully trust the source of the HTML content and understand the XSS risks involved.
 :::
 
 Here's an example of the final string:
