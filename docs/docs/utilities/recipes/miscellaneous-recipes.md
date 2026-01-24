@@ -20,8 +20,8 @@ Applies concentric border radius and enhances padding for nested elements, ensur
 - **is-bg**:
 Turns any element into a background element and automatically handles the layering of multiple background elements.
 
-- **brace-both**:
-Outputs escaped curly braces `{"{"}{"}"}`  for use in dynamic data contexts where literal braces are needed.
+- **brace-contain**:
+Outputs escaped curly braces with an empty interior `{""}` for use in dynamic data contexts where you need to wrap content in literal braces.
 
 - **brace-left**:
 Outputs an escaped left curly brace `{"{"}` for use in dynamic data contexts where a literal opening brace is needed.
