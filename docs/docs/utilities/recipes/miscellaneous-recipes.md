@@ -20,6 +20,9 @@ Applies concentric border radius and enhances padding for nested elements, ensur
 - **is-bg**:
 Turns any element into a background element and automatically handles the layering of multiple background elements.
 
+- **skip-link**:
+Styles an element as an accessible skip link that is hidden off-screen until focused. When the user tabs to the link, it slides into view for keyboard navigation.
+
 - **brace-contain**:
 Outputs escaped curly braces with an empty interior `{""}` for use in dynamic data contexts where you need to wrap content in literal braces.
 

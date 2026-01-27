@@ -107,6 +107,7 @@
     "passthrough.md"
   ],
   "docs/how-to/basics": [
+    "how-to-install-custom-fonts.md",
     "how-to-set-content-width.md",
     "how-to-set-global-heading-styles.md",
     "how-to-set-global-section-styles.md"
