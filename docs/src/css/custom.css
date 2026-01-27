@@ -313,3 +313,8 @@ td p:last-child {
   color: var(--ifm-color-emphasis-400);
   border-color: var(--ifm-color-emphasis-200);
 }
+
+/* Prevent inline code from wrapping */
+code {
+  text-wrap: nowrap;
+}

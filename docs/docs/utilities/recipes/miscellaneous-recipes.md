@@ -17,11 +17,11 @@ Limits multi-line content to a maximum number of lines with an ellipsis for over
 - **concentric-radius**: 
 Applies concentric border radius and enhances padding for nested elements, ensuring child elements have a unified rounded appearance and remain visually cohesive.
 
+- **font-face**:
+Outputs a complete `@font-face` declaration template for adding custom fonts. Includes placeholders for font family name, file path, style, weight, and uses `font-display: swap` for optimal loading.
+
 - **is-bg**:
 Turns any element into a background element and automatically handles the layering of multiple background elements.
-
-- **skip-link**:
-Styles an element as an accessible skip link that is hidden off-screen until focused. When the user tabs to the link, it slides into view for keyboard navigation.
 
 - **brace-contain**:
 Outputs escaped curly braces with an empty interior `{""}` for use in dynamic data contexts where you need to wrap content in literal braces.

@@ -10,3 +10,5 @@ Accessibility recipes help you create more inclusive and accessible user experie
 - **clickable-parent**: Makes any element group clickable and hoverable by expanding the clickable area of a child link to the entire parent element.
 
 - **focus-parent**: Used in conjunction with Clickable Parent, this recipe removes focus styles from the child link and adds the focus styles to the parent.
+
+- **skip-link**: Styles an element as an accessible skip link that is hidden off-screen until focused. When the user tabs to the link, it slides into view for keyboard navigation.
