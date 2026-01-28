@@ -8,9 +8,9 @@ sidebar_position: 50
 ![Screenshot of Selector Pills in Etch](./img/selector-pill.avif)
 
 
-Any time you add a valid selector in Etch, that selector will show up as a selector pill on that element in both the Style Panel as well as the CSS Editor. 
+Any time you add a valid selector in Etch, that selector will show up as a selector pill on that element in the CSS Editor. 
 
-Whenever the pill for a selector is selected, styles you add will be applied to that selector. Styles can be added with the **CSS Editor** the **Styles Panel**. Your styles will always be bi-directionally synced, so there's no tradeoffs to either workflow. You can even mix and match how you approach styling.
+Whenever the pill for a selector is selected, styles you add will be applied to that selector. Styles can be added with the **CSS Editor**.
 
 You can **rename selectors** by double clicking the pill or by opening the Style Manager and editing the selector.
 

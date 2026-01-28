@@ -17,7 +17,7 @@ Unlike traditional builders, Etch has a full attribute and selector system, not 
 
 You can access the Attributes Bar by selecting any element and pressing <kbd>Cmd</kbd> + <kbd>Return</kbd> on Mac, or <kbd>Ctrl</kbd> + <kbd>Return</kbd> on Windows/Linux.
 
-You can also click the "+" icon in the header of the HTML, CSS, or Style panels.
+You can also click the "+" icon in the header of the HTML or CSS panels.
 
 ![Screenshot of the Attributes Bar in Etch](./img/trigger-attribute-bar.avif)
 
@@ -99,4 +99,4 @@ In some cases it's very convenient to create selectors like this, but in other c
 
 ## Styling Selectors
 
-Styling in Etch is based on the [Selector Pill](selector-pills) that's currently selected. You can style them with the CSS editor the Styles panel. Your styles will always be bi-directionally synced, so there's no tradeoffs to either workflow. You can even mix and match how you approach styling.
+Styling in Etch is based on the [Selector Pill](selector-pills) that's currently selected. You can style them with the CSS editor. 

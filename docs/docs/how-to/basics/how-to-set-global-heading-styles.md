@@ -37,7 +37,7 @@ Etch will have a dedicated global styles manager in the future with a preview pa
 
 For now, though, the best way to add your global styles (especially if you don't want to write CSS) is to close the style manager and add each heading level to the canvas.
 
-When you click on a heading element, you'll see the [Selector Pill](../../interface/selector-pills.md) available. Click it and use the [Style Panel](../../interface/style-panel.md) or [CSS Panel](../../interface/css-panel.md) to add your styles.
+When you click on a heading element, you'll see the [Selector Pill](../../interface/selector-pills.md) available. Click it and use the [CSS Panel](../../interface/css-panel.md) to add your styles.
 
 Using this method will allow you to see exactly what you're doing as you work.
 
