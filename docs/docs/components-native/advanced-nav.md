@@ -2,9 +2,13 @@
 title: Nav - Advanced
 sidebar_position: 110
 sidebar_custom_props:
-  badge: "Planned"
+  badge: "WIP"
 ---
 
 # Advanced Nav
 
-This element is not currently available, but is planned. Check back soon.
+This component is waiting on our Components API, but we've built two working versions that you can quickly paste into your site.
+
+Simple JSON Loop Driven Navigation: https://patterns.etchwp.com/layouts/navigation/
+
+Manual Flexible Navigation w/ Mega Menu Support: https://patterns.etchwp.com/layouts/flex-nav/
