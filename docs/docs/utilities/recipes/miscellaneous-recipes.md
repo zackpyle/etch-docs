@@ -31,5 +31,3 @@ Outputs an escaped left curly brace `{"{"}` for use in dynamic data contexts whe
 
 - **brace-right**:
 Outputs an escaped right curly brace `{"}"}` for use in dynamic data contexts where a literal closing brace is needed.
-
-
