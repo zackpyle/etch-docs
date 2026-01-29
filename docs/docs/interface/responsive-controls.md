@@ -1,8 +1,6 @@
 ---
 title: Responsive Controls
 sidebar_position: 110
-sidebar_custom_props:
-  badge: "WIP"
 ---
 
 # Responsive Controls
