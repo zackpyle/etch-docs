@@ -64,7 +64,7 @@ At a minimum, you might include a heading with a link inside it. The heading wou
 
 This will output a list of search result titles, each linked to its corresponding post or page.
 
-When you first create a Search Results template in Etch, the generated markup is typically just a `<main>` element with a `{@post-content}` slot inside it. This needs to be replaced with your custom search layout when using `mainQuery`.
+When you first create a Search Results template in Etch, the generated markup is typically just a `<main>` element with a `{@post-content}` element inside it. This needs to be replaced with your custom search layout when using `mainQuery`.
 
 Here's an example of a more complete search archive layout:
 
