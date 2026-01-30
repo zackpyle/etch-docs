@@ -51,7 +51,7 @@ With the filter created, now you can call it in the builder.
 #### Inside a loop
 If you are using inside a loop you can call it this way:
 ```html
-{#loop temrs as item}
-{item.term_custom_data.field_name_1}
+{#loop terms as item}
+    {item.term_custom_data.field_name_1}
 {/loop}
 ```
