@@ -31,3 +31,6 @@ Outputs an escaped left curly brace `{"{"}` for use in dynamic data contexts whe
 
 - **brace-right**:
 Outputs an escaped right curly brace `{"}"}` for use in dynamic data contexts where a literal closing brace is needed.
+
+- **footer-reveal**:
+Creates a "reveal" effect where the footer is sticky at the bottom and appears to be revealed as the main content scrolls away. Automatically styles the main element with proper z-index and shadow for the effect. Must be used in a template on a footer element that is adjacent to the main tag.
