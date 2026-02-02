@@ -43,6 +43,5 @@ You can choose from the available flags below. Their default state is listed.
 |-----------|-------------|---------|
 | `ENABLE_DEBUG_LOG` | Enables debug logging | `off` |
 | `ENABLE_SERVER_TIMING` | Enables server timing headers for performance monitoring | `off` |
-| `ENABLE_WAF_COMPATIBILITY_WORKAROUND` | Improves compatibility with WAF that don't allow `PUT`, `PATCH` or `DELETE` requests | `on`
 | `RETURN_ACF_DYNAMIC_DATA` | Enables returning data based on the ACF field settings. | `off` |
 | `ENABLE_WAF_BLOCK_REQUEST_WORKAROUND` | Improve compatibility with Hostinger WAF that block the save request. | `off` |
