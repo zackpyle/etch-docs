@@ -144,6 +144,7 @@
   ],
   "docs/interface": [
     "attributes-bar.md",
+    "canvas-color-scheme.md",
     "command-bar.md",
     "content-manager.md",
     "css-panel.md",
