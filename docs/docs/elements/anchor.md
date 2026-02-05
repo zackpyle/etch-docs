@@ -24,7 +24,7 @@ If you are triggering an on-page event, like firing a modal or advancing slides 
 
 Anchors can be transformed into buttons by changing the HTML tag, but you should remove any anchor-based attributes when you do this.
 
-Buttons can also be added by adding a Text, Div, or Flex Div element and changing the tag to `<button>`. Doing this will save you the step of having to remove the link attributes.
+Buttons can also be added by adding a Text or Div element and changing the tag to `<button>`. Doing this will save you the step of having to remove the link attributes.
 
 We did not include a literal Button element in Etch for two big reasons:
 

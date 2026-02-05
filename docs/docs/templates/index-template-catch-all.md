@@ -44,7 +44,7 @@ Open Etch, navigate to the Template Manager, and click "edit" on the Index templ
 
 1. Create a header and save it as a component.
 2. Create a footer and save it as a component.
-3. Add a Flex Div between the header and footer components and change the HTML tag to `main`.
+3. Add a Div between the header and footer components and change the HTML tag to `main`.
 4. Add a Content Slot element.
 5. Hit save.
 
