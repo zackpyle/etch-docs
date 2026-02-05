@@ -65,7 +65,9 @@ For our blog post card situation, we'd add the following JSON to our Object Prop
 {
     "title": "Title of the Post",
     "featuredImage": "[url-to-sample-image]",
-    "permalink.relative": "#"
+    "permalink": {
+        "relative": "#"
+    }
 }
 ```
 
