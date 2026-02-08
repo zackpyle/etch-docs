@@ -20,3 +20,5 @@ Flex recipes provide utility patterns for working with CSS Flexbox layouts in Et
 - **center-top**: Horizontally centers items at the top, with centered text.
 
 - **center-bottom**: Horizontally centers items at the bottom, with centered text.
+
+- **flex-grid**: Creates a responsive flex-based grid with configurable columns. Uses `--columns` to set column count (default 3), `--gap` for spacing, and `--stretch` to control whether items stretch. Includes built-in responsive breakpoints that reduce columns at 900px and 600px.
