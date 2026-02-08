@@ -10,14 +10,19 @@ The HTML Element is used in dynamic data situations (e.g. component/template aut
 
 ## Adding the HTML Element
 
-There are two ways to add the HTML Element:
+There are three ways to add the HTML Element:
 
-1. You can click the icon for it when editing a component or a template.
-2. You can write it manually in the HTML editor.
+1. **Convert an existing element** (recommended): Right-click any element and select "Convert to Raw HTML"
+2. Click the icon for it when editing a component or a template
+3. Write it manually in the HTML editor
 
-:::note
-Since the HTML Element is most useful when working with components and templates, we've only added it to the Elements Bar in these contexts.
-:::
+### Converting an Existing Element to Raw HTML
+
+The easiest way to use the HTML Element is to convert an existing element. Right-click on any element in the builder and select "Convert to Raw HTML" from the context menu.
+
+![Convert to Raw HTML](img/etch-convert-to-raw-html.png)
+
+This is the recommended approach because it preserves your element's structure and allows Etch to properly parse the HTML content.
 
 ### Adding the HTML Element in the Component Editor
 
@@ -25,7 +30,11 @@ Since the HTML Element is most useful when working with components and templates
 
 When editing a component or template, you'll see a purple HTML element icon. Click this icon to add the HTML Element to your component.
 
-### Adding the HTML Element in the Code Editor'
+:::note
+Since the HTML Element is most useful when working with components and templates, we've only added it to the Elements Bar in these contexts.
+:::
+
+### Adding the HTML Element in the Code Editor
 
 Even though the icon for the HTML Element only shows up in the component editor, the element will function anywhere and can be used anywhere. You just have to write it manually to create it, since it's not a commonly used element outside of components/templates.
 
@@ -41,6 +50,14 @@ The HTML Element has two attributes:
 
 - **content**: This is where you put the dynamic data or prop key.
 - **unsafe**: Boolean attribute that accepts `true` or `false`. The default is `false`.
+
+### Rich Text Content
+
+When using the HTML Element to display rich text content (from a WYSIWYG field, for example), make sure the parent element's tag is set to `div`. Rich text content produces its own block-level HTML tags like `<p>`, `<h2>`, `<ul>`, etc., so the parent must be a container element that can hold these tags.
+
+:::danger Use a div for rich text
+If you place rich text inside an element with a tag like `<p>` or `<span>`, you'll end up with invalid HTML (e.g., a paragraph inside a paragraph). Always use a `div` or other appropriate container element as the parent.
+:::
 
 ### The `unsafe` Attribute
 
