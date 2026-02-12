@@ -3,6 +3,8 @@ title: Comparison Modifiers
 sidebar_position: 60
 ---
 
+import VersionBadge from '@site/src/components/VersionBadge/VersionBadge';
+
 # Comparison Modifiers
 
 Comparison modifiers can be applied to custom data just like basic modifiers.  
@@ -13,20 +15,19 @@ They can be used as simple true/false checks, or you can override the true and f
 One of the most powerful features of comparison modifiers is their ability to return **custom values** based on the result of a comparison.
 By default, they return a boolean value (`true` or `false`), but you can override these to return any value you choose for either outcome.
 
-This is the way to do **inline “if/else” conditional logic** in Etch.
-Because `{#if}` blocks can’t be used inline (for example, inside an attribute value), comparison modifiers let you conditionally return one value or another right where you need it.
+This is the way to do **inline "if/else" conditional logic** in Etch.
+Because `{#if}` blocks can't be used inline (for example, inside an attribute value), comparison modifiers let you conditionally return one value or another right where you need it.
 
 This allows you to create **dynamic content that adapts to your data**. For example, conditionally adding CSS classes, displaying alternate text, or adjusting attributes based on specific conditions.
 
 ### Example: Conditional CSS Classes Based on Product Price
 
-Suppose you have a product loop, and you want to assign different CSS classes depending on each product’s price:
+Suppose you have a product loop, and you want to assign different CSS classes depending on each product's price:
 
 * Products with a price **greater than 10** should receive the class `product--expensive`.
 * Products priced at **10 or less** should receive the class `product--affordable`.
 
-Without comparison modifiers, you’d have to use multiple conditionals and duplicate markup:
-
+Without comparison modifiers, you'd have to use multiple conditionals and duplicate markup:
 ```html
 {#loop products as product}
   {#if product.price > 10}
@@ -44,7 +45,6 @@ Without comparison modifiers, you’d have to use multiple conditionals and dupl
 
 With comparison modifiers, you can handle both cases in one clean block of markup using `.greater()` with custom true and false values.<br/>
 Making your templates **more concise and easier to maintain**:
-
 ```html
 {#loop products as product}
   <div class="{product.price.greater(10, 'product--expensive', 'product--affordable')}">
@@ -90,6 +90,15 @@ Making your templates **more concise and easier to maintain**:
         <a href="#includes">More Details</a>
       </td>
       <td><code>user.userRoles = ["author", "editor"]</code><br /><br /><code>&#123;user.userRoles.includes('editor')&#125;</code> → <code>true</code></td>
+    </tr>
+    <tr>
+      <td><code>.intersects()</code></td>
+      <td>
+        Checks if two *arrays* have any elements in common.<br/>
+        <a href="#intersects">More Details</a>
+        <VersionBadge version="1.1.0" style={{marginBottom: 0}}/>
+      </td>
+      <td><code>userRoles = ["author", "editor"]</code><br /><br /><code>&#123;userRoles.intersects(["admin", "editor"])&#125;</code> → <code>true</code></td>
     </tr>
     <tr>
         <td><code>.less()</code></td>
@@ -147,7 +156,7 @@ Making your templates **more concise and easier to maintain**:
 
 ## Detailed Modifier Reference
 
-Below is a more detailed disriptiopn of the above modifiers.
+Below is a more detailed description of the above modifiers.
 
 ### `.startsWith()`
 **Returns:** boolean (`true`/`false`) or custom true/false values
@@ -221,6 +230,41 @@ The `.includes()` method checks whether a string contains a given substring or a
   - `{item.value.includes("test")}` → `false`
   - `{item.value.includes("bar", "Yes", "No")}` → `"Yes"`
   - `{item.value.includes("baz", "Yes", "No")}` → `"No"`
+
+---
+
+### `.intersects()`
+
+<VersionBadge version="1.1.0" />
+
+**Returns:** boolean (`true`/`false`) or custom true/false values
+
+The `.intersects()` method checks if two arrays have any elements in common. The check requires exact element matches and is case-sensitive for string values.
+
+| Argument | Type   | Default | Description                          |
+| -------- | ------ | ------- | ------------------------------------ |
+| `array`  | array  | —       | Array to check for common elements   |
+| `trueValue` | any    | `true`  | Value to return if the check is true  |
+| `falseValue` | any   | `false` | Value to return if the check is false |
+
+#### Examples:
+- value = `["author", "editor", "contributor"]`
+  - `{item.value.intersects(["editor", "admin"])}` → `true`
+  - `{item.value.intersects(["admin", "moderator"])}` → `false`
+  - `{item.value.intersects(["author"])}` → `true`
+  - `{item.value.intersects([])}` → `false`
+  - `{item.value.intersects(["editor"], "Has Permission", "No Permission")}` → `"Has Permission"`
+  - `{item.value.intersects(["admin"], "Has Permission", "No Permission")}` → `"No Permission"`
+
+#### Use Case Example:
+Check if a user has any of the required roles:
+```html
+{#loop users as user}
+  <div class="{user.roles.intersects(['admin', 'moderator'], 'user--privileged', 'user--standard')}">
+    {user.name}
+  </div>
+{/loop}
+```
 
 ---
 
