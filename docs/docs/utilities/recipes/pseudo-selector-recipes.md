@@ -19,3 +19,5 @@ Pseudo selector recipes provide utility patterns for working with CSS pseudo-cla
 
 - **:hover, :focus-visible**: Creates a combined selector for both `:hover` and `:focus-visible` states. Useful when you want the same styling for both hover and keyboard focus states.
 
+- **hover-exclude-touch**: Creates a media query that only applies styles on devices with a mouse/trackpad, excluding touch devices. This prevents hover effects from being triggered on mobile/touch devices where hover states can cause usability issues.
+
