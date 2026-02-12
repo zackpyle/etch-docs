@@ -24,9 +24,6 @@ Your Etch Theme license key is required to enable auto-updates and access certai
 
 If you haven't already claimed your free license, head over to [etchwp.com/account/customer-dashboard/](https://etchwp.com/account/customer-dashboard/) and follow the [License Setup guide](/getting-started/installation#license-setup).
 
-## Child Theme Approach
-
-To make custom modifications to Etch without losing them on theme updates, use a child theme. This is the recommended approach for all customizations.
 
 ## Additional Insights
 
