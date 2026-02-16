@@ -67,7 +67,7 @@
     "user-dynamic-data-integration.md"
   ],
   "docs/dynamic-data/dynamic-data-modifiers": [
-    "basic-modfiers.mdx",
+    "basic-modifiers.mdx",
     "comparison-modifiers.mdx"
   ],
   "docs/elements": [
@@ -167,6 +167,9 @@
     "looping-attachments.md",
     "main-query.md",
     "nested-loops.md"
+  ],
+  "docs/migration-guides": [
+    "v1-migration.md"
   ],
   "docs/responsive-development": [
     "container-queries.md",

@@ -64,7 +64,7 @@ Prefix the key with `!` to invert the boolean.
 ```
 
 #### Check if a post has a specific category
-You can also use data modifiers in conditions. For example, you can check a post's assigned category terms without the need for looping by combining [.pluck()](/dynamic-data/dynamic-data-modifiers/basic-modfiers#pluck) and [.includes()](/dynamic-data/dynamic-data-modifiers/comparison-modifiers#includes).
+You can also use data modifiers in conditions. For example, you can check a post's assigned category terms without the need for looping by combining [.pluck()](/dynamic-data/dynamic-data-modifiers/basic-modifiers#pluck) and [.includes()](/dynamic-data/dynamic-data-modifiers/comparison-modifiers#includes).
 
 ```html
 {#if this.categories.pluck("name").includes("ABCs")}
