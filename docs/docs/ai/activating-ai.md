@@ -32,7 +32,7 @@ You'll also need to add a payment method to your OpenAI account. API usage is bi
 6. Click **Save**
 
 
-The AI assistant is now available in the builder.
+The AI assistant is now available in the builder. Once activated, the AI panel will appear automatically. You can show or hide it at any time like any other panel in Etch — it doesn't need to be visible to stay enabled.
 
 ## Future LLM Support
 
