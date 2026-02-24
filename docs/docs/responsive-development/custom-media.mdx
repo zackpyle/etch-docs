@@ -56,8 +56,10 @@ Once defined, you can reference a custom media name anywhere you would normally 
 Global aliases are best for viewport-driven concerns like overall layout changes or top-level element behavior.
 
 ```css
-@media (--small-screen) {
-	.my-component {
+.my-component {
+	...
+	
+	@media (--small-screen) {
 		...
 	}
 }
@@ -77,9 +79,7 @@ Component-specific aliases are ideal when you want a component to respond to the
 	}
 
 	@container (--news-card-wide) {
-		.news-card {
-			grid-template-columns: 160px 1fr;
-		}
+		grid-template-columns: 160px 1fr;
 	}
 }
 ```
