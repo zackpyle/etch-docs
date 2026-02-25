@@ -21,8 +21,8 @@ Bug fixes, general improvements, and minor features are not listed here. The pur
 
 | Feature                        | Description                                                                                      |
 |--------------------------------|--------------------------------------------------------------------------------------------------|
-| **Maximize&nbsp;Stability** | Architecture updates, test coverage, etc. |
 | **Native AI** | Agent-powered workflow |
+| **Expanded Component Functionality** | Groups, Repeaters |
 | **Components API** | A way for 3rd party devs to create/register native Etch elements for custom functionality and for internal use for creating Etch dynamic elements. |
 
 ## High Priority Items (Soon)
@@ -32,11 +32,9 @@ Bug fixes, general improvements, and minor features are not listed here. The pur
 | **PHP Authoring** | PHP authoring inside the HTML editor |
 | **Native Components** | Prioritization of our native [components (native)](../components-native/overview). |
 | **Recipes** | Custom/importable/exportable code snippets for maximum development efficiency. |
-| **History States** | Proper undo/redo functionality & selectable history states. |
 | **Facets/Filters** | Facets and filters for loops. |
 | **Loop Through External API** | External API support for loops. |
 | **Shortcuts** | Customizable shortcut architecture |
-| **Pattern Library** | A way to save, name, categorize, and import/export patterns for easy insertion throughout a project. This includes support for third party pattern libraries. |
 
 
 ## Community Feedback
