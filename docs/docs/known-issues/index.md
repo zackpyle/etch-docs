@@ -37,12 +37,6 @@ If you find partial selectors in your style manager, it's a sign that you should
 
 The Mini GUI / CSS Quick Actions bar is our new, streamlined way to style elements quickly and intuitively.
 
-The current version is still V1 POC (proof-of-concept), but it has already proven significantly more effective and enjoyable to use than the traditional styling panels.
+The current version is still V1, but it has already proven significantly more effective and enjoyable to use than the traditional styling panels.
 
-We have an exciting roadmap of features and refinements planned for the Mini GUI — it will soon become the primary (and eventually only) way to handle styling in Etch.
-
-Important note for users:
-
-Please avoid using the classic styling panels going forward. They represent an older Era 3 UX pattern, are currently limited to desktop styling only, and will be completely removed in the near future.
-
-Thanks for your patience as we transition to this much better workflow!
+We have an exciting roadmap of features and refinements planned for the Mini GUI, so stay tuned!
