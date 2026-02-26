@@ -90,7 +90,7 @@ $query_args = [
   <div data-etch-element="container">
     <div class="posts-grid facetwp-template">
       {#loop blog-posts as item}
-        <article data-etch-element="flex-div">
+        <article>
           {#if item.featuredImage}
             <img src="{item.featuredImage.url}" alt="{item.featuredImage.alt}" />
           {/if}

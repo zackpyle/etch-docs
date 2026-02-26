@@ -81,9 +81,9 @@ Here's the code for a blog post grid. The first question is, "What do I need to 
 
 ```html
 <ul data-etch-element="container">
-  <li data-etch-element="flex-div">
-    <article data-etch-element="flex-div">
-      <figure data-etch-element="flex-div"><img src="https://placehold.co/600x400" alt="" /></figure>
+  <li>
+    <article>
+      <figure><img src="https://placehold.co/600x400" alt="" /></figure>
       <h2>Insert your heading here...</h2>
       <p>Insert your text here...</p>
       <a href="https://digitalgravy.co/">Click me</a>
@@ -107,9 +107,9 @@ Your HTML will now look like this:
 <ul data-etch-element="container">
   // highlight-next-line
   {#loop loop-name as item}
-    <li data-etch-element="flex-div">
-      <article data-etch-element="flex-div">
-        <figure data-etch-element="flex-div"><img src="https://placehold.co/600x400" alt="" /></figure>
+    <li>
+      <article>
+        <figure><img src="https://placehold.co/600x400" alt="" /></figure>
         <h2>Insert your heading here...</h2>
         <p>Insert your text here...</p>
         <a href="https://digitalgravy.co/">Click me</a>
@@ -135,9 +135,9 @@ Here's our new output:
 ```html
 <ul data-etch-element="container">
   {#loop loop-name as item}
-    <li data-etch-element="flex-div">
-      <article data-etch-element="flex-div">
-        <figure data-etch-element="flex-div">
+    <li>
+      <article>
+        <figure>
           <img src="{item.featuredImage.url}" alt="{item.featuredImage.alt}" />
         </figure>
         <h2>{item.title}</h2>
@@ -158,9 +158,9 @@ An aria-label can be used here to describe exactly which blog post the user is g
 ```html
 <ul data-etch-element="container">
   {#loop loop-name as item}
-    <li data-etch-element="flex-div">
-      <article data-etch-element="flex-div">
-        <figure data-etch-element="flex-div">
+    <li>
+      <article>
+        <figure>
           <img src="{item.featuredImage.url}" alt="{item.featuredImage.alt}" />
         </figure>
         <h2>{item.title}</h2>

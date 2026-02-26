@@ -99,7 +99,7 @@ $query_args = [
 <section data-etch-element="container">
   <div class="posts-grid wpgb-content-1">
     {#loop blog-posts as item}
-      <article data-etch-element="flex-div">
+      <article>
         {#if item.featuredImage}
           <img src="{item.featuredImage.url}" alt="{item.featuredImage.alt}" />
         {/if}

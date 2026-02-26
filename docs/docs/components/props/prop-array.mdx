@@ -68,14 +68,16 @@ Here's a complete component that uses both a loop prop and a count prop:
 
 ```html
 <component>
-  <div data-etch-element="flex-div">
+  <ul>
     {#loop props.myLoop($count: props.myCount) as item}
-      <article data-etch-element="flex-div">
+    <li>
+      <article>
         <h2>{item.title}</h2>
         <p>{item.excerpt}</p>
       </article>
+    </li>
     {/loop}
-  </div>
+  </ul>
 </component>
 ```
 
@@ -99,7 +101,7 @@ You can apply modifiers directly to the loop prop itself. For example, using `.s
 
 ```html
 {#loop props.myLoop.slice(0, 3) as item}
-  <article data-etch-element="flex-div">
+  <article>
     <h2>{item.title}</h2>
   </article>
 {/loop}
@@ -143,14 +145,16 @@ Here's a comprehensive example combining multiple techniques:
 
 ```html
 <component>
-  <div data-etch-element="flex-div">
+  <ul>
     {#loop props['featured-loop'].slice(0, props.maxItems.toInt())($offset: props.startFrom.toInt()) as item}
-      <article data-etch-element="flex-div">
+    <li>
+      <article>
         <h2>{item.title}</h2>
         <p>{item.excerpt.truncateWords(20)}</p>
       </article>
+    </li>
     {/loop}
-  </div>
+  </ul>
 </component>
 ```
 

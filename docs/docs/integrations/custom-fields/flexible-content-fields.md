@@ -39,11 +39,11 @@ Suppose you have an ACF flexible content field called "page_sections" with three
 Here's how you'd loop through and display the different sections:
 
 ```html
-<div data-etch-element="flex-div" class="page-sections">
+<div class="page-sections">
   {#loop this.acf.page_sections as section}
     
     {#if section.acf_fc_layout == 'hero_banner'}
-      <section data-etch-element="flex-div" class="section section--hero">
+      <section class="section section--hero">
         <div class="hero" style="background-image: url({section.background_image.url});">
           <div class="hero__content">
             <h1 class="hero__title">{section.title}</h1>
@@ -57,7 +57,7 @@ Here's how you'd loop through and display the different sections:
     {/if}
     
     {#if section.acf_fc_layout == 'text_block'}
-      <section data-etch-element="flex-div" class="section section--text">
+      <section class="section section--text">
         <div class="text-block">
           <h2 class="text-block__heading">{section.heading}</h2>
           <div class="text-block__content">{section.content}</div>
@@ -66,7 +66,7 @@ Here's how you'd loop through and display the different sections:
     {/if}
     
     {#if section.acf_fc_layout == 'image_gallery'}
-      <section data-etch-element="flex-div" class="section section--gallery">
+      <section class="section section--gallery">
         <div class="gallery">
           <h2 class="gallery__title">{section.gallery_title}</h2>
           <ul class="gallery__grid">

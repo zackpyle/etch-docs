@@ -51,9 +51,9 @@ Suppose you have an ACF repeater field called FAQ (`faq`) with two sub-fields:
 Here's how you'd loop through and display the FAQ items:
 
 ```html
-<ul data-etch-element="flex-div" class="faq-list">
+<ul class="faq-list">
   {#loop this.acf.faq as faq}
-    <li data-etch-element="flex-div" class="faq">
+    <li class="faq">
       <h3 class="faq__question">{faq.question}</h3>
       <div class="faq__answer">{faq.answer}</div>
     </li>
@@ -96,9 +96,9 @@ Suppose you have an Meta Box repeater field called FAQ (`faq`) with two sub-fiel
 Here's how you'd loop through and display the FAQ items:
 
 ```html
-<ul data-etch-element="flex-div" class="faq-list">
+<ul class="faq-list">
   {#loop this.metabox.faq as faq}
-    <li data-etch-element="flex-div" class="faq">
+    <li class="faq">
       <h3 class="faq__question">{faq.question}</h3>
       <div class="faq__answer">{faq.answer}</div>
     </li>
@@ -142,9 +142,9 @@ Suppose you have an Jet Engine repeater field called FAQ (`faq`) with two sub-fi
 Here's how you'd loop through and display the FAQ items:
 
 ```html
-<ul data-etch-element="flex-div" class="faq-list">
+<ul class="faq-list">
   {#loop this.jetengine.faq as faq}
-    <li data-etch-element="flex-div" class="faq">
+    <li class="faq">
       <h3 class="faq__question">{faq.question}</h3>
       <div class="faq__answer">{faq.answer}</div>
     </li>

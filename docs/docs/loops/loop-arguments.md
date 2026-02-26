@@ -177,7 +177,7 @@ Here's an example of a "Blog Posts" component where a blog post loop is inside o
 ```html
 <component>
   {#loop recent_posts($count: props.numberOfPosts) as item}
-  <div data-etch-element="flex-div">
+  <div>
     <h2>Insert your heading here...</h2>
     <p>Insert your text here...</p>
   </div>

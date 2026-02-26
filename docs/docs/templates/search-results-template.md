@@ -76,7 +76,7 @@ Here's an example of a more complete search archive layout:
     </div>
     <div data-etch-element="container" class="search__results">
       {#loop mainQuery as item}
-        <article data-etch-element="flex-div" class="search-card">
+        <article class="search-card">
           <h2 class="search-card__title"><a href={item.permalink.relative}>{item.title}</a></h2>
           <div class="search-card__description">{item.excerpt}</div>
         </article>
