@@ -96,7 +96,7 @@ $query_args = [
 3) Add the selector class to the parent of the loop element and place the shortcode below it:
 
 ```html
-<section data-etch-element="container">
+<section data-etch-element="section">
   <div class="posts-grid wpgb-content-1">
     {#loop blog-posts as item}
       <article>

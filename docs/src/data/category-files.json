@@ -1,4 +1,9 @@
 {
+  "docs/ai": [
+    "activating-ai.md",
+    "ask-mode.md",
+    "build-mode.md"
+  ],
   "docs/components": [
     "creating-a-component.md",
     "creating-component-props.md",
