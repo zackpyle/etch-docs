@@ -198,6 +198,22 @@ This allows you to format or transform values before they are displayed.
       <td><code>this.categories = [&#123; name: "ABCs", slug: "abcs" &#125;, &#123; name: "XYZs", slug: "xyzs" &#125;]</code><br /><br /><code>&#123;this.categories.pluck("name")&#125;</code> → <code>["ABCs", "XYZs"]</code></td>
     </tr>
     <tr>
+      <td><code>.keys()</code></td>
+      <td>
+        Returns the keys of an object as an array. Non-object values pass through unchanged. <br />
+        <a href="#keys">More Details</a>
+      </td>
+      <td><code>item.config = &#123; color: "red", size: "lg" &#125;</code><br /><br /><code>&#123;item.config.keys()&#125;</code> → <code>["color", "size"]</code></td>
+    </tr>
+    <tr>
+      <td><code>.values()</code></td>
+      <td>
+        Returns the values of an object as an array. Non-object values pass through unchanged. <br />
+        <a href="#values">More Details</a>
+      </td>
+      <td><code>item.config = &#123; color: "red", size: "lg" &#125;</code><br /><br /><code>&#123;item.config.values()&#125;</code> → <code>["red", "lg"]</code></td>
+    </tr>
+    <tr>
       <td><code>.split()</code></td>
       <td>
         Splits a string by the given separator and returns the result as an array.
@@ -376,6 +392,67 @@ You can of course combine pluck with other modifiers to create more complex cond
 {#if this.categories.pluck("name").includes("ABCs")}
   true
 {/if}
+```
+
+---
+
+### `.keys()`
+**Returns:** array or original value
+
+The `.keys()` method returns the keys of an object as an array. If the value is not an object (e.g., a string, number, boolean, null, or a plain array), it is returned unchanged.
+
+#### Examples:
+```json
+"config": { "color": "red", "size": "lg", "weight": "bold" }
+```
+- `{item.config.keys()}` → `["color", "size", "weight"]`
+- `{item.config.keys().length()}` → `3`
+- `{item.config.keys().join(", ")}` → `"color, size, weight"`
+
+#### Example use case: Check if an object contains a specific key
+```
+{#if item.config.keys().includes("color")}
+  This object has a "color" key
+{/if}
+```
+
+#### Example use case: Check if a custom field is present
+You can combine `.keys()` with `.includes()` to output different content depending on whether a key exists. Since `.includes()` accepts optional true/false return values, you can do this inline without an `{#if}` block:
+```
+{item.meta.keys().includes("name", "name custom field is set", "name custom field is not set")}
+```
+
+#### Non-object inputs pass through:
+- `42` → `42`
+- `["a", "b"]` → `["a", "b"]`
+
+---
+
+### `.values()`
+**Returns:** array or original value
+
+The `.values()` method returns the values of an object as an array. If the value is not an object (e.g., a string, number, boolean, null, or a plain array), it is returned unchanged.
+
+#### Examples:
+```json
+"config": { "color": "red", "size": "lg", "weight": "bold" }
+```
+- `{item.config.values()}` → `["red", "lg", "bold"]`
+- `{item.config.values().length()}` → `3`
+- `{item.config.values().join(", ")}` → `"red, lg, bold"`
+
+#### Example use case: Check if an object contains a specific value
+```
+{#if item.config.values().includes("red")}
+  This object contains the value "red"
+{/if}
+```
+
+#### Example use case: Loop over object values
+```
+{#loop item.config.values() as value}
+  <span>{value}</span>
+{/loop}
 ```
 
 ---
