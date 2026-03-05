@@ -204,6 +204,28 @@ Sometimes you just want to repeat a piece of content a fixed number of times —
 
 In this example, the variable item also holds the corresponding value from the array (1 through 5), which you can use inside the loop if needed.
 
+## Showing a "No Results" Message
+
+When a loop has no items, it renders nothing by default.
+
+If you want to display a message when this happens, you can add a second loop that only runs when the loop data returns no results:
+
+```html
+<div>
+  {#loop posts as item}
+    <!-- Renders as normal, but when the loop returns no results, then nothing is rendered -->
+    <p>{item.title}</p>
+  {/loop}
+
+  {#loop posts.length().equal(0, [1], []) as item}
+    <!-- Only renders when the loop returns no results -->
+    <p>No results</p>
+  {/loop}
+</div>
+```
+
+This is currently a workaround. A more official way to handle empty loop states will be added in the future.
+
 ## Accessing the Index
 
 When looping through data in Etch, you can optionally access the index of each iteration.
