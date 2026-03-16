@@ -14,11 +14,16 @@ This allows you to format or transform values before they are displayed.
 
 ## Available Modifiers
 
-<table>
+<table className="modifiers-table" style={{ width: "100%", tableLayout: "fixed" }}>
+  <colgroup>
+    <col style={{ width: "20%" }} />
+    <col style={{ width: "30%" }} />
+    <col style={{ width: "50%" }} />
+  </colgroup>
   <tr>
-    <th width="20%">Modifier</th>
-    <th width="40%">Description</th>
-    <th width="40%">Example</th>
+    <th>Modifier</th>
+    <th>Description</th>
+    <th>Example</th>
   </tr>
   <tbody>
     <tr>
@@ -216,6 +221,7 @@ This allows you to format or transform values before they are displayed.
       <td>
         Splits a string by the given separator and returns the result as an array.
         <details><summary>Arguments</summary> <code>separator</code>: default <code>","</code></details>
+        <a href="#split">More Details</a>
       </td>
       <td><code>value = "Jan,Feb,Mar,Apr"</code><br /><br /><code>&#123;item.value.split(",")&#125;</code> → <code><br/>["Jan", "Feb", "Mar", "Apr"]</code></td>
     </tr>
@@ -239,6 +245,19 @@ This allows you to format or transform values before they are displayed.
     </tr>
   </tbody>
 </table>
+
+<style>{`
+  .modifiers-table td,
+  .modifiers-table th {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .modifiers-table code {
+    white-space: normal;
+    word-break: break-word;
+  }
+`}</style>
 
 
 ## Detailed Modifier Reference
@@ -413,6 +432,20 @@ The `.keys()` method returns the keys of an object as an array. If the value is 
 {/if}
 ```
 
+#### Example use case: Quickly inspect what keys are available
+When you want to quickly see what keys are available, use `.keys()` directly in your loop or template.
+
+You might currently check the Loop Manager’s JSON output to see what data is available. `.keys()` gives you a faster way to inspect the same data in context, especially when you want to check a specific nested object without scanning the full JSON tree.
+
+Use it with any object, at the root level or on a nested object:
+```
+{this.keys()}
+{this.acf.keys()}
+{item.meta.keys()}
+```
+
+This returns the keys as an array, giving you a quick list of what’s available.
+
 #### Example use case: Check if a custom field is present
 You can combine `.keys()` with `.includes()` to output different content depending on whether a key exists. Since `.includes()` accepts optional true/false return values, you can do this inline without an `{#if}` block:
 ```
@@ -450,6 +483,30 @@ The `.values()` method returns the values of an object as an array. If the value
 {#loop item.config.values() as value}
   <span>{value}</span>
 {/loop}
+```
+
+---
+
+### `.split()`
+**Returns:** array
+
+The `.split()` method splits a string by a separator and returns an array of parts. If no separator is provided, it defaults to `","`.
+
+| Argument             | Type     | Default | Description                          |
+| -------------------- | -------- | ------- | ------------------------------------ |
+| `separator`          | string   | `","`   | Value used to split the string       |
+
+#### Examples:
+- value = `"Jan,Feb,Mar,Apr"`<br />
+  - `{item.value.split(",")}` → `["Jan", "Feb", "Mar", "Apr"]`
+
+#### Unique use case: Dynamically wrap each word in a `<span>`
+```
+<h1>
+  {#loop this.title.split(" ") as word}
+    <span>{word} </span>
+  {/loop}
+</h1>
 ```
 
 ---
