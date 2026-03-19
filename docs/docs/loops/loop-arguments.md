@@ -100,10 +100,10 @@ In this example, if you use the loop without passing `$count`, it will default t
 
 ```html
 <!-- No $count passed, defaults to -1 -->
-{#loop blog-posts as item}
+{#loop blogPosts as item}
 
 <!-- Explicit $count passed, uses 3 -->
-{#loop blog-posts($count: 3) as item}
+{#loop blogPosts($count: 3) as item}
 ```
 
 :::warning Important: First Default Wins
@@ -140,13 +140,13 @@ Great, add a Loop element and choose the "Blog Posts" loop you made.
 In the HTML editor you'll see something like this:
 
 ```html
-{#loop blog-posts as item}
+{#loop blogPosts as item}
 ```
 
 All you're going to do is change it to this:
 
 ```html
-{#loop blog-posts($count: 3) as item}
+{#loop blogPosts($count: 3) as item}
 ```
 
 Now, whenever you use the loop, you have full control over the number of items that is displayed.

@@ -55,7 +55,7 @@ In your template, add `facetwp-template` as a CSS class on the direct parent of 
 ```html
 <div data-etch-element="container">
   <div class="posts-grid facetwp-template">
-    {#loop your-loop-name as item}
+    {#loop yourLoopName as item}
       <!-- loop content -->
     {/loop}
   </div>
@@ -89,7 +89,7 @@ $query_args = [
 <section data-etch-element="section">
   <div data-etch-element="container">
     <div class="posts-grid facetwp-template">
-      {#loop blog-posts as item}
+      {#loop blogPosts as item}
         <article>
           {#if item.featuredImage}
             <img src="{item.featuredImage.url}" alt="{item.featuredImage.alt}" />

@@ -81,7 +81,7 @@ $query_args = [
 ```
 
 - Add a Loop element for project statuses, then inside it, add another Loop element for projects.
-- The outer loop syntax would be: `{#loop project-status as status}`
+- The outer loop syntax would be: `{#loop projectStatus as status}`
 - The inner loop syntax would be: `{#loop projects($status: status.id) as project}`
 - This pattern works for any post type and its associated custom taxonomies.
 

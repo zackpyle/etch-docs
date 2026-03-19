@@ -106,7 +106,7 @@ Your HTML will now look like this:
 ```html
 <ul data-etch-element="container">
   // highlight-next-line
-  {#loop loop-name as item}
+  {#loop loopName as item}
     <li>
       <article>
         <figure><img src="https://placehold.co/600x400" alt="" /></figure>
@@ -126,7 +126,7 @@ Make sure you choose the correct loop that you configured for your blog posts an
 
 Looping cards with the same static data over and over again defeats the point of a loop, so the next step is to map the proper areas to your [dynamic data keys](/dynamic-data/dynamic-data-keys).
 
-Since our loop is saying `{#loop loop-name as item}` we need to use `item` as stem for our dynamic data keys.
+Since our loop is saying `{#loop loopName as item}` we need to use `item` as stem for our dynamic data keys.
 
 Anything that is **unique data** to the thing we're looping needs to be replaced with a dynamic data key. In this case, the blog post title, link to the post, excerpt, image src, and image alt. You can do this via the Etch UI or the HTML editor.
 
@@ -134,7 +134,7 @@ Here's our new output:
 
 ```html
 <ul data-etch-element="container">
-  {#loop loop-name as item}
+  {#loop loopName as item}
     <li>
       <article>
         <figure>
@@ -157,7 +157,7 @@ An aria-label can be used here to describe exactly which blog post the user is g
 
 ```html
 <ul data-etch-element="container">
-  {#loop loop-name as item}
+  {#loop loopName as item}
     <li>
       <article>
         <figure>
@@ -237,7 +237,7 @@ You can choose any name for the index, but we recommend using one that clearly d
 The index variable behaves just like any other piece of dynamic data and can be used directly inside your markup:
 
 ```html
-{#loop recent-posts as post, index}
+{#loop recentPosts as post, index}
   <div class="post-card" data-post-idx={index}>
     {#if index === 0}
      <!-- Only render something for the first item -->
