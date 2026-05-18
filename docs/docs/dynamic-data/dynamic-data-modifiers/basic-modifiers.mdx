@@ -145,10 +145,12 @@ This allows you to format or transform values before they are displayed.
     <tr>
       <td><code>.concat()</code></td>
       <td>
-        Concatenates all the given strings to the source string. Any number of strings can be passed as arguments.
+        Concatenates values to a *string* OR an *array*. When used on a string, any number of strings can be passed as arguments. When used on an array, arrays are merged and non-array values are appended as individual elements.
       </td>
       <td>
         <code>value = "Hello"</code><br /><br /><code>&#123;item.value.concat(" ", "World", "!")&#125;</code> → <code>"Hello World!"</code>
+        <br /><br />
+        <code>value = [1, 2, 3]</code><br /><br /><code>&#123;item.value.concat([4, 5])&#125;</code> → <code>[1, 2, 3, 4, 5]</code>
       </td>
     </tr>
     <tr>
