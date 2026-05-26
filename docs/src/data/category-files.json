@@ -76,6 +76,7 @@
     "user-dynamic-data-integration.md"
   ],
   "docs/dynamic-data/dynamic-data-modifiers": [
+    "arithmetic-modifiers.mdx",
     "basic-modifiers.mdx",
     "comparison-modifiers.mdx"
   ],
