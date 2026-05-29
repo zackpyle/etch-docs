@@ -206,7 +206,7 @@
   ],
   "docs/troubleshooting": [
     "activity-log.md",
-    "api-concurrency-limit.md"
+    "api-concurrency-limit.mdx"
   ],
   "docs/utilities": [
     "functions.md",
