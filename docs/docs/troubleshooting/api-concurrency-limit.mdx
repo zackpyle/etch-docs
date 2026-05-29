@@ -1,0 +1,35 @@
+---
+title: API Concurrency Limit
+description: Limit how many API requests the Etch builder sends in parallel
+---
+
+import VersionBadge from '@site/src/components/VersionBadge/VersionBadge';
+
+# API Concurrency Limit
+
+<VersionBadge version="1.4.20" />
+
+By default, the Etch builder sends API requests to your server without a concurrency limit. On some hosting environments, sending many requests in parallel can overwhelm the server or trigger rate limiting.
+
+## When to use this
+
+Consider setting a concurrency limit if you experience any of the following while using the builder:
+
+- **Server errors** — your server runs out of PHP workers or memory and starts dropping requests.
+- **Hosting rate limits** — managed hosts (e.g. Kinsta, WP Engine, Cloudways) may throttle or block bursts of requests, causing failed saves or missing data.
+- **Slow or unresponsive admin** — other users on the same server notice slowdowns while the builder is open, because too many PHP processes are occupied at once.
+- **Database connection errors** — a high number of concurrent API requests can exhaust your database's connection pool, especially on shared hosting.
+
+## Configuration
+
+You can cap the number of concurrent requests by adding the following constant to your `wp-config.php`:
+
+```php
+define( 'ETCH_API_CONCURRENCY_LIMIT', 5 );
+```
+
+This limits the builder to at most 5 simultaneous API requests. Any additional requests are queued and sent as earlier ones complete.
+
+:::tip
+Start with a value of `5` and adjust based on your server's capacity. Lower values reduce server load but may make the builder feel slower.
+:::
