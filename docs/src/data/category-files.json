@@ -181,6 +181,18 @@
   "docs/migration-guides": [
     "v1-migration.md"
   ],
+  "docs/public-api": [
+    "blocks.md",
+    "components.md",
+    "fields.md",
+    "index.md",
+    "loops.md",
+    "navigation.md",
+    "styles.md",
+    "stylesheets.md",
+    "types-reference.md",
+    "ui-and-history.md"
+  ],
   "docs/responsive-development": [
     "container-queries.md",
     "custom-media.mdx",
