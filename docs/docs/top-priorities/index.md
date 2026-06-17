@@ -21,19 +21,18 @@ Bug fixes, general improvements, and minor features are not listed here. The pur
 
 | Feature                        | Description                                                                                      |
 |--------------------------------|--------------------------------------------------------------------------------------------------|
-| **Etch Static** | Build & deploy static websites (includes work on popular areas like media manager, content hub, etc.) | 
-| **Components API** | A way for 3rd party devs to create/register native Etch elements for custom functionality and for internal use for creating Etch dynamic elements. |
+| **Etch Studio** | Build & deploy semi-dynamic websites (includes work on popular areas like media manager, content hub, etc.) | 
+| **Data Sources to Replace Loops** | An exciting new model for accessing and displaying data. |
 | **Native Components** | Prioritization of our native [components (native)](../components-native/overview). |
+| **AI Capability Expansion** | Agent-powered workflow features |
 
 ## High Priority Items (Soon)
 
 | Feature                        | Description                                                                                      |
 |--------------------------------|--------------------------------------------------------------------------------------------------|
-| **AI Capability Expansion** | Agent-powered workflow features |
-| **PHP Authoring** | PHP authoring inside the HTML editor |
 | **Facets/Filters** | Facets and filters for loops. |
-| **Loop Through External API** | External API support for loops. |
 | **Shortcuts** | Customizable shortcut architecture |
+| **PHP Authoring** | PHP authoring inside the HTML editor |
 
 
 ## Community Feedback
