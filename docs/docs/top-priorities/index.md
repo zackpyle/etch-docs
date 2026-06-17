@@ -22,7 +22,7 @@ Bug fixes, general improvements, and minor features are not listed here. The pur
 | Feature                        | Description                                                                                      |
 |--------------------------------|--------------------------------------------------------------------------------------------------|
 | **Etch Studio** | Build & deploy semi-dynamic websites (includes work on popular areas like media manager, content hub, etc.) | 
-| **Data Sources to Replace Loops** | An exciting new model for accessing and displaying data. |
+| **Data Sources to Replace Loop Manager** | An exciting new model for accessing and displaying data. |
 | **Native Components** | Prioritization of our native [components (native)](../components-native/overview). |
 | **AI Capability Expansion** | Agent-powered workflow features |
 
