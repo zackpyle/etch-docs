@@ -96,7 +96,7 @@ etch.blocks.create({ type: "etch/text", version: 1, context: {}, children: [], t
 interface BlockPatch {
   name?: string;                                  // structure-panel label
   hidden?: boolean;                               // hide or show on canvas
-  attributes?: Record<string, string | undefined>; // merge HTML attrs (undefined removes a key)
+  attributes?: Record<string, string | undefined>; // merge attrs/props (undefined removes a key)
   text?: string;                                  // replace text (text blocks only)
 }
 ```
@@ -113,7 +113,7 @@ interface EtchBlocksApi {
   setText(blockId: string, text: string): void;   // text blocks only
   rename(blockId: string, name: string): void;     // structure-panel label
 
-  // HTML attributes
+  // attributes (HTML attributes, or component props — see Component props below)
   getAttribute(blockId: string, key: string): string | undefined;
   setAttribute(blockId: string, key: string, value?: string): void; // undefined clears
   removeAttribute(blockId: string, key: string): void;
@@ -146,6 +146,30 @@ etch.blocks.setAttribute(imgBlockId, "useSrcSet", "true");
 etch.blocks.setAttribute(svgBlockId, "src", "/icons/logo.svg");
 etch.blocks.setAttribute(svgBlockId, "stripColors", "true");
 ```
+
+## Component props
+
+A component **instance** (`etch/component`) exposes its bound props as block attributes. Set them with `setAttribute` / `update` and read them with `getAttribute` — the same methods you use for HTML attributes.
+
+Unlike an HTML block's free-form attributes, a component's props are a **closed schema**: the key must be a property declared by the component definition. An unknown key throws `INVALID_ARGUMENT` (or `OPERATION_FAILED` if the component definition has not loaded yet).
+
+```ts
+const [cardId] = etch.blocks.find({ type: "etch/component" });
+
+// Set a declared prop
+etch.blocks.setAttribute(cardId, "title", "Hello world");
+etch.blocks.getAttribute(cardId, "title"); // "Hello world"
+
+// Patch several props at once
+etch.blocks.update(cardId, { attributes: { title: "Hi", variant: "primary" } });
+
+// An undeclared key is rejected
+etch.blocks.setAttribute(cardId, "notAProp", "x"); // throws INVALID_ARGUMENT
+```
+
+Values are stored as-is. For typed props such as classes or repeater/group data, pass the value in the component's internal format.
+
+This sets props **without** entering [component edit mode](#component-edit-mode) — that's for editing the component's internal block tree, covered next.
 
 ## Component edit mode
 
