@@ -105,6 +105,8 @@ interface BlockPatch {
 etch.blocks.update(id, { name: "Hero heading", hidden: false });
 ```
 
+The `attributes` patch works on HTML blocks (HTML attributes) and on component instances, whose attributes are their props — see [Component props](#component-props).
+
 ## Text, naming, attributes, and classes
 
 ```ts
