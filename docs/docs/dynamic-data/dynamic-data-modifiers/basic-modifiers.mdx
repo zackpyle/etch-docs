@@ -105,6 +105,20 @@ This allows you to format or transform values before they are displayed.
       <td><code>value = "Hello%20World!"</code><br /><br /><code>&#123;item.value.urlDecode()&#125;</code> → <code>"Hello&nbsp;World!"</code></td>
     </tr>
     <tr>
+      <td><code>.htmlEncode()</code></td>
+      <td>
+        Converts HTML-significant characters (<code>&amp;</code> <code>&lt;</code> <code>&gt;</code> <code>"</code> <code>'</code>) into HTML entities so the value displays as text instead of markup. <br /><a href="#htmlencode">More Details</a>
+      </td>
+      <td><code>value = "&lt;b&gt;Bold&lt;/b&gt;"</code><br /><br /><code>&#123;item.value.htmlEncode()&#125;</code> → <code>"&amp;lt;b&amp;gt;Bold&amp;lt;/b&amp;gt;"</code></td>
+    </tr>
+    <tr>
+      <td><code>.htmlDecode()</code></td>
+      <td>
+        Converts HTML entities (named, decimal, and hexadecimal) back into their characters. <br /><a href="#htmldecode">More Details</a>
+      </td>
+      <td><code>value = "&amp;lt;b&amp;gt;Bold&amp;lt;/b&amp;gt;"</code><br /><br /><code>&#123;item.value.htmlDecode()&#125;</code> → <code>"&lt;b&gt;Bold&lt;/b&gt;"</code></td>
+    </tr>
+    <tr>
       <td><code>.truncateChars()</code></td>
       <td>
         Truncates and returns the string after <code>count</code> characters.
@@ -617,6 +631,52 @@ The `.replaceAll()` method replaces **all** occurrences of a search string with 
 {item.slug.replaceAll("-", " ").toUpperCase()}
 ```
 Transforms `"my-blog-post"` → `"MY BLOG POST"`.
+
+---
+
+### `.htmlEncode()`
+<VersionBadge version="1.5.2" />
+
+**Returns:** string or original value
+
+The `.htmlEncode()` method converts the HTML-significant characters into their HTML entities, so the value is rendered as text instead of being interpreted as markup. Only string inputs are transformed; other types are returned unchanged.
+
+| Character | Entity   |
+| --------- | -------- |
+| `&`       | `&amp;`  |
+| `<`       | `&lt;`   |
+| `>`       | `&gt;`   |
+| `"`       | `&quot;` |
+| `'`       | `&apos;` |
+
+#### Examples:
+- value = `"<b>Bold</b>"`<br />
+  - `{item.value.htmlEncode()}` → `"&lt;b&gt;Bold&lt;/b&gt;"`
+- value = `"Tom & Jerry"`<br />
+  - `{item.value.htmlEncode()}` → `"Tom &amp; Jerry"`
+
+#### Example use case: Display a code snippet as text
+```
+<code>{post.snippet.htmlEncode()}</code>
+```
+Renders the raw markup stored in `post.snippet` as visible text instead of letting the browser interpret it.
+
+---
+
+### `.htmlDecode()`
+<VersionBadge version="1.5.2" />
+
+**Returns:** string or original value
+
+The `.htmlDecode()` method is the inverse of `.htmlEncode()`. It converts HTML entities back into their characters, resolving named entities (e.g. `&amp;`, `&copy;`, `&nbsp;`) as well as decimal (`&#169;`) and hexadecimal (`&#xA9;`) numeric character references. Only string inputs are transformed; other types are returned unchanged.
+
+#### Examples:
+- value = `"&lt;b&gt;Bold&lt;/b&gt;"`<br />
+  - `{item.value.htmlDecode()}` → `"<b>Bold</b>"`
+- value = `"Tom &amp; Jerry"`<br />
+  - `{item.value.htmlDecode()}` → `"Tom & Jerry"`
+- value = `"&copy; 2024"`<br />
+  - `{item.value.htmlDecode()}` → `"© 2024"`
 
 ---
 
