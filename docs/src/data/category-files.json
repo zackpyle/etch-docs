@@ -97,6 +97,14 @@
     "svg.md",
     "text.md"
   ],
+  "docs/etch-connector": [
+    "ai-agent-guide.md",
+    "cli-reference.md",
+    "index.md",
+    "installation.md",
+    "security.md",
+    "usage.md"
+  ],
   "docs/facets": [
     "apply.md",
     "filter.md",
