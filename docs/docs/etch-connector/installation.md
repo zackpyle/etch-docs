@@ -9,25 +9,25 @@ last_update:
 
 The connector is the npm package [`@digital-gravy/etch-connector`](https://www.npmjs.com/package/@digital-gravy/etch-connector). You'll run it from a terminal, so you need [Node.js](https://nodejs.org) (which includes `npx`) or [Bun](https://bun.sh) installed.
 
-## Run it without installing (easiest)
+You have two options. Either way, you actually start the connector in [Usage](./usage.md) — this page is just about getting the command ready.
 
-`npx` (comes with Node.js) downloads and runs the connector in one step — nothing to install ahead of time:
+## Option 1: No install (easiest)
 
-```bash
-npx @digital-gravy/etch-connector serve
-```
-
-If you use Bun instead, the equivalent is:
+With `npx` (included with Node.js) there's nothing to install — you run the connector on demand, and it downloads automatically the first time. Throughout these docs, wherever you see a command starting with `etch-connector`, you'd type:
 
 ```bash
-bunx @digital-gravy/etch-connector serve
+npx @digital-gravy/etch-connector <command>
 ```
 
-`serve` starts the connector and leaves it running. That's all you need to move on to [Usage](./usage.md).
+If you use Bun, swap `npx` for `bunx`. To confirm it's working, check the version:
 
-## Install it for the short command
+```bash
+npx @digital-gravy/etch-connector --version
+```
 
-If you'd rather type `etch-connector` instead of the full package name every time, install it once, globally:
+## Option 2: Install for the short command
+
+If you'd rather type a short `etch-connector` instead of the full package name every time, install it once, globally:
 
 ```bash
 npm install -g @digital-gravy/etch-connector
@@ -35,14 +35,14 @@ npm install -g @digital-gravy/etch-connector
 bun install -g @digital-gravy/etch-connector
 ```
 
-Then you can just run:
+Then confirm it's available:
 
 ```bash
-etch-connector serve
+etch-connector --version
 ```
 
 :::note Which command to type
-The rest of these docs use the short `etch-connector ...` form. If you're using `npx`/`bunx` instead of a global install, put `npx @digital-gravy/etch-connector` (or `bunx @digital-gravy/etch-connector`) in front of each command.
+The rest of these docs use the short `etch-connector ...` form. If you went with Option 1, put `npx @digital-gravy/etch-connector` (or `bunx @digital-gravy/etch-connector`) in front of each command instead.
 :::
 
 Next: [Usage](./usage.md) walks through starting the connector and connecting your tab.
