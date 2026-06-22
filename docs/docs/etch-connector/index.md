@@ -20,16 +20,16 @@ It's published as a free, open-source npm package, [`@digital-gravy/etch-connect
 There are three pieces:
 
 1. **Your Etch tab** — a normal builder page open in your browser.
-2. **The connector** — a small program you run on your own computer.
+2. **The connector** — started by pasting `npx @digital-gravy/etch-connector serve` into your assistant's chat. The assistant runs it; you don't install anything.
 3. **Your AI assistant** — a tool that can run commands, like Claude Code.
 
-You start the connector, then tell your Etch tab to connect to it. From then on, your AI assistant sends its changes to the connector, and the connector applies them in your tab.
+You connect by clicking the AI sparkles button in the builder, then pasting that command in chat. Once the assistant confirms the connection, it can send changes through the connector and they appear live in your tab.
 
 ```
 Your AI assistant (Claude Code, Cowork, …)
       │  "add a hero section to the homepage"
       ▼
-  Etch Connector  (running on your computer)
+  Etch Connector  (your assistant runs this for you)
       │  ▲
       ▼  │
   Your open Etch builder tab  ──►  changes appear live
@@ -37,10 +37,13 @@ Your AI assistant (Claude Code, Cowork, …)
 
 Everything runs locally on your own machine — nothing is sent to an outside server. See [Security](./security.md) for more.
 
+:::warning New chat? Run the command again
+Any time you start a **new chat context**, tell the agent to run `npx @digital-gravy/etch-connector serve` again. The builder connection can stay active, but each new chat needs that command — see [Usage](./usage.md).
+:::
+
 ## Get started
 
-- [Installation](./installation.md) — install the connector (or run it without installing).
-- [Usage](./usage.md) — start it, connect your tab, and try your first command.
-- [CLI Reference](./cli-reference.md) — every command and option, for when you want the details.
+- [Usage](./usage.md) — turn on the AI Connector, open your builder, and connect from chat. **Start here.**
+- [CLI Reference](./cli-reference.md) — the commands your assistant runs, for reference.
 - [AI Agent Guide](./ai-agent-guide.md) — a few notes for the AI assistant driving Etch.
 - [Security](./security.md) — what runs where, and how to stay safe.

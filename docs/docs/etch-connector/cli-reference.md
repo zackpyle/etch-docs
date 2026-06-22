@@ -7,7 +7,11 @@ last_update:
 
 # CLI Reference
 
-The full set of commands. Most of the time your AI assistant runs these for you — this page is here for when you want to know exactly what each one does.
+The full set of commands. **You don't run these yourself** — your AI assistant runs them for you when you connect from chat (see [Usage](./usage.md)). This page is here for reference, so you can see what the assistant is doing.
+
+:::note Command names
+The assistant runs the connector via `npx` (e.g. `npx @digital-gravy/etch-connector serve`). For readability, the examples below use the short `etch-connector` form.
+:::
 
 ```
 etch-connector — drive a live Etch tab from the command line
