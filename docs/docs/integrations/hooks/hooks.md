@@ -38,7 +38,7 @@ add_filter('etch/dynamic_data/post', function( $data, $post_id ) {
     );
 
     return $data;
-});
+}, 10, 2);
 ```
 
 ### Filter: `etch/dynamic_data/user`
@@ -54,7 +54,7 @@ add_filter('etch/dynamic_data/user', function( $data, $user_id ) {
     );
 
     return $data;
-});
+}, 10, 2);
 ```
 
 ### Filter: `etch/dynamic_data/term`
@@ -70,7 +70,7 @@ add_filter('etch/dynamic_data/term', function( $data, $term_id, $taxonomy ) {
     );
 
     return $data;
-});
+}, 10, 3);
 ```
 
 ### Filter: `etch/dynamic_data/option`
