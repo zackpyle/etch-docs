@@ -131,7 +131,19 @@ const config: Config = {
 			} satisfies Preset.Options
 		]
 	],
-	plugins: [],
+	plugins: [
+		[
+			'@docusaurus/plugin-client-redirects',
+			{
+				redirects: [
+					{
+						from: '/troubleshooting/api-concurrency-limit',
+						to: '/troubleshooting/performance-issues',
+					},
+				],
+			},
+		],
+	],
 
 	themeConfig: {
 		// Replace with your project's social card

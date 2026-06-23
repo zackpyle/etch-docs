@@ -225,7 +225,7 @@
   ],
   "docs/troubleshooting": [
     "activity-log.md",
-    "api-concurrency-limit.mdx"
+    "performance-issues.mdx"
   ],
   "docs/utilities": [
     "functions.md",
