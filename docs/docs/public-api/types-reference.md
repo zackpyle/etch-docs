@@ -4,7 +4,7 @@ sidebar_position: 90
 sidebar_custom_props:
   badge: "New"
 last_update:
-  date: 2026-06-11
+  date: 2026-06-24
 ---
 
 # Types Reference
@@ -145,6 +145,27 @@ interface GutenbergBlock {
   attrs: { [key: string]: unknown };
 }
 ```
+
+## Copy payload
+
+`CopyObject` is the portable, JSON-serializable snapshot produced by [`etch.blocks.copy()`](./blocks.md#copy-paste) and consumed by [`etch.blocks.pasteAsync()`](./blocks.md#copy-paste). Treat it as an **opaque token** — hold it, store it, or pass it back to `pasteAsync()`. The bundled `styles` / `loops` / `components` / `customMediaDefinitions` are Etch-internal definitions that paste re-creates and re-maps to fresh ids, so don't depend on their shape.
+
+```ts
+interface CopyObject {
+  type: "block";                                        // payload kind (currently always "block")
+  version: number;                                      // schema version, from the block's features
+  gutenbergBlock: GutenbergBlock;                       // the copied subtree in Gutenberg grammar
+  styles?: { [styleId: string]: unknown };              // referenced global styles (opaque)
+  loops?: { [loopId: string]: unknown };                // referenced loop definitions (opaque)
+  components?: { [componentId: number]: unknown };      // referenced component definitions (opaque)
+  customMediaDefinitions?: { [name: string]: unknown }; // referenced @custom-media rules (opaque)
+  timestamp?: string;                                   // ISO 8601 time the copy was produced
+}
+```
+
+:::warning
+The `gutenbergBlock` shape is **not yet stable**. Before the stable release it will be replaced with an Etch-native block representation, so use it with caution — treat the `CopyObject` as an opaque token you round-trip through [`pasteAsync()`](./blocks.md#copy-paste) rather than reading or constructing `gutenbergBlock` by hand.
+:::
 
 ## Errors
 

@@ -4,7 +4,7 @@ sidebar_position: 10
 sidebar_custom_props:
   badge: "New"
 last_update:
-  date: 2026-06-11
+  date: 2026-06-24
 ---
 
 # Blocks
@@ -59,16 +59,19 @@ if (block.type === "etch/text") {
 
 ```ts
 interface EtchBlocksApi {
-  create(json: EtchBlockJson, parentId?: string, index?: number): string; // returns new id
+  create(json: EtchBlockJson, parentId?: string | null, index?: number): string; // returns new id
   delete(blockId: string): void;                                          // remove block + subtree
   duplicate(blockId: string): string;                                     // deep-copy; returns new id
   move(blockId: string, newParentId: string | null, index?: number): void;
   replace(blockId: string, json: EtchBlockJson): string;                  // returns new id
   update(blockId: string, patch: BlockPatch): void;                       // patch in place
+
+  copy(blockId: string): CopyObject;                                      // serialize a block + subtree
+  pasteAsync(payload: CopyObject, targetId?: string | null, index?: number): Promise<string>; // insert a copy; returns new id
 }
 ```
 
-`create()`, `duplicate()`, and `replace()` all return the id of the resulting block. Pass `null` as `newParentId` to `move()` to re-parent to the document root.
+`create()`, `duplicate()`, `replace()`, and `pasteAsync()` all return the id of the resulting block. To target the document root, omit the parent id — or pass `null` (`parentId` on `create()`, `targetId` on `pasteAsync()`, `newParentId` on `move()`).
 
 ### create()
 
@@ -106,6 +109,33 @@ etch.blocks.update(id, { name: "Hero heading", hidden: false });
 ```
 
 The `attributes` patch works on HTML blocks (HTML attributes) and on component instances, whose attributes are their props — see [Component props](#component-props).
+
+### copy() and pasteAsync() {#copy-paste}
+
+`copy()` serializes a block and its subtree — together with the global styles, loops, and components it references — into a portable [`CopyObject`](./types-reference.md#copy-payload). `pasteAsync()` inserts one back, re-creating and re-mapping those styles/loops/components to fresh ids.
+
+Unlike the builder's Cmd-C / Cmd-V shortcuts, these **never touch the system clipboard**, so they work in fully programmatic flows — no user gesture or clipboard permission required. The `CopyObject` is plain JSON: hold it, store it, or send it over the wire.
+
+```ts
+const payload = etch.blocks.copy(sourceId);          // a plain, serializable CopyObject
+
+const newId = await etch.blocks.pasteAsync(payload);        // append to the document root
+await etch.blocks.pasteAsync(payload, containerId);         // into a container (or after it)
+await etch.blocks.pasteAsync(payload, containerId, 2);      // as the container's 3rd child
+await etch.saveAsync();
+```
+
+**Placement** mirrors [`create()`](#create):
+
+- **No `targetId`** (omitted or `null`) — appended to the document root, or inserted there at `index` when given.
+- **`targetId` + `index`** — inserted as a child of the target at `index`.
+- **`targetId`, no `index`** — inserted into the target when it accepts children, otherwise immediately after it (handy for "paste near this block").
+
+`index` is clamped to the valid range; a negative `index` counts from the end (`-1` appends).
+
+:::tip
+`copy()` produces the same payload the Cmd-C shortcut would put on the clipboard, so you can persist it and `pasteAsync()` it later — even on a different page; the bundled styles, loops, and components are re-created on paste.
+:::
 
 ## Text, naming, attributes, and classes
 
