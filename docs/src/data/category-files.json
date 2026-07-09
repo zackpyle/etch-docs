@@ -161,6 +161,7 @@
     "hooks.md"
   ],
   "docs/interface": [
+    "asset-manager.md",
     "attributes-bar.md",
     "canvas-color-scheme.md",
     "command-bar.md",
@@ -170,7 +171,6 @@
     "html-panel.md",
     "js-panel.md",
     "loop-manager.md",
-    "media-manager.md",
     "modular-interface.md",
     "responsive-controls.md",
     "selector-pills.md",
