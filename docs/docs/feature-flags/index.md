@@ -46,3 +46,4 @@ You can choose from the available flags below. Their default state is listed.
 | `RETURN_ACF_DYNAMIC_DATA` | Enables returning data based on the ACF field settings. | `off` |
 | `ENABLE_WAF_BLOCK_REQUEST_WORKAROUND` | Improve compatibility with Hostinger WAF that block the save request. | `off` |
 | `ENABLE_CLEAR_BUFFER_IN_STREAM_REQUEST` | Force-clears PHP output buffers on AI streaming requests. Enable this if the AI assistant's response comes back empty on your host. | `off` |
+| `ENABLE_METABOX_LEGACY_MOE` | Enables the legacy Meta Box data retrieval behavior for backward compatibility. When disabled, Etch returns data using the standard Meta Box format instead of the legacy format.  | `on` |
