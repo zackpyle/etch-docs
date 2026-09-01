@@ -83,7 +83,7 @@ If a prop is a [Class prop](./props/prop-class) with a default of `hero`, the de
 
 ## Scope
 
-The `component` namespace is **only available inside the component's own HTML**. It works everywhere the component renders — in the component editor, on the canvas, in Gutenberg, and on the frontend. However, it is not accessible from the outside: the page or template where you place a component instance cannot read its `component` namespace.
+The `component` namespace is **only available inside the component's own HTML**. It works everywhere the component renders — in the component editor, on the canvas, and on the frontend. However, it is not accessible from the outside: the page or template where you place a component instance cannot read its `component` namespace.
 
 This follows the same scoping rules as `props`: component internals stay internal.
 

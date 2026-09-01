@@ -9,7 +9,7 @@ last_update:
 
 # Types Reference
 
-This page collects the shared types referenced throughout the [Public API](./index.md) — the block JSON union, the common block shape, and HTML/Gutenberg helper types. For per-namespace types (styles, components, loops, fields), see each namespace page.
+This page collects the shared types referenced throughout the [Public API](./index.md) — the block JSON union, the common block shape, and HTML helper types. For per-namespace types (styles, components, loops, fields), see each namespace page.
 
 ## Block JSON
 
@@ -126,24 +126,6 @@ interface EtchRawHtmlBlockJson extends EtchBlockCommon {
   unsafe: string;                 // original, unsanitized HTML
 }
 
-interface EtchPassthroughBlockJson extends EtchBlockCommon {
-  type: "etch/passthrough";
-  gutenbergBlock: GutenbergBlock; // wrapped Gutenberg block
-}
-```
-
-## HTML and Gutenberg types
-
-```ts
-type EtchHtmlAttributes = Record<string, string | undefined>;
-
-interface GutenbergBlock {
-  blockName: string;                  // e.g. "core/paragraph"
-  innerBlocks: GutenbergBlock[];
-  innerHTML: string;
-  innerContent: (string | null)[];
-  attrs: { [key: string]: unknown };
-}
 ```
 
 ## Copy payload
@@ -154,7 +136,6 @@ interface GutenbergBlock {
 interface CopyObject {
   type: "block";                                        // payload kind (currently always "block")
   version: number;                                      // schema version, from the block's features
-  gutenbergBlock: GutenbergBlock;                       // the copied subtree in Gutenberg grammar
   styles?: { [styleId: string]: unknown };              // referenced global styles (opaque)
   loops?: { [loopId: string]: unknown };                // referenced loop definitions (opaque)
   components?: { [componentId: number]: unknown };      // referenced component definitions (opaque)
@@ -162,10 +143,6 @@ interface CopyObject {
   timestamp?: string;                                   // ISO 8601 time the copy was produced
 }
 ```
-
-:::warning
-The `gutenbergBlock` shape is **not yet stable**. Before the stable release it will be replaced with an Etch-native block representation, so use it with caution — treat the `CopyObject` as an opaque token you round-trip through [`pasteAsync()`](./blocks.md#copy-paste) rather than reading or constructing `gutenbergBlock` by hand.
-:::
 
 ## Errors
 

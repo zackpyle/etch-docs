@@ -16,7 +16,7 @@ Example output:
 
 ## Essential Attributes & Selecting an Image
 
-You can click on the thumbnail in the image attributes panel to to open the media library and choose an image. This will replace the `src` attribute with the path to the new image.
+You can click on the thumbnail in the image attributes panel to to open the asset picker and choose an image. This will replace the `src` attribute with the path to the new image.
 
 ![Etch Image Element](img/etch-image-attributes-squashed.webp)
 
@@ -27,62 +27,8 @@ The `src` attribute is mandatory and contains the URL or path to the image file.
 The `alt` attribute provides alternative text for screen readers and accessibility. It's crucial for web accessibility and should describe the image content.
 
 ```html
-<img src="/wp-content/uploads/hero-banner.jpg" alt="A beautiful sunset over the mountains" />
+<img src="/uploads/hero-banner.jpg" alt="A beautiful sunset over the mountains" />
 ```
-
-## Responsive Images with `srcset`
-
-The Image element supports the `srcset` attribute for responsive images, allowing you to provide an optimal image size as well as various additional files for different screen sizes and resolutions. This is all handled for you automatically by Etch and WordPress.
-
-:::info
-`srcset` works by providing various image resolutions to the browser so the browser can choose which resolution to load based on the user's device. The use of `srcset` brings major performance increases without any effort on your part. 
-:::
-
-Once you choose an image, more attributes will appear:
-
-![Etch Image Element](img/etch-image-srcset-squashed.webp)
-
-### `size`
-Use this attribute to select the optimal size for the image in its current context on the canvas. The size options are automatically pulled from your registered size options in WordPress.
-
-### `srcset`
-You can ignore this attribute. There's nothing you have to do here—it's all done for you.
-
-### `sizes`
-You can ignore this attribute. There's nothing you have to do here—it's all done for you.
-
-### Registering Custom Image Sizes in WordPress
-
-WordPress only offers a few sizes by default. If you want to create more of them, you can use the example script below. Add it to your site's `functions.php` file.
-
-```php
-<?php
-add_theme_support("post-thumbnails");
-add_image_size( 'image-480', 480, 9999 );
-add_image_size( 'image-640', 640, 9999 );
-add_image_size( 'image-720', 720, 9999 );
-add_image_size( 'image-960', 960, 9999 );
-add_image_size( 'image-1168', 1168, 9999 );
-add_image_size( 'image-1440', 1440, 9999 );
-add_image_size( 'image-1920', 1920, 9999 );
-
-function my_custom_sizes( $sizes ) {
-	return array_merge( $sizes, array(
-		'image-480' => 'image-480',
-		'image-640' => 'image-640',
-		'image-720' => 'image-720',
-		'image-960' => 'image-960',
-		'image-1168' => 'image-1168',
-		'image-1440' => 'image-1440',
-		'image-1920' => 'image-1920',
-	) );
-}
-add_filter( 'image_size_names_choose', 'my_custom_sizes' );
-```
-
-:::warning
-Note: You will need to regenerate thumbnails to regenerate all the images in your media gallery at the various sizes before you're able to use the new sizes. There are various free plugins in the WordPress.org repo that regenerate thumbnails.
-:::
 
 ## Additional Attributes
 

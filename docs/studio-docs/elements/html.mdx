@@ -61,7 +61,7 @@ If you place rich text inside an element with a tag like `<p>` or `<span>`, you'
 
 ### The `unsafe` Attribute
 
-When `unsafe="false"` (the default), the HTML is sanitized but still allows "safe" tags commonly used in rich content. This includes tags like `<p>`, `<strong>`, `<em>`, `<b>`, `<u>`, `<a>`, `<ul>`, `<ol>`, `<li>`, `<blockquote>`, and more. Technically, it allows any HTML that WordPress permits in post content (via `wp_kses_allowed_html('post')`).
+When `unsafe="false"` (the default), the HTML is sanitized but still allows "safe" tags commonly used in rich content. This includes tags like `<p>`, `<strong>`, `<em>`, `<b>`, `<u>`, `<a>`, `<ul>`, `<ol>`, `<li>`, `<blockquote>`, and more.
 
 When `unsafe="true"`, no sanitization occurs. All HTML passes through, including potentially dangerous tags like `<script>` and `<iframe>`.
 

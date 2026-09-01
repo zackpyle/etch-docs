@@ -29,9 +29,9 @@ This is proper, scalable, maintainable modern web design and content management.
 
 ## Benefits of Dynamic Data
 
-- **Centralized Content Management**: All your content lives in WordPress, making it easy to update, organize, and maintain. No more scattered content across multiple pages and areas of your site.
+- **Centralized Content Management**: All your content lives in Content Manager, making it easy to update, organize, and maintain. No more scattered content across multiple pages and areas of your site.
 
-- **Automatic Updates**: When you update content in WordPress, all pages using that content automatically reflect the changes. No manual updates required.
+- **Automatic Updates**: When you update content, all pages using that content automatically reflect the changes. No manual updates required.
 
 - **Scalability**: Add new content (posts, products, services) and it automatically appears on your site without additional development work.
 

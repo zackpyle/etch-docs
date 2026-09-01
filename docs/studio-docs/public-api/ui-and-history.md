@@ -26,9 +26,6 @@ interface EtchUiApi {
   isInterfaceHidden(): boolean;
   setInterfaceHidden(hidden: boolean): void;
   toggleInterface(): void;
-
-  // navigation
-  exitToWordPress(): void;                     // leave the builder, return to wp-admin
 }
 
 type ColorScheme = "light" | "dark";
@@ -41,8 +38,6 @@ etch.ui.setColorScheme("dark");
 // Distraction-free: hide all chrome
 if (!etch.ui.isInterfaceHidden()) etch.ui.toggleInterface();
 
-// Leave the builder
-etch.ui.exitToWordPress();
 ```
 
 ## etch.history

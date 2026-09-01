@@ -15,7 +15,7 @@ Connecting relies on Etch's **AI Connector** feature, which is off by default. I
 
 ## 2. Open the page in the Etch builder
 
-Open the page or template you want to work on **in the Etch builder**, and leave that tab open while you work. The builder itself has to be on screen — editing a page or template in Etch — not just your WordPress dashboard, the front end of your site, or the standard block editor.
+Open the page or template you want to work on **in the Etch builder**, and leave that tab open while you work. The builder itself has to be on screen — editing a page or template in Etch — not just the front end of your site.
 
 ## 3. Connect
 

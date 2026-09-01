@@ -43,8 +43,6 @@ Etch is the first tool to full unify your development workflow so you're not bou
 
 Etch is true innovation and maximum efficiency. It's full flexibility and control...
 
-It's what WordPress' visual environment should have always been.
-
 ## To Beginners & Aspiring Pros: We Believe That You're Capable of Being Capable
 
 Etch's founder, [Kevin Geary](https://geary.co), has taught web development best practices to tens of thousands of people.
@@ -63,7 +61,7 @@ If you're wanting to do actual web development, Etch is the best place to learn 
 
 For years, professional web developers have been an afterthought in the world of visual builders. 
 
-Most tools are built for laypeople, leaving pros frustrated by rigid interfaces, lack of control, and code output that doesn't meet their standards. Even traditional IDEs and code editors, while powerful, often lack the seamless integration between structure, style, and content that modern web projects demand, especially when working with Wordpress.
+Most tools are built for laypeople, leaving pros frustrated by rigid interfaces, lack of control, and code output that doesn't meet their standards. Even traditional IDEs and code editors, while powerful, often lack the seamless integration between structure, style, and content that modern web projects demand.
 
 **Etch changes everything.** Here, professionals are not just remembered—they're prioritized. Etch is designed to give you the power, flexibility, and efficiency you expect from a top-tier development environment, but with a level of integration and workflow optimization that goes beyond what most IDEs offer.
 
