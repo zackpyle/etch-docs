@@ -112,9 +112,7 @@ interface Etch {
 | `etch.styles`              | [Styles](./styles.md)                   | CSS rules and `:root` custom properties (variables)                  |
 | `etch.stylesheets`         | [Stylesheets](./stylesheets.md)         | Global stylesheets and `@custom-media` definitions                   |
 | `etch.components`          | [Components](./components.md)           | Reusable component definitions and their properties                  |
-| `etch.loops`               | [Loops](./loops.md)                     | Loop definitions (WP queries, JSON) and block binding                |
 | `etch.navigation`          | [Navigation](./navigation.md)           | Move around the builder UI; switch posts/templates                   |
-| `etch.fields`              | [Custom Fields](./fields.md)            | Custom field groups and per-post values                              |
 | `etch.ui` / `etch.history` | [UI & History](./ui-and-history.md)     | Color scheme, chrome visibility, undo/redo                           |
 | `etch.skills`              | [Skills](./skills.md)                   | Bundled, read-only authoring guides (e.g. ACSS conventions)          |
 | `etch.ai`                  | [AI Presence](./ai.md)                  | Advertise an external agent's presence and phase to the builder      |
@@ -187,25 +185,6 @@ interface EtchEnvironment {
 }
 
 type EtchCapabilities = Readonly<Partial<Record<EtchCapability, boolean>>>;
-```
-
-**Branch on a capability, never on `product`.** `product` is identity, for display and diagnostics; capabilities move over time, and a product check silently rots the day they do.
-
-| Capability  | Backed when                                                            |
-| ----------- | ---------------------------------------------------------------------- |
-| `loops`     | [`etch.loops`](./loops.md) is a real registry of loop definitions      |
-| `fields`    | [`etch.fields`](./fields.md) is backed by a real field store           |
-| `templates` | Template posts exist and `navigation.goTo("templates")` works          |
-| `wpMedia`   | Media ids resolve against the WordPress media library (`/wp/v2/media`) |
-
-Every key is optional on purpose: a runtime older than a capability's introduction simply omits it, so **absent means unavailable** — test with `=== true` rather than truthiness.
-
-```ts
-const etch = getEtch();
-
-if (etch.environment?.capabilities.fields === true) {
-  const groups = await etch.fields.listGroupsAsync();
-}
 ```
 
 `blockTypes` is read live off the runtime's block registry, so it cannot drift from what the runtime can actually construct. Check it instead of assuming a block type exists:

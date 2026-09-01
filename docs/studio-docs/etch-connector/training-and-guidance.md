@@ -7,10 +7,6 @@ sidebar_position: 25
 
 Etch Connector ships with **no built-in guidance for your AI assistant**. This page explains what that means and why it's intentional.
 
-:::tip Prefer something that just works?
-[Etch Intelligence](../etch-intelligence/activating-ai.md) is a fully trained experience native inside Etch that gives you a fantastic experience out of the box. If you're not interested in shaping and managing the details of the model behavior, use Etch Intelligence.
-:::
-
 ## What "no guidance" means
 
 When you connect an AI assistant through Etch Connector, the connector gives it two things: the ability to run commands against your live builder tab, and access to the Etch documentation so it knows the correct syntax. That's it.

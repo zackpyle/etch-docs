@@ -313,12 +313,6 @@
     "dynamic-data-intro.md",
     "dynamic-data-keys.mdx"
   ],
-  "studio-docs/dynamic-data/dynamic-data-integration": [
-    "option-dynamic-data-integration.md",
-    "post-dynamic-data-integration.md",
-    "term-dynamic-data-integration.md",
-    "user-dynamic-data-integration.md"
-  ],
   "studio-docs/dynamic-data/dynamic-data-modifiers": [
     "arithmetic-modifiers.mdx",
     "basic-modifiers.mdx",
@@ -349,103 +343,36 @@
     "training-and-guidance.md",
     "usage.md"
   ],
-  "studio-docs/etch-intelligence": [
-    "activating-ai.md",
-    "ask-mode.md",
-    "build-mode.md",
-    "introduction.md"
-  ],
-  "studio-docs/facets": [
-    "apply.md",
-    "filter.md",
-    "load.md",
-    "map.md",
-    "pagination.md",
-    "reset.md",
-    "search.md",
-    "sort.md"
-  ],
-  "studio-docs/facets/third-party-facets": [
-    "facetwp.md",
-    "wp-grid-builder.md"
-  ],
-  "studio-docs/feature-flags": [
-    "index.md"
-  ],
   "studio-docs/getting-started": [
     "core-principles.md",
     "development-strategy.md",
-    "etch-theme.md",
-    "installation.md",
-    "requirements.md",
     "things-to-know.md"
   ],
-  "studio-docs/gutenberg": [
-    "block-authoring.md",
-    "passthrough.md"
-  ],
   "studio-docs/how-to/basics": [
-    "how-to-install-custom-fonts.mdx",
     "how-to-set-content-width.md",
     "how-to-set-global-heading-styles.md",
     "how-to-set-global-section-styles.md"
-  ],
-  "studio-docs/integrations": [
-    "integrations.md"
-  ],
-  "studio-docs/integrations/controls": [
-    "controls.md"
-  ],
-  "studio-docs/integrations/custom-fields": [
-    "custom-fields.md",
-    "flexible-content-fields.md",
-    "gallery-fields.md",
-    "image-fields.md",
-    "options-pages.mdx",
-    "relationship-fields.md",
-    "repeater-fields.md",
-    "text-fields.md"
-  ],
-  "studio-docs/integrations/hooks": [
-    "hooks.md"
   ],
   "studio-docs/interface": [
     "asset-manager.md",
     "attributes-bar.md",
     "canvas-color-scheme.md",
     "command-bar.md",
-    "content-manager.md",
     "css-panel.md",
     "elements-bar.md",
     "html-panel.md",
     "js-panel.md",
-    "loop-manager.md",
     "modular-interface.md",
     "responsive-controls.md",
     "selector-pills.md",
     "structure-panel.md",
     "style-manager.md"
   ],
-  "studio-docs/known-issues": [
-    "index.md"
-  ],
-  "studio-docs/loops": [
-    "basic-loops.mdx",
-    "loop-arguments.md",
-    "looping-attachments.md",
-    "main-query.md",
-    "nested-loops.md"
-  ],
-  "studio-docs/migration-guides": [
-    "v1-migration.md"
-  ],
   "studio-docs/public-api": [
     "ai.md",
     "blocks.md",
     "components.md",
-    "fields.md",
     "index.md",
-    "loops.md",
     "navigation.md",
     "skills.md",
     "styles.md",
@@ -460,25 +387,6 @@
     "philosophy.md",
     "using-media-queries.md",
     "workflow.md"
-  ],
-  "studio-docs/templates": [
-    "404-template.md",
-    "archive-templates.md",
-    "author-template.md",
-    "index-template-catch-all.md",
-    "intro-to-templates.md",
-    "page-templates.md",
-    "post-content-slot.md",
-    "search-results-template.md",
-    "single-post-templates.md",
-    "template-manager.md"
-  ],
-  "studio-docs/top-priorities": [
-    "index.md"
-  ],
-  "studio-docs/troubleshooting": [
-    "activity-log.md",
-    "performance-issues.mdx"
   ],
   "studio-docs/utilities": [
     "functions.md",
