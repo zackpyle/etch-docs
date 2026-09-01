@@ -1,0 +1,42 @@
+---
+title: Known Issues
+sidebar_position: 10
+---
+
+# Known Issues & Areas of Improvement
+
+Great software is never "done," and that's certainly true for software as young as Etch. We are committed to continuous improvement and transparency about the current limitations, bugs, and areas where we know things could be better.
+
+This page documents the most significant known issues and areas we're actively planning to improve. If you encounter a problem not listed here, please let us know so we can investigate and address it in future updates.
+
+## Issue: Hostinger Issues
+
+Users who are using Hostinger for their hosting are having unique issues that are not experienced on any other hosting platform:
+
+- WAF blocks saving
+- WAF blocks plugin upload
+- WAF breaks copy/paste of components and JSON
+
+If the errors you are seeing return a "403" then it's most likely a WAF issue. Some of these issues be temporarily solved by setting the WAF to "essentially off."
+
+We are currently trying to reach out to Hostinger and get in touch with a higher-level technical person on their team to investigate these issues. We hope they'll be responsive to our requests and help us find a solution.
+
+## WIP: Content Hub / CPTs / Custom Fields
+
+This area of Etch is a functional Proof of Concept so that users can start to experience the tremendous advantages of a "unified workflow." It's a high priority area and will get progressively better very quickly, but the CPT/Custom Fields functionality should be treated as more of a playground right now than a real part of your workflow (unless your needs are very basic).
+
+## Quirk: Partial Selectors
+
+The HTML editor allows you to write classes in plain HTML, which it then parses into attached selector pills on the element. The one limitation of this workflow is that it has to be debounced, which means it has to try and guess when you're done typing.
+
+If you're a fast typist, you won't have any issues. If you're a slow typist and constantly pause or stop to think, Etch will think you're done and will create a selector out of the partial selector you typed. This can result in having tons of partial selectors in your style manager.
+
+If you find partial selectors in your style manager, it's a sign that you should stop using the HTML editor to add classes to elements. Instead, use the add attribute bar/workflow which allows you to type at any speed and doesn't require any debouncing or guessing.
+
+## WIP: Mini GUI vs Styling Panels
+
+The Mini GUI / CSS Quick Actions bar is our new, streamlined way to style elements quickly and intuitively.
+
+The current version is still V1, but it has already proven significantly more effective and enjoyable to use than the traditional styling panels.
+
+We have an exciting roadmap of features and refinements planned for the Mini GUI, so stay tuned!

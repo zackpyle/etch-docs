@@ -1,0 +1,45 @@
+---
+title: Performance Issues
+description: Diagnose and fix slow saves, dropped requests, and server overload while using the Etch builder
+---
+
+import VersionBadge from '@site/src/components/VersionBadge/VersionBadge';
+
+# Performance Issues
+
+While using the builder, the Etch builder sends API requests to your server. On some hosting environments, sending many requests in parallel can overwhelm the server or trigger rate limiting. This can show up as:
+
+- **Server errors** — your server runs out of PHP workers or memory and starts dropping requests.
+- **Hosting rate limits** — managed hosts (e.g. Kinsta, WP Engine, Cloudways) may throttle or block bursts of requests, causing failed saves or missing data.
+- **Slow or unresponsive admin** — other users on the same server notice slowdowns while the builder is open, because too many PHP processes are occupied at once.
+- **Database connection errors** — a high number of concurrent API requests can exhaust your database's connection pool, especially on shared hosting.
+
+If you run into any of these, here are the things you can try.
+
+## Lower the API concurrency limit
+
+<VersionBadge version="1.4.20" />
+
+By default, the Etch builder sends API requests without a concurrency limit. You can cap the number of concurrent requests by adding the following constant to your `wp-config.php`:
+
+```php
+define( 'ETCH_API_CONCURRENCY_LIMIT', 5 );
+```
+
+This limits the builder to at most 5 simultaneous API requests. Any additional requests are queued and sent as earlier ones complete.
+
+:::tip
+Start with a value of `5` and adjust based on your server's capacity. Lower values reduce server load but may make the builder feel slower.
+:::
+
+## Increase your server's worker limit
+
+If your server can handle the load but is configured with too few PHP workers, requests get queued or dropped at the server level. Raising the worker limit lets your server process more requests at once. The setting depends on your stack:
+
+- **Apache (`mpm_event` / `mpm_worker`)** — increase the [`MaxRequestWorkers`](https://httpd.apache.org/docs/2.4/mod/mpm_common.html#maxrequestworkers) directive. This controls the maximum number of simultaneous requests Apache will serve.
+- **PHP-FPM** — increase the `pm.max_children` value in your PHP-FPM pool configuration. This controls the maximum number of PHP worker processes available to handle requests.
+- **XCloud** — raise the **PM Max Children** value in your server's PHP settings.
+
+:::warning
+Each additional worker consumes memory. Increase these limits gradually and monitor your server's RAM usage so you don't trade dropped requests for out-of-memory errors.
+:::

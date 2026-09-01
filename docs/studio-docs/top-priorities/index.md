@@ -1,0 +1,40 @@
+---
+title: Top Priorities
+sidebar_position: 10
+---
+
+# Current Priorities
+
+This page outlines the key areas we're focusing on most actively, but it's important to understand that priorities can change quickly based on various factors:
+
+1. **Our vision** - What we think needs to happen next.
+2. **Real-world use cases** - Where people are getting stuck.
+3. **User feedback** - What people are saying about their experience.
+
+**This page should not be treated as a fixed roadmap.** It's a fluid and flexible attempt to communicate what's currently important. It's also limited to the top 5 large-scale items across two different categories because prioritization beyond that is too fluid to worry about.
+
+:::note
+Bug fixes, general improvements, and minor features are not listed here. The purpose of this page is for communicating larger-scale priorities. It goes without saying that bug fixes and general improvements are always a top priority.
+:::
+
+## Immediate Priorities
+
+| Feature                        | Description                                                                                      |
+|--------------------------------|--------------------------------------------------------------------------------------------------|
+| **Etch Studio** | Build & deploy semi-dynamic websites (includes work on popular areas like media manager, content hub, etc.) | 
+| **Data Sources to Replace Loop Manager** | An exciting new model for accessing and displaying data. |
+| **Native Components** | Prioritization of our native [components (native)](../components-native/overview). |
+| **AI Capability Expansion** | Agent-powered workflow features |
+
+## High Priority Items (Soon)
+
+| Feature                        | Description                                                                                      |
+|--------------------------------|--------------------------------------------------------------------------------------------------|
+| **Facets/Filters** | Facets and filters for loops. |
+| **Shortcuts** | Customizable shortcut architecture |
+| **PHP Authoring** | PHP authoring inside the HTML editor |
+
+
+## Community Feedback
+
+We actively monitor user feedback and feature requests to ensure our priorities align with what matters most to our users. If you have suggestions for improvements or encounter issues, please let us know so we can incorporate your feedback into our development plans.
