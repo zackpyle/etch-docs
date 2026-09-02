@@ -185,7 +185,9 @@ The Object Prop doesn't require a loop at all. For a one-off use — say, a sing
 
 Paste this JSON into the `object` combobox on the component instance (instead of selecting a loop source), and the same `PostCard`/`TeamMemberCard`-style component renders it exactly as if it came from a loop — no changes to the component itself are needed.
 
-## Troubleshooting: A Nested Loop Stops Working Inside a Component
+## Troubleshooting
+
+### A Nested Loop Stops Working Inside a Component
 
 A common mistake is extracting markup that contains a nested loop into a component, and expecting the nested loop to keep working unchanged. This works fine directly on the page:
 
@@ -221,3 +223,47 @@ But the moment the `<h3>` and the nested loop are extracted into a `ProductCard`
 ```
 
 The rule to remember: a loop and everything it renders must live on the same side of the component boundary. Either keep the whole loop (and its markup) outside the component, or move the whole loop inside the component and feed it the source array through an Object Prop — never split a loop's opening tag from its body across that boundary.
+
+### A Slot Doesn't Receive Per-Item Loop Data
+
+It's tempting to treat a slot like a per-item placeholder inside a component's loop, the way an Object Prop bridges scope. It can't. A slot's fill content is authored once, in whatever scope the component instance is placed in, and dropped into the `{@slot}` position as-is. It never re-runs per loop iteration with a different item in context.
+
+For example, this component loops over `props.postLoop` and leaves a slot for each card:
+
+```html
+<ul>
+    {#loop props.postLoop as post}
+        <li>{#slot Card}{/slot}</li>
+    {/loop}
+</ul>
+```
+
+Filling the slot like this, from outside the component, will not work:
+
+```html
+<PostList postLoop="posts">
+    {#slot Card}
+        <PostCard object="post" />
+    {/slot}
+</PostList>
+```
+
+`post` doesn't exist at the point this markup is written — it's outside the loop, in `PostList`'s usage, not inside it. Every card ends up empty because the slot content is resolved once, before the loop ever runs.
+
+**The fix** is to skip the slot for this use case and put the component directly inside the loop instead, passing the item via an Object Prop exactly as described above:
+
+```html
+<ul>
+    {#loop props.postLoop as post}
+        <li>
+            {PostCard object="post" /}
+        </li>
+    {/loop}
+</ul>
+```
+
+If different instances of `PostList` need different card layouts (the reason you might have reached for a slot in the first place), nest a few candidate components inside the loop and use a Select or Boolean prop on `PostList` to choose which one renders, rather than trying to make that choice via a slot.
+
+:::tip
+This limitation only exists because Components have their own scope. If `PostList` doesn't need to update everywhere it's used, saving it as an (unsynced) Pattern instead of a Component sidesteps the whole issue — a Pattern is just saved markup, so once it's placed on a page it behaves like you typed the loop there directly, and `post` stays in scope for anything nested inside it, slot or no slot. The tradeoff is losing the "edit once, updates everywhere" behavior a Component provides.
+:::
