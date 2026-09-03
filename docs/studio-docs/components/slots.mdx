@@ -152,6 +152,15 @@ Nope. Slot content is per-instance. If you want something to apply to all instan
 </details>
 
 <details>
+<summary>Can a slot access data from a loop running inside the component?</summary>
+
+No. Slot content is authored once, in whatever scope the component instance is placed in, and is dropped into the `{@slot}` position as-is — it never re-runs per loop iteration. So if a component wraps a slot in its own `{#loop}`, the slot's fill content still can't see that loop's item, because it was written outside the loop, before the loop ever ran.
+
+If each iteration needs different data, put the component (not a slot) directly inside the loop and pass the item in via an [Object Prop](./props/prop-object). Reserve slots for content that's the same across every instance/iteration, or for a single non-looped drop zone.
+
+</details>
+
+<details>
 <summary>Can I limit slots to specific types of content?</summary>
 
 No, if you want to limit the user to placing certain types of content, then you should use existing prop types with conditional logic. Slots are specifically designed as generic drop zones.
