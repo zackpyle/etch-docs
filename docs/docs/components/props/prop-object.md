@@ -136,7 +136,7 @@ This is the most common use case for the Object Prop — a card component that n
 
 ```html
 {#loop posts as post}
-    {PostCard post={post} /}
+    <PostCard post="{post}" />
 {/loop}
 ```
 
@@ -155,7 +155,7 @@ Object Props get more interesting once there's more than one loop on the page. S
     <section class="department">
         <h2>{department.name}</h2>
         {#loop department.members as member}
-            {TeamMemberCard member={member} /}
+            <TeamMemberCard member="{member}" />
         {/loop}
     </section>
 {/loop}
@@ -218,7 +218,7 @@ But the moment the `<h3>` and the nested loop are extracted into a `ProductCard`
 
 ```html
 {#loop products as item}
-    {ProductCard object="item" /}
+    <ProductCard object="{item}" />
 {/loop}
 ```
 
@@ -233,7 +233,7 @@ For example, this component loops over `props.postLoop` and leaves a slot for ea
 ```html
 <ul>
     {#loop props.postLoop as post}
-        <li>{#slot Card}{/slot}</li>
+        <li>{#@slot Card}</li>
     {/loop}
 </ul>
 ```
@@ -241,9 +241,9 @@ For example, this component loops over `props.postLoop` and leaves a slot for ea
 Filling the slot like this, from outside the component, will not work:
 
 ```html
-<PostList postLoop="posts">
+<PostList postLoop="{posts}">
     {#slot Card}
-        <PostCard object="post" />
+        <PostCard object="{post}" />
     {/slot}
 </PostList>
 ```
@@ -256,7 +256,7 @@ Filling the slot like this, from outside the component, will not work:
 <ul>
     {#loop props.postLoop as post}
         <li>
-            {PostCard object="post" /}
+            <PostCard object="{post}" />
         </li>
     {/loop}
 </ul>
