@@ -94,7 +94,7 @@ Once your component is built using the Object Prop, it's very easy to use. Simpl
 
 This input is a combobox. If you place the component inside a loop, it will automatically populate itself with the proper key from any parent or ancestor loops. If it's a single loop, your component will work out of the box. If it's a nested loop, you'll want to make sure that the correct data source is selected.
 
-You also type custom values into the input for edge case scenarios.
+You can also type custom values into the input for edge case scenarios.
 
 ## Real-World Examples
 
@@ -233,7 +233,7 @@ For example, this component loops over `props.postLoop` and leaves a slot for ea
 ```html
 <ul>
     {#loop props.postLoop as post}
-        <li>{#@slot Card}</li>
+        <li>{@slot Card}</li>
     {/loop}
 </ul>
 ```
