@@ -77,14 +77,14 @@ Static pages are the starting point, not the destination:
 ## Publishing
 
 Studio builds your site to static files. Getting them online is either a
-download or a direct deploy; see [Deploying](deploying.md).
+download or a direct deploy; see [Deploying](deploying/README.md).
 
 Etch Studio never hosts your site. It builds the artifact; where that artifact
 lives is your call, which also means your site's uptime never depends on ours.
 
 ## Next steps
 
-- [Deploying](deploying)
+- [Deploying](deploying/README.md)
 - [Data Sources](data-sources/README.md)
 - [Content Types](content-types/README.md)
 - [Forms](forms/README.md)

@@ -241,7 +241,7 @@ the scenario validates too.
 
 There's no preview in the builder, so test on the real output:
 
-1. **Download Site** or **Deploy** (see [Deploying](../deploying.md)).
+1. **Download Site** or **Deploy** (see [Deploying](../deploying/README.md)).
 2. Open the page and submit the form.
 3. Watch the run appear in Make's scenario history, and confirm the fields
    arrived under the right names.

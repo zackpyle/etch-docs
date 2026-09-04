@@ -309,6 +309,19 @@
     "basic-conditions.md",
     "intro-to-conditional-logic.md"
   ],
+  "studio-docs/content-types": [
+    "README.md",
+    "querying-content.md"
+  ],
+  "studio-docs/data-sources": [
+    "README.md",
+    "api.md",
+    "javascript.md",
+    "json.md"
+  ],
+  "studio-docs/deploying": [
+    "README.md"
+  ],
   "studio-docs/dynamic-data": [
     "dynamic-data-intro.md",
     "dynamic-data-keys.mdx"
@@ -343,7 +356,13 @@
     "training-and-guidance.md",
     "usage.md"
   ],
+  "studio-docs/forms": [
+    "README.md",
+    "custom-forms.md",
+    "embedding.md"
+  ],
   "studio-docs/getting-started": [
+    "README.md",
     "core-principles.md",
     "development-strategy.md",
     "things-to-know.md"

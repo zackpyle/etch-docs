@@ -22,7 +22,7 @@ which is also why your site's uptime never depends on ours.
 ## What gets deployed
 
 Every page is rendered on the server, so **anything dynamic is resolved at build
-time and baked into the output**. A [data source](data-sources/README.md) that
+time and baked into the output**. A [data source](../data-sources/README.md) that
 calls an external API is fetched during the build, and the deployed site serves
 whatever that call returned. To publish fresh data, deploy again.
 

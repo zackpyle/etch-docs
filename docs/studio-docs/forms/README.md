@@ -41,7 +41,7 @@ at build time. Two consequences worth knowing before you start:
   key is readable by anyone who views the source. Never put a secret in a form.
 
 This is the same build-time-versus-runtime split described in
-[Deploying](../deploying.md): data sources resolve when the site is built, while
+[Deploying](../deploying/README.md): data sources resolve when the site is built, while
 a form runs when a visitor arrives.
 
 ## Next
